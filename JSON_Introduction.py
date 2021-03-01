@@ -1,4 +1,5 @@
 import json
+import urllib.request
 
 Information1 = '{ "Name": "Jingze Dai", "School": "McMaster University", "MacID": "daij24" }'
 Information2 = '{ "Program": "Honors Computer Science program (co-op)" }'
@@ -10,9 +11,10 @@ Information7 = '{ "Web Programming": [ "Javascript", "CSS", "HTML5", "Node.js", 
 Information8 = '{ "Computer Graphics": [ "OpenGL", "Unity" ] }'
 Information9 = '{ "Database and Data Science": [ "MATLAB", "Oracle", "MySQL" ] }'
 Information10 = '{ "Others": [ "Scala", "Ruby", "Haskell" ] }'
-Information11 = '{ "Machine Learning": "1-year with certificates from taking courses" }'
-Information12 = '{ "LinkedIn Webpage": "https://www.linkedin.com/in/jingze-dai/" }'
-Information13 = '{ "Github Webpage": "https://github.com/daijingz" }'
+Information11 = '{ "Machine Learning": "1-year learning experience with certificates from Stanford University" }'
+Information12 = '{ "Data Science": "1-year learning experience with certificates from IBM" }'
+Information13 = '{ "LinkedIn Webpage": "https://www.linkedin.com/in/jingze-dai/" }'
+Information14 = '{ "Github Webpage": "https://github.com/daijingz" }'
 
 
 def display_Basic_Information():
@@ -140,7 +142,23 @@ def display_Other_Skills():
     print()
     print(Output10["Others"][2])
     print()
+    Output11 = json.loads(Information11)
+    print("Machine Learning: " + str(Output11["Machine Learning"]))
+    print()
+    Output12 = json.loads(Information12)
+    print("Data Science: " + str(Output12["Data Science"]))
+    print()
     print("************************************************************************")
+
+
+def display_LinkedIn():
+    Output13 = json.loads(Information13)
+    return urllib.request.urlopen(str(Output13["LinkedIn Webpage"]))
+
+
+def display_Github():
+    Output14 = json.loads(Information14)
+    return urllib.request.urlopen(str(Output14["Github Webpage"]))
 
 
 display_Basic_Information()
@@ -151,3 +169,5 @@ display_Web_Programming()
 display_Computer_Graphics()
 display_Data_Science()
 display_Other_Skills()
+# display_LinkedIn()
+# display_Github()
