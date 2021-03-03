@@ -8,7 +8,9 @@ class Tree:
         self.rightBranch = None
         self.data = data
 
-    def getData(self):
+    def getData(self, printed=True):
+        if printed:
+            print(str(self.data))
         return self.data
 
     def addBranch(self, inputData, isLeft=True, isRight=False):
@@ -103,3 +105,19 @@ class Tree:
 
         self.rightBranch = leftPart
         self.leftBranch = rightPart
+
+    def HeapedSort(self, inputList):
+        if self.leftBranch is not None:
+            raise ValueError()
+        elif self.rightBranch is not None:
+            raise ValueError()
+
+        for i in inputList:
+            if inputList.count(i) > 1:
+                raise ValueError()
+
+        list1 = inputList
+        list1.sort()
+        midpoint = len(inputList) // 2
+        self.data = list1[midpoint]
+        list1 = list1[:midpoint] + list1[midpoint+1:]
