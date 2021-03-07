@@ -1,4 +1,5 @@
 import json
+import re
 import urllib.request
 
 Information1 = '{ "Name": "Jingze Dai", "School": "McMaster University", "MacID": "daij24" }'
@@ -161,13 +162,51 @@ def display_Github():
     return urllib.request.urlopen(str(Output14["Github Webpage"]))
 
 
-display_Basic_Information()
-display_Programming_Languages()
-display_Assembly_Languages()
-display_Professional_Tools()
-display_Web_Programming()
-display_Computer_Graphics()
-display_Data_Science()
-display_Other_Skills()
-# display_LinkedIn()
-# display_Github()
+def Welcome():
+    username = input("Enter username: ")
+    print("Welcome: " + username + "!!!")
+    print("Here is David's homepage. What do you want to know about David?")
+    information = input("Information you want to know: ")
+
+    if re.search('^Basic.*', information):
+        display_Basic_Information()
+        Welcome()
+    elif re.search('^basic.*', information):
+        display_Basic_Information()
+        Welcome()
+    elif re.search('^Programming.*', information):
+        display_Programming_Languages()
+        Welcome()
+    elif re.search('^programming.*', information):
+        display_Programming_Languages()
+        Welcome()
+    elif re.search('^Assem.*', information):
+        display_Assembly_Languages()
+        Welcome()
+    elif re.search('^assem.*', information):
+        display_Assembly_Languages()
+        Welcome()
+    elif re.search('^Tool.*', information):
+        display_Professional_Tools()
+        Welcome()
+    elif re.search('^tool.*', information):
+        display_Professional_Tools()
+        Welcome()
+    elif re.search('^Web.*', information):
+        display_Web_Programming()
+        Welcome()
+    elif re.search('^web.*', information):
+        display_Web_Programming()
+        Welcome()
+    elif re.search('^end.*', information):
+        print()
+    else:
+        print("Error: Information Category not Founded")
+        exitOrNot = input("Do you want to continue searches? ")
+        if re.search('^yes.*', exitOrNot) or re.search('^Yes.*', exitOrNot):
+            Welcome()
+        else:
+            print()
+
+
+Welcome()
