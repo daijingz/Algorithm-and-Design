@@ -5,8 +5,8 @@
 class Tree:
     # Setting an empty tree with a central node (including values)
     def __init__(self, data):
-        self.leftBranch = None
-        self.rightBranch = None
+        self.__leftBranch = None
+        self.__rightBranch = None
         self.__data = data
 
     # get central node's data at the top
@@ -16,10 +16,10 @@ class Tree:
         return self.__data
 
     def getLeftBranch(self):
-        return self.leftBranch
+        return self.__leftBranch
 
     def getRightBranch(self):
-        return self.rightBranch
+        return self.__rightBranch
 
     def addBranch(self, inputData, isLeft=True, isRight=False):
         if isLeft == isRight:
@@ -28,79 +28,79 @@ class Tree:
             raise TypeError()
 
         if isLeft:
-            self.leftBranch = inputData
+            self.__leftBranch = inputData
         elif isRight:
-            self.rightBranch = inputData
+            self.__rightBranch = inputData
 
     def countLeaf(self):
-        if self.leftBranch is None and self.rightBranch is None:
+        if self.__leftBranch is None and self.__rightBranch is None:
             return 1
-        elif self.leftBranch is None:
-            return self.rightBranch.countLeaf()
+        elif self.__leftBranch is None:
+            return self.__rightBranch.countLeaf()
 
-        if self.rightBranch is None:
-            return self.leftBranch.countLeaf()
+        if self.__rightBranch is None:
+            return self.__leftBranch.countLeaf()
         else:
-            return self.leftBranch.countLeaf() + self.rightBranch.countLeaf()
+            return self.__leftBranch.countLeaf() + self.__rightBranch.countLeaf()
 
     def countNode(self):
-        if self.leftBranch is None and self.rightBranch is None:
+        if self.__leftBranch is None and self.__rightBranch is None:
             return 0
         else:
-            if self.leftBranch is None:
-                return 1 + self.rightBranch.countNode()
-            elif self.rightBranch is None:
-                return 1 + self.leftBranch.countNode()
+            if self.__leftBranch is None:
+                return 1 + self.__rightBranch.countNode()
+            elif self.__rightBranch is None:
+                return 1 + self.__leftBranch.countNode()
             else:
-                return 1 + self.leftBranch.countNode() + self.rightBranch.countNode()
+                return 1 + self.__leftBranch.countNode() + self.__rightBranch.countNode()
 
     def findDepth(self):
-        if self.leftBranch is None and self.rightBranch is None:
+        if self.__leftBranch is None and self.__rightBranch is None:
             return 0
-        elif self.leftBranch is None:
-            return self.rightBranch.findDepth()
+        elif self.__leftBranch is None:
+            return self.__rightBranch.findDepth()
 
-        if self.rightBranch is None:
-            return self.leftBranch.findDepth()
+        if self.__rightBranch is None:
+            return self.__leftBranch.findDepth()
         else:
-            return 1 + max(self.leftBranch.findDepth(), self.rightBranch.findDepth())
+            return 1 + max(self.__leftBranch.findDepth(), self.__rightBranch.findDepth())
 
     def sumUp(self):
         if type(self.__data) != int:
             raise TypeError()
 
-        if self.leftBranch is None:
+        if self.__leftBranch is None:
             output1 = 0
         else:
-            output1 = self.leftBranch.sumUp()
-        if self.rightBranch is None:
+            output1 = self.__leftBranch.sumUp()
+        if self.__rightBranch is None:
             output2 = 0
         else:
-            output2 = self.rightBranch.sumUp()
+            output2 = self.__rightBranch.sumUp()
 
         return output1 + self.__data + output2
 
     def isElement(self, data):
-        if self.leftBranch is None and self.rightBranch is None:
+        if self.__leftBranch is None and self.__rightBranch is None:
             return data == self.__data
         else:
-            if self.leftBranch is None:
-                return self.rightBranch.isElement(data) and data == self.__data
-            elif self.rightBranch is None:
-                return self.leftBranch.isElement(data) and data == self.__data
+            if self.__leftBranch is None:
+                return self.__rightBranch.isElement(data) and data == self.__data
+            elif self.__rightBranch is None:
+                return self.__leftBranch.isElement(data) and data == self.__data
             else:
-                return self.leftBranch.isElement(data) and self.rightBranch.isElement(data) and data == self.__data
+                return self.__leftBranch.isElement(data) and self.__rightBranch.isElement(data) and data == self.__data
 
     def flattenTree(self):
-        if self.leftBranch is None and self.rightBranch is None:
+        if self.__leftBranch is None and self.__rightBranch is None:
             return [self.__data]
         else:
-            if self.leftBranch is None:
-                return [self.__data] + self.rightBranch.flattenTree()
-            elif self.rightBranch is None:
-                return self.leftBranch.flattenTree() + [self.__data]
+            if self.__leftBranch is None:
+                return [self.__data] + self.__rightBranch.flattenTree()
+            elif self.__rightBranch is None:
+                return self.__leftBranch.flattenTree() + [self.__data]
             else:
-                return self.leftBranch.flattenTree() + [self.__data] + self.rightBranch.flattenTree()
+                return self.__leftBranch.flattenTree() + [self.__data] + self.__rightBranch.flattenTree()
 
     # rotate tree's left part with right part
     # For example
@@ -110,28 +110,28 @@ class Tree:
     #     / \  / \                 / \    / \
     #    4  5  6  7               7   6   5  4
     def rotateTree(self):
-        if self.leftBranch is not None:
-            self.leftBranch.rotateTree()
+        if self.__leftBranch is not None:
+            self.__leftBranch.rotateTree()
         else:
-            self.leftBranch = None
-        if self.rightBranch is not None:
-            self.rightBranch.rotateTree()
+            self.__leftBranch = None
+        if self.__rightBranch is not None:
+            self.__rightBranch.rotateTree()
         else:
-            self.leftBranch = None
+            self.__leftBranch = None
 
-        leftPart = self.leftBranch
-        rightPart = self.rightBranch
+        leftPart = self.__leftBranch
+        rightPart = self.__rightBranch
 
-        self.rightBranch = leftPart
-        self.leftBranch = rightPart
+        self.__rightBranch = leftPart
+        self.__leftBranch = rightPart
 
     # Returns all leaves at the bottom (with no branch)
     def baseLeaf(self):
-        if self.leftBranch is None and self.rightBranch is None:
+        if self.__leftBranch is None and self.__rightBranch is None:
             return [self.__data]
-        elif self.leftBranch is None:
-            return self.rightBranch.baseLeaf()
-        if self.rightBranch is None:
-            return self.leftBranch.baseLeaf()
+        elif self.__leftBranch is None:
+            return self.__rightBranch.baseLeaf()
+        if self.__rightBranch is None:
+            return self.__leftBranch.baseLeaf()
         else:
-            return self.leftBranch.baseLeaf() + self.rightBranch.baseLeaf()
+            return self.__leftBranch.baseLeaf() + self.__rightBranch.baseLeaf()

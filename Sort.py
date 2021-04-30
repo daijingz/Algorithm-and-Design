@@ -7,7 +7,24 @@
 import random
 
 
+def checkAvailable(inputList):
+    i = 0
+    while i < len(inputList):
+        if isinstance(inputList[i], (float, int)):
+            return False
+        i += 1
+
+    for j in inputList:
+        if inputList.count(j) > 1:
+            return False
+
+    return True
+
+
 def SelectionSort(inputList):
+    if not checkAvailable(inputList):
+        raise ValueError
+
     output = []
     loopList = inputList
     while len(loopList) > 0:
@@ -17,6 +34,9 @@ def SelectionSort(inputList):
 
 
 def InsertionSort(inputList):
+    if not checkAvailable(inputList):
+        raise ValueError
+
     output = []
     for i in inputList:
         output = Insertion(output, i)
@@ -26,6 +46,9 @@ def InsertionSort(inputList):
 
 # Helper function of Insertion Sort
 def Insertion(inputList, elem):
+    if not checkAvailable(inputList):
+        raise ValueError
+
     if len(inputList) == 0:
         return [elem]
     elif elem > max(inputList):
@@ -44,6 +67,9 @@ def Insertion(inputList, elem):
 
 
 def MergeSort(inputList):
+    if not checkAvailable(inputList):
+        raise ValueError
+
     if len(inputList) > 1:
         subLeft = inputList[:len(inputList) // 2]
         subRight = inputList[len(inputList) // 2:]
@@ -81,8 +107,11 @@ def MergeSort(inputList):
 
 
 def ShellSort(inputPart):
+    if not checkAvailable(inputPart):
+        raise ValueError
+
     inputList = inputPart
-    medium = len(inputList)//2
+    medium = len(inputList) // 2
     while medium > 0:
         for i in range(medium, len(inputList)):
             temp = inputList[i]
@@ -96,6 +125,9 @@ def ShellSort(inputPart):
 
 
 def QuickSort(inputList):
+    if not checkAvailable(inputList):
+        raise ValueError
+
     leftPart = []
     rightPart = []
     randomNum = inputList[random.randint(0, len(inputList) - 1)]
