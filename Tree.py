@@ -3,15 +3,23 @@
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
 
 class Tree:
+    # Setting an empty tree with a central node (including values)
     def __init__(self, data):
         self.leftBranch = None
         self.rightBranch = None
-        self.data = data
+        self.__data = data
 
+    # get central node's data at the top
     def getData(self, printed=True):
         if printed:
-            print(str(self.data))
-        return self.data
+            print(str(self.__data))
+        return self.__data
+
+    def getLeftBranch(self):
+        return self.leftBranch
+
+    def getRightBranch(self):
+        return self.rightBranch
 
     def addBranch(self, inputData, isLeft=True, isRight=False):
         if isLeft == isRight:
@@ -58,7 +66,7 @@ class Tree:
             return 1 + max(self.leftBranch.findDepth(), self.rightBranch.findDepth())
 
     def sumUp(self):
-        if type(self.data) != int:
+        if type(self.__data) != int:
             raise TypeError()
 
         if self.leftBranch is None:
@@ -70,35 +78,46 @@ class Tree:
         else:
             output2 = self.rightBranch.sumUp()
 
-        return output1 + self.data + output2
+        return output1 + self.__data + output2
 
     def isElement(self, data):
         if self.leftBranch is None and self.rightBranch is None:
-            return data == self.data
+            return data == self.__data
         else:
             if self.leftBranch is None:
-                return self.rightBranch.isElement(data) and data == self.data
+                return self.rightBranch.isElement(data) and data == self.__data
             elif self.rightBranch is None:
-                return self.leftBranch.isElement(data) and data == self.data
+                return self.leftBranch.isElement(data) and data == self.__data
             else:
-                return self.leftBranch.isElement(data) and self.rightBranch.isElement(data) and data == self.data
+                return self.leftBranch.isElement(data) and self.rightBranch.isElement(data) and data == self.__data
 
     def flattenTree(self):
         if self.leftBranch is None and self.rightBranch is None:
-            return [self.data]
+            return [self.__data]
         else:
             if self.leftBranch is None:
-                return [self.data] + self.rightBranch.flattenTree()
+                return [self.__data] + self.rightBranch.flattenTree()
             elif self.rightBranch is None:
-                return self.leftBranch.flattenTree() + [self.data]
+                return self.leftBranch.flattenTree() + [self.__data]
             else:
-                return self.leftBranch.flattenTree() + [self.data] + self.rightBranch.flattenTree()
+                return self.leftBranch.flattenTree() + [self.__data] + self.rightBranch.flattenTree()
 
+    # rotate tree's left part with right part
+    # For example
+    #        1                         1
+    #       /  \                     /   \
+    #      2    3         ->        3     2
+    #     / \  / \                 / \    / \
+    #    4  5  6  7               7   6   5  4
     def rotateTree(self):
         if self.leftBranch is not None:
             self.leftBranch.rotateTree()
+        else:
+            self.leftBranch = None
         if self.rightBranch is not None:
             self.rightBranch.rotateTree()
+        else:
+            self.leftBranch = None
 
         leftPart = self.leftBranch
         rightPart = self.rightBranch
@@ -106,18 +125,13 @@ class Tree:
         self.rightBranch = leftPart
         self.leftBranch = rightPart
 
-    def HeapedSort(self, inputList):
-        if self.leftBranch is not None:
-            raise ValueError()
-        elif self.rightBranch is not None:
-            raise ValueError()
-
-        for i in inputList:
-            if inputList.count(i) > 1:
-                raise ValueError()
-
-        list1 = inputList
-        list1.sort()
-        midpoint = len(inputList) // 2
-        self.data = list1[midpoint]
-        list1 = list1[:midpoint] + list1[midpoint+1:]
+    # Returns all leaves at the bottom (with no branch)
+    def baseLeaf(self):
+        if self.leftBranch is None and self.rightBranch is None:
+            return [self.__data]
+        elif self.leftBranch is None:
+            return self.rightBranch.baseLeaf()
+        if self.rightBranch is None:
+            return self.leftBranch.baseLeaf()
+        else:
+            return self.leftBranch.baseLeaf() + self.rightBranch.baseLeaf()
