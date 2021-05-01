@@ -3,18 +3,15 @@ from collections import defaultdict
 
 
 class Graph:
-
-    # Constructor
     def __init__(self):
-
-        # default dictionary to store graph
+        self.amount = 0
         self.graph = defaultdict(list)
 
-    # function to add an edge to graph
     def addEdge(self, u, v):
+        if self.graph[u].count(v) > 0:
+            raise ValueError()
         self.graph[u].append(v)
 
-    # A function used by DFS
     def DFSUtil(self, v, visited):
 
         # Mark the current node as visited

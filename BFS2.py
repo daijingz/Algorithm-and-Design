@@ -5,15 +5,13 @@ from collections import defaultdict
 # This class represents a directed graph
 # using adjacency list representation
 class Graph:
-
-    # Constructor
     def __init__(self):
-
-        # default dictionary to store graph
+        self.amount = 0
         self.graph = defaultdict(list)
 
-    # function to add an edge to graph
     def addEdge(self, u, v):
+        if self.graph[u].count(v) > 0:
+            raise ValueError()
         self.graph[u].append(v)
 
     # Function to print a BFS of graph
