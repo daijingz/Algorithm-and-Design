@@ -9,6 +9,16 @@ class Tree:
         self.__rightBranch = None
         self.__data = data
 
+    def __str__(self):
+        if self.__leftBranch is None and self.__rightBranch is None:
+            return "( " + str(self.__data) + " )"
+        elif self.__leftBranch is None:
+            return "( " + str(self.__data) + " " + str(self.__rightBranch) + " )"
+        elif self.__rightBranch is None:
+            return "( " + str(self.__leftBranch) + " " + str(self.__data) + " )"
+        else:
+            return "( " + str(self.__leftBranch) + " " + str(self.__data) + " " + str(self.__rightBranch) + " )"
+
     # get central node's data at the top
     def getData(self, printed=True):
         if printed:

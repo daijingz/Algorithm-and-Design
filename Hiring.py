@@ -4,10 +4,12 @@
 # Email Address: daij24@mcmaster.ca or david1147062956@163.co
 
 class Hiring:
-    def __init__(self, cost, maxCost=100, minCost=0):
+    def __init__(self, cost: float, maxCost=100, minCost=0):
         if cost <= minCost:
             raise ValueError()
         elif cost >= maxCost:
+            raise ValueError()
+        elif minCost >= maxCost:
             raise ValueError()
         self.cost = cost
         self.applicants = []
