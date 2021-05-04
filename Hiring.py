@@ -4,20 +4,23 @@
 # Email Address: daij24@mcmaster.ca or david1147062956@163.co
 
 class Hiring:
-    def __init__(self, cost: int, cutoff: int, maxCost=100, minCost=0):
+    def __init__(self, cost: int, cutoff: int, benefit, maxCost=100, minCost=0):
         if cost <= minCost:
             raise ValueError()
         elif cost >= maxCost:
             raise ValueError()
         elif minCost >= maxCost:
             raise ValueError()
+
         self.__cost = cost
         self.__applicants = []
         self.__cutoff = cutoff
+        self.__benefit = benefit
 
     def __str__(self):
         Part1 = " Hiring problem "
         Part2 = " with cost " + str(self.__cost)
+
         if len(self.__applicants) == 0:
             Part3 = " without applicants "
         else:
@@ -27,13 +30,39 @@ class Hiring:
         return Part1 + Part2 + Part3
 
     def getCost(self):
-        return self.__cost
+        try:
+            return self.__cost
+        except:
+            raise Exception
 
     def getApplicants(self):
-        return self.__applicants
+        try:
+            return self.__applicants
+        except:
+            raise Exception
 
     def getCutoff(self):
-        return self.__cutoff
+        try:
+            return self.__cutoff
+        except:
+            raise Exception
+
+    def getBenefit(self):
+        try:
+            return self.__benefit
+        except:
+            raise Exception
 
     def addApplicants(self, app: int):
+        if app <= 0:
+            raise ValueError()
         self.__applicants = self.__applicants + [app]
+
+    def HiringPerfect(self):
+        cost = 0
+        net = []
+        for i in self.getApplicants():
+            cost = cost + self.__cost
+            net += [self.__benefit(i) - cost]
+        return max(net)
+

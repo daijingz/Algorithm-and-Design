@@ -4,10 +4,25 @@
 
 class Tree:
     # Setting an empty tree with a central node (including values)
-    def __init__(self, data):
+    def __init__(self, data: int):
         self.__leftBranch = None
         self.__rightBranch = None
         self.__data = data
+
+    def __abs__(self):
+        if self is None:
+            return 0
+        elif self.__leftBranch is None:
+            return self.__data + abs(self.getLeftBranch())
+        elif self.__rightBranch is None:
+            return self.__data + abs(self.getRightBranch())
+        else:
+            return self.__data + abs(self.getLeftBranch()) + abs(self.getRightBranch())
+
+    def treeType(self):
+        if self.__leftBranch is None and self.__rightBranch is None:
+            return type(self.__data)
+        return None
 
     def __str__(self):
         if self.__leftBranch is None and self.__rightBranch is None:
@@ -26,10 +41,16 @@ class Tree:
         return self.__data
 
     def getLeftBranch(self):
-        return self.__leftBranch
+        try:
+            return self.__leftBranch
+        except:
+            raise Exception
 
     def getRightBranch(self):
-        return self.__rightBranch
+        try:
+            return self.__rightBranch
+        except:
+            raise Exception
 
     def addBranch(self, inputData, isLeft=True, isRight=False):
         if isLeft == isRight:
