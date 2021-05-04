@@ -5,13 +5,22 @@ class DFS:
         self.__startNode = None
 
     def get_node(self):
-        return self.__node
+        try:
+            return self.__node
+        except:
+            raise Exception
 
     def get_edge(self):
-        return self.__edge
+        try:
+            return self.__edge
+        except:
+            raise Exception
 
     def get_start_node(self):
-        return self.__startNode
+        try:
+            return self.__startNode
+        except:
+            raise Exception
 
     def empty_Graph(self):
         self.__edge = []
