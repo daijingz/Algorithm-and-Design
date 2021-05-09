@@ -66,3 +66,13 @@ class Hiring:
             net += [self.__benefit(i) - cost]
         return max(net)
 
+    def Hiring(self, target):
+        net = 0
+        j = 0
+        for i in self.__applicants:
+            net -= self.__cost
+            net += self.__benefit(i)
+            j += 1
+            if net >= target:
+                break
+        return j
