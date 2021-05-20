@@ -67,6 +67,12 @@ class SingleLinkedList:
         self.getBody()[index] = node
         self.getBody()[index + 1] = newNode
 
+    def delete(self):
+        if self.getLength() == 0:
+            self.__body = self.getBody()
+        else:
+            self.__body = self.getBody()[1:]
+
 
 class DBegin:
     def __init__(self):

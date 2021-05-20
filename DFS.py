@@ -1,3 +1,11 @@
+class WrongInput(Exception):
+    pass
+
+
+class WrongObjects(Exception):
+    pass
+
+
 class DFS:
     def __init__(self):
         self.__node = set()
@@ -29,15 +37,15 @@ class DFS:
 
     def add_Edge(self, tup: tuple, startNode: int):
         if len(tup) != 2:
-            raise ValueError()
+            raise WrongInput()
         elif tup[0] == tup[1]:
-            raise ValueError()
+            raise WrongInput()
         elif startNode != 0 and startNode != 1:
-            raise ValueError()
+            raise WrongInput()
 
         for i in self.__edge:
             if i == tup:
-                raise ValueError()
+                raise WrongInput()
 
         if len(self.__edge) == 0:
             self.__startNode = tup[startNode]
@@ -59,6 +67,6 @@ class DFS:
 
     def DFS(self):
         if self.__startNode is None:
-            raise ValueError()
+            raise WrongObjects()
         output = [self.__startNode]
         return output
