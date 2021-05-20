@@ -4,6 +4,9 @@
 
 
 # Example Input: [100, 95, 105, 110, 120, 130]
+class InAppropriateData(Exception):
+    pass
+
 
 class MaximumSubarray:
     def __init__(self, dailyPrice: list, startPrice=100):
@@ -48,7 +51,18 @@ class MaximumSubarray:
             print("Net Price: " + str(self.__net))
         return self.__net
 
+    def checkAvailable(self):
+        for i in self.getDailyPrice():
+            if i <= 0:
+                return False
+            elif type(i) not in [int, float]:
+                return False
+        return True
+
     def BruteForce(self):
+        if not self.checkAvailable():
+            raise InAppropriateData()
+
         if len(self.getDailyPrice(False)) == 0:
             return 0, 0
 
@@ -73,6 +87,9 @@ class MaximumSubarray:
 
     # An algorithm which is an expression of Greedy Algorithm
     def MaxAndMin(self):
+        if not self.checkAvailable():
+            raise InAppropriateData()
+
         if len(self.getDailyPrice(False)) == 0:
             return 0, 0
 
@@ -94,6 +111,9 @@ class MaximumSubarray:
         return output
 
     def DivideAndConquer(self):
+        if not self.checkAvailable():
+            raise InAppropriateData()
+
         if len(self.getDailyPrice(False)) == 0:
             return 0, 0
 
