@@ -7,6 +7,10 @@
 import random
 
 
+class InappropriateInput(Exception):
+    pass
+
+
 # Function Check whether it is correct and appropriate
 def checkAvailable(inputList):
     i = 0
@@ -26,7 +30,7 @@ def checkAvailable(inputList):
 
 def SelectionSort(inputList):
     if not checkAvailable(inputList):
-        raise ValueError
+        raise InappropriateInput()
 
     output = []
     loopList = inputList
@@ -38,7 +42,7 @@ def SelectionSort(inputList):
 
 def InsertionSort(inputList):
     if not checkAvailable(inputList):
-        raise ValueError
+        raise InappropriateInput()
 
     output = []
     for i in inputList:
@@ -49,7 +53,7 @@ def InsertionSort(inputList):
 # Helper function of Insertion Sort
 def Insertion(inputList, elem):
     if not checkAvailable(inputList):
-        raise ValueError
+        raise InappropriateInput()
 
     if len(inputList) == 0:
         return [elem]
@@ -70,7 +74,7 @@ def Insertion(inputList, elem):
 
 def MergeSort(inputList):
     if not checkAvailable(inputList):
-        raise ValueError
+        raise InappropriateInput()
 
     if len(inputList) > 1:
         subLeft = inputList[:len(inputList) // 2]
@@ -110,7 +114,7 @@ def MergeSort(inputList):
 
 def ShellSort(inputPart):
     if not checkAvailable(inputPart):
-        raise ValueError
+        raise InappropriateInput()
 
     inputList = inputPart
     medium = len(inputList) // 2
@@ -128,7 +132,7 @@ def ShellSort(inputPart):
 
 def QuickSort(inputList):
     if not checkAvailable(inputList):
-        raise ValueError
+        raise InappropriateInput()
 
     leftPart = []
     rightPart = []
