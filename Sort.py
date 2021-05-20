@@ -7,15 +7,18 @@
 import random
 
 
+# Function Check whether it is correct and appropriate
 def checkAvailable(inputList):
     i = 0
     while i < len(inputList):
-        if isinstance(inputList[i], (float, int)):
+        if not isinstance(inputList[i], (float, int)):
             return False
         i += 1
 
     for j in inputList:
         if inputList.count(j) > 1:
+            return False
+        elif j == 0:
             return False
 
     return True
@@ -40,7 +43,6 @@ def InsertionSort(inputList):
     output = []
     for i in inputList:
         output = Insertion(output, i)
-        print(output)
     return output
 
 
