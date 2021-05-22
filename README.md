@@ -19,3 +19,9 @@ Java version includes:
 
 1. Basic Java programming tools
 2. Junit (Unit testing)
+
+# Contact
+daij24@mcmaster.ca
+(preferred)
+
+david1147062956@163.com
