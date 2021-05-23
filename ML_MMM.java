@@ -41,4 +41,24 @@ public class ML_MMM {
         }
         return maxValue;
     }
+
+    double Minimum(double[] input){
+        double output = 100000.0;
+        for (double v : input) {
+            if (v < output) {
+                output = v;
+            }
+        }
+        return output;
+    }
+
+    double Maximum(double[] input){
+        double output = -100000.0;
+        for (double v : input) {
+            if (v > output) {
+                output = v;
+            }
+        }
+        return output;
+    }
 }
