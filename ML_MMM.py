@@ -19,8 +19,35 @@ class ML_Input:
     def Mean(self):
         return statistics.mean(self.getData())
 
+    def ownMean(self):
+        if len(self.__data) == 0:
+            return 0
+        input1 = self.getData()
+        sum1 = sum(input1)
+        return sum1/len(input1)
+
     def Median(self):
         return numpy.median(self.getData())
 
+    def ownMedian(self):
+        input1 = self.getData()
+        input1.sort()
+        if len(input1) % 2 == 0:
+            median1 = len(input1) // 2
+            median2 = len(input1) // 2 + 1
+            return (input1[median1] + input1[median2])/2
+        else:
+            median = len(input1) // 2
+            return input1[median]
+
     def Mode(self):
         return stats.mode(self.getData())
+    
+    def ownMode(self):
+        occur = 0
+        output = None
+        for i in self.getData():
+            if self.getData().count(i) > occur:
+                occur = self.getData().count(i)
+                output = i
+        return output
