@@ -1,7 +1,7 @@
 # Algorithm and Design
 Jingze Dai's Project
 
-This project includes algorithm designs with Python and Java Implementations.
+This project includes algorithm designs with Python, C++ and Java Implementations.
 
 Python version includes:
 
@@ -19,6 +19,9 @@ Java version includes:
 
 1. Basic Java programming tools
 2. Junit (Unit testing)
+
+C++ Version includes:
+1. Interesting small application programs
 
 # Contact
 daij24@mcmaster.ca
