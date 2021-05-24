@@ -5,18 +5,55 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class Sort{
-    int[] SelectionSort(int[] arr){
-        for (int i = 0; i < arr.length - 1; i++) {
-            int min_idx = i;
-            for (int j = i+1; j < arr.length; j++)
-                if (arr[j] < arr[min_idx])
-                    min_idx = j;
-
-            int temp = arr[min_idx];
-            arr[min_idx] = arr[i];
-            arr[i] = temp;
+    double[] SelectionSort(double[] input){
+        double[] output = new double[input.length];
+        for (int i = 0; i < input.length; i++){
+            output[i] = SelectMIN(input);
         }
+        return output;
+    }
 
-        return arr;
+    double SelectMIN(double[] input){
+        double output = 100000.0;
+        for (double v : input) {
+            if (v < output) {
+                output = v;
+            }
+        }
+        return output;
+    }
+
+    int IndexMIN(double[] input){
+        double num = 100000.0;
+        int output = 0;
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] < num) {
+                num = input[i];
+                output = i;
+            }
+        }
+        return output;
+    }
+
+    double SelectMAX(double[] input){
+        double output = -100000.0;
+        for (double v : input) {
+            if (v > output) {
+                output = v;
+            }
+        }
+        return output;
+    }
+
+    int IndexMAX(double[] input){
+        double num = -100000.0;
+        int output = 0;
+        for (int i = 0; i < input.length; i++) {
+            if (input[i] > num) {
+                num = input[i];
+                output = i;
+            }
+        }
+        return output;
     }
 }
