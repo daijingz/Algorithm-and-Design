@@ -2,14 +2,23 @@
 # Date: 16/02/2021
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
 
+"""! Example Input: [100, 95, 105, 110, 120, 130]"""
+"""! Where 100 is the price on the first day"""
 
-# Example Input: [100, 95, 105, 110, 120, 130]
+
 class InAppropriateData(Exception):
     pass
 
 
 class MaximumSubarray:
     def __init__(self, dailyPrice: list, startPrice=100):
+        """! Initializes the program.
+
+        @param dailyPrice   daily prices on stock markets (list of prices)
+        @param startPrice   price at the beginning of trades (price)
+        @param net          if people buy stock at the beginning day, how many benefits each day has (list of benefits)
+
+        """
         if type(startPrice) != int:
             raise TypeError()
         elif startPrice < 0:
