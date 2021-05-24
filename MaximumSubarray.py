@@ -136,3 +136,20 @@ class MaximumSubarray:
                 i = 0
                 j -= 1
         return output
+
+
+def fibonacci(n: int):
+    if n < 0:
+        raise InAppropriateData()
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+def fibonacciM(n: int):
+    memo = [1, 1]
+    limit = n
+    for i in range(3, limit + 1):
+        memo.append(memo[i - 1] + memo[i - 2])
+    return memo[-1]
