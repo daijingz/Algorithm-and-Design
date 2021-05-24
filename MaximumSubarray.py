@@ -2,11 +2,19 @@
 # Date: 16/02/2021
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
 
-"""! Example Input: [100, 95, 105, 110, 120, 130]"""
-"""! Where 100 is the price on the first day"""
-
 
 class InAppropriateData(Exception):
+    """! Exception when function receives unexpected type data"""
+    pass
+
+
+class Bull(Exception):
+    """! Exception when stock price is always rising"""
+    pass
+
+
+class Bear(Exception):
+    """! Exception when stock price is always falling"""
     pass
 
 
@@ -33,34 +41,72 @@ class MaximumSubarray:
         self.__startPrice = startPrice
         self.__dailyPrice = []
         for i in dailyPrice:
-            self.__dailyPrice += int(i)
+            self.__dailyPrice += [int(i)]
 
         self.__net = []
         for j in self.__dailyPrice:
             self.__net += [j - self.__startPrice]
 
     def setStartPrice(self, number: int):
+        """! Setting start price value"""
         self.__startPrice = number
 
     def getStartPrice(self, printed=True):
-        if printed:
-            print("Start Price: " + str(self.__startPrice))
-        return self.__startPrice
+        """! Getting start price value"""
+        try:
+            if printed:
+                print("Start Price: " + str(self.__startPrice))
+            return self.__startPrice
+        except:
+            raise Exception
 
     def emptyDailyPrice(self):
+        """! Setting daily price values to an empty list"""
         self.__dailyPrice = []
 
+    def addDailyPrice(self, price):
+        """! Adding new daily price value"""
+        if type(price) not in [int, float]:
+            raise InAppropriateData()
+        self.__dailyPrice += [price]
+
     def getDailyPrice(self, printed=True):
-        if printed:
-            print("Daily Price: " + str(self.__dailyPrice))
-        return self.__dailyPrice
+        """! Getting daily price values"""
+        try:
+            if printed:
+                print("Daily Price: " + str(self.__dailyPrice))
+            return self.__dailyPrice
+        except:
+            raise Exception()
+
+    def emptyNet(self):
+        """! Setting net price values to an empty list"""
+        self.__net = []
+
+    def addNet(self, price):
+        """! Adding new net price value"""
+        if type(price) not in [int, float]:
+            raise InAppropriateData()
+        self.__net += [price]
 
     def getNet(self, printed=True):
-        if printed:
-            print("Net Price: " + str(self.__net))
-        return self.__net
+        """! Getting net price values"""
+        try:
+            if printed:
+                print("Net Price: " + str(self.__net))
+            return self.__net
+        except:
+            raise Exception()
 
     def checkAvailable(self):
+        """! Check whether an object is an appropriate object"""
+        if self.__startPrice <= 0:
+            return False
+        elif self.__startPrice >= max(self.__dailyPrice):
+            raise Bull()
+        elif self.__startPrice <= min(self.__dailyPrice):
+            raise Bear()
+
         for i in self.getDailyPrice():
             if i <= 0:
                 return False
@@ -69,6 +115,7 @@ class MaximumSubarray:
         return True
 
     def BruteForce(self):
+        """! Checking every situation and find the most profitable one"""
         if not self.checkAvailable():
             raise InAppropriateData()
 
@@ -94,8 +141,8 @@ class MaximumSubarray:
         output = (dayNum1, dayNum2)
         return output
 
-    # An algorithm which is an expression of Greedy Algorithm
     def MaxAndMin(self):
+        """! Checking from best situations to find a most-profitable situation"""
         if not self.checkAvailable():
             raise InAppropriateData()
 
@@ -120,6 +167,7 @@ class MaximumSubarray:
         return output
 
     def DivideAndConquer(self):
+        """! Dividing it into small sub-problems and solve them"""
         if not self.checkAvailable():
             raise InAppropriateData()
 
@@ -148,6 +196,7 @@ class MaximumSubarray:
 
 
 def fibonacci(n: int):
+    """! Divide and Conquer"""
     if n < 0:
         raise InAppropriateData()
     elif n == 0 or n == 1:
@@ -157,6 +206,7 @@ def fibonacci(n: int):
 
 
 def fibonacciM(n: int):
+    """! Divide and Conquer with Memorization"""
     memo = [1, 1]
     limit = n
     for i in range(3, limit + 1):
