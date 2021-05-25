@@ -3,27 +3,85 @@
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
 
 class Stack:
-    # Object Constructor (Setting an empty stack)
     def __init__(self):
-        # Setting up Empty body
+        """! Initializes the program.
+
+        @param body     stock body (empty value)
+
+        """
         self.__body = []
 
-    # Getters for returning objects' bodies
     def getBody(self):
-        return self.__body
+        """! Getters for returning objects' bodies"""
+        try:
+            return self.__body
+        except:
+            raise Exception()
 
-    # Function on checking whether a stack is an empty stack
     def empty(self):
-        return len(self.getBody()) == 0
+        """! Checking whether a stack is an empty stack"""
+        try:
+            return len(self.getBody()) == 0
+        except:
+            raise Exception()
 
-    # Return size of stacks
     def size(self):
-        return len(self.getBody())
+        """! Return size of stacks"""
+        try:
+            return len(self.getBody())
+        except:
+            raise Exception()
 
     def push(self, element):
+        """! Push an element to stack"""
         self.__body += [element]
 
     def pop(self):
+        """! Delete an element from stack and return it"""
         if len(self.__body) == 0:
             raise Exception("Error: Underflow")
         self.__body = self.__body[:-1]
+        return self.__body[-1]
+
+
+class A(enumerate):
+    Add = 1
+    Sub = 2
+
+
+class NoneOfTypes(Exception):
+    pass
+
+
+class AStack:
+    def __init__(self, input1):
+        self.__body = []
+
+        if type(input1) == str:
+            self.__unitType = 'str'
+        elif type(input1) in [int, float]:
+            self.__unitType = 'num'
+        elif type(input1) == bool:
+            self.__unitType = 'bool'
+        else:
+            raise NoneOfTypes()
+
+        self.__type = None
+
+    def get_body(self):
+        try:
+            return self.__body
+        except:
+            raise Exception
+
+    def get_unitType(self):
+        try:
+            return self.__unitType
+        except:
+            raise Exception
+
+    def get_type(self):
+        try:
+            return self.__type
+        except:
+            raise Exception
