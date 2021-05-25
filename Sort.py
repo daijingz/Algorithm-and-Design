@@ -8,11 +8,12 @@ import random
 
 
 class InappropriateInput(Exception):
+    """! Exception when inputs are inappropriate"""
     pass
 
 
-# Function Check whether it is correct and appropriate
 def checkAvailable(inputList):
+    """! Function Check whether it is correct and appropriate"""
     i = 0
     while i < len(inputList):
         if not isinstance(inputList[i], (float, int)):
@@ -29,6 +30,7 @@ def checkAvailable(inputList):
 
 
 def SelectionSort(inputList):
+    """! Sort select the minimum and make it into the new array again and again"""
     if not checkAvailable(inputList):
         raise InappropriateInput()
 
@@ -41,6 +43,7 @@ def SelectionSort(inputList):
 
 
 def InsertionSort(inputList):
+    """! Sort select elements from left to right and insert them sequentially"""
     if not checkAvailable(inputList):
         raise InappropriateInput()
 
@@ -50,8 +53,8 @@ def InsertionSort(inputList):
     return output
 
 
-# Helper function of Insertion Sort
 def Insertion(inputList, elem):
+    """! Find the right place for an element in a sorted list"""
     if not checkAvailable(inputList):
         raise InappropriateInput()
 
@@ -73,6 +76,7 @@ def Insertion(inputList, elem):
 
 
 def MergeSort(inputList):
+    """! Divide list into sub-lists and sort them, then combine their results together"""
     if not checkAvailable(inputList):
         raise InappropriateInput()
 
@@ -113,6 +117,7 @@ def MergeSort(inputList):
 
 
 def ShellSort(inputPart):
+    """! Variation of Insertion Sort"""
     if not checkAvailable(inputPart):
         raise InappropriateInput()
 
@@ -131,6 +136,7 @@ def ShellSort(inputPart):
 
 
 def QuickSort(inputList):
+    """! Find a comparable index (not max or min) and then compare others"""
     if not checkAvailable(inputList):
         raise InappropriateInput()
 

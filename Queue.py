@@ -8,9 +8,9 @@ class Queue:
     def __init__(self, queue_size, head: int, tail: int):
         """! Initializes the program.
 
-        @param
-        @param
-        @param
+        @param queue_size   size of queue
+        @param head         head data
+        @param tail         tail data
 
         """
         self.__queue = []
@@ -29,24 +29,28 @@ class Queue:
         self.__tail = tail
 
     def getQueue(self):
+        """! Getting queue values"""
         try:
             return self.__queue
         except:
             raise Exception()
 
     def getHead(self):
+        """! Getting head value"""
         try:
             return self.__head
         except:
             raise Exception()
 
     def getTail(self):
+        """! Getting tail value"""
         try:
             return self.__tail
         except:
             raise Exception()
 
     def enqueue(self, num: int):
+        """! Enqueue"""
         try:
             self.__queue[self.__tail] = num
             if self.__tail == len(self.__queue):
@@ -57,6 +61,7 @@ class Queue:
             raise SettingError()
 
     def dequeue(self):
+        """! Dequeue"""
         try:
             x = self.__queue[self.__head]
             if self.__head == len(self.__queue):
