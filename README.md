@@ -15,13 +15,19 @@ Python version includes:
 8. MySQL library
 9. MongoDB library
 
+Current total 3160 lines
+
 Java version includes:
 
 1. Basic Java programming tools
 2. Junit (Unit testing)
 
+Current total 123 lines
+
 C++ Version includes:
 1. Interesting small application programs
+
+Current total 0 lines
 
 # Contact
 daij24@mcmaster.ca
