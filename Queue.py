@@ -1,7 +1,18 @@
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
+class SettingError(Exception):
+    """! Exception when setting values takes place"""
+    pass
+
 
 class Queue:
     def __init__(self, queue_size, head: int, tail: int):
+        """! Initializes the program.
+
+        @param
+        @param
+        @param
+
+        """
         self.__queue = []
         i = 0
         while i < queue_size:
@@ -18,25 +29,40 @@ class Queue:
         self.__tail = tail
 
     def getQueue(self):
-        return self.__queue
+        try:
+            return self.__queue
+        except:
+            raise Exception()
 
     def getHead(self):
-        return self.__head
+        try:
+            return self.__head
+        except:
+            raise Exception()
 
     def getTail(self):
-        return self.__tail
+        try:
+            return self.__tail
+        except:
+            raise Exception()
 
     def enqueue(self, num: int):
-        self.__queue[self.__tail] = num
-        if self.__tail == len(self.__queue):
-            self.__tail = 0
-        else:
-            self.__tail = self.__tail + 1
+        try:
+            self.__queue[self.__tail] = num
+            if self.__tail == len(self.__queue):
+                self.__tail = 0
+            else:
+                self.__tail = self.__tail + 1
+        except:
+            raise SettingError()
 
     def dequeue(self):
-        x = self.__queue[self.__head]
-        if self.__head == len(self.__queue):
-            self.__head = 0
-        else:
-            self.__head = self.__head + 1
-        return x
+        try:
+            x = self.__queue[self.__head]
+            if self.__head == len(self.__queue):
+                self.__head = 0
+            else:
+                self.__head = self.__head + 1
+            return x
+        except:
+            raise SettingError()
