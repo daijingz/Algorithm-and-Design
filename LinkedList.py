@@ -3,51 +3,103 @@
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
 
 class NotAvailableValues(Exception):
+    """! Exception when objects have unexpected values"""
     pass
 
 
 class WrongIndex(Exception):
+    """! Exception when indexing has errors"""
+    pass
+
+
+class SettingError(Exception):
+    """! Exception when setting values takes place"""
     pass
 
 
 class SNode:
     def __init__(self, element=None):
+        """! Initializes the program.
+
+        @param data         current node's data
+        @param nextData     next linked node's data
+
+        """
         self.__data = element
         self.__nextData = None
 
     def setData(self, data=None):
-        self.__data = data
+        """! Setting data value"""
+        try:
+            self.__data = data
+        except:
+            raise SettingError()
 
     def setNextData(self, nextData=None):
-        self.__nextData = nextData
+        """! Setting nextData value"""
+        try:
+            self.__nextData = nextData
+        except:
+            raise SettingError()
 
     def getData(self):
-        return self.__data
+        """! Getting data value"""
+        try:
+            return self.__data
+        except:
+            raise Exception()
 
     def getNextData(self):
-        return self.__nextData
+        """! Getting nextData value"""
+        try:
+            return self.__nextData
+        except:
+            raise Exception()
 
 
 class SingleLinkedList:
     def __init__(self):
+        """! Initializes the program.
+
+        @param length       length of linked list (only counts )
+        @param body         linked list body
+
+        """
         self.__length = 0
         self.__body = [SNode()]
 
     def setLength(self, amount: int):
-        if amount == 0:
-            raise NotAvailableValues()
-        self.__length = self.__length + amount
+        """! Setting length value"""
+        try:
+            if amount == 0:
+                raise NotAvailableValues()
+            self.__length = self.__length + amount
+        except:
+            raise SettingError()
 
     def getLength(self):
-        return self.__length
+        """! Getting length value"""
+        try:
+            return self.__length
+        except:
+            raise Exception()
 
     def getBody(self):
-        return self.__body
+        """! Setting body value"""
+        try:
+            return self.__body
+        except:
+            raise Exception()
 
     def getRealBody(self):
-        return self.__body[:-1]
+        """! Setting not-None body value"""
+        try:
+            return self.__body[:-1]
+        except:
+            raise Exception()
 
     def append(self, node: SNode):
+        """! Adding a node at the end of linked list"""
         if node.getData() is None:
             raise NotAvailableValues()
         node.setNextData(self.__body[1].getData())
@@ -55,6 +107,7 @@ class SingleLinkedList:
         self.setLength(1)
 
     def insert(self, index: int, node: SNode):
+        """! Adding a node in the middle of linked list"""
         if self.getLength() < 1:
             raise NotAvailableValues()
         elif index <= 0 or index >= self.getLength() + 1:
@@ -68,6 +121,7 @@ class SingleLinkedList:
         self.getBody()[index + 1] = newNode
 
     def delete(self):
+        """! Deleting a node from the end of linked list"""
         if self.getLength() == 0:
             self.__body = self.getBody()
         else:
@@ -80,13 +134,22 @@ class DBegin:
         self.__nextData = None
 
     def setNextData(self, data):
-        self.__nextData = data
+        try:
+            self.__nextData = data
+        except:
+            raise Exception()
 
     def getData(self):
-        return self.__data
+        try:
+            return self.__data
+        except:
+            raise Exception()
 
     def getNextData(self):
-        return self.__nextData
+        try:
+            return self.__nextData
+        except:
+            raise Exception()
 
 
 class DEnd:
@@ -98,10 +161,16 @@ class DEnd:
         self.__prevData = data
 
     def getData(self):
-        return self.__data
+        try:
+            return self.__data
+        except:
+            raise Exception()
 
     def getPrevData(self):
-        return self.__prevData
+        try:
+            return self.__prevData
+        except:
+            raise Exception()
 
 
 class DNode:
@@ -111,10 +180,16 @@ class DNode:
         self.__nextData = None
 
     def getData(self):
-        return self.__data
+        try:
+            return self.__data
+        except:
+            raise Exception()
 
     def getPrevData(self):
-        return self.__prevData
+        try:
+            return self.__prevData
+        except:
+            raise Exception()
 
     def getNextData(self):
         return self.__nextData
@@ -127,3 +202,35 @@ class DNode:
 
     def setNextData(self, data):
         self.__nextData = data
+
+
+class DoubleEdgeLinkedList:
+    def __init__(self, begin: DBegin, end: DEnd):
+        self.__length = 0
+        self.__body = []
+        self.__begin = begin
+        self.__end = end
+
+    def get_length(self):
+        try:
+            return self.__length
+        except:
+            raise Exception()
+
+    def get_body(self):
+        try:
+            return self.__body
+        except:
+            raise Exception()
+
+    def get_begin(self):
+        try:
+            return self.__begin
+        except:
+            raise Exception()
+
+    def get_end(self):
+        try:
+            return self.__end
+        except:
+            raise Exception()
