@@ -2,7 +2,10 @@
 # Date: 16/02/2021
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
 from collections import defaultdict
-import random
+
+
+class TooFewEdges(Exception):
+    pass
 
 
 class Graph:
@@ -61,7 +64,7 @@ class Graph:
         if not self.get_directed():
             if self.__edge[edge[0]].count(edge[1]) == 0:
                 self.__edge[edge[0]].append(edge[1])
-            elif self.__edge[edge[1]].count(edge[0]) == 0:
+            if self.__edge[edge[1]].count(edge[0]) == 0:
                 self.__edge[edge[1]].append(edge[0])
         else:
             if self.__edge[edge[0]].count(edge[1]) == 0:
@@ -83,20 +86,25 @@ class Graph:
                 return False
         return True
 
-    def BFS(self):
+    def BFS(self, s):
         """! Breadth First Search """
-        start = random.randint(0, len(self.__node) - 1)
+        if self.__node.count(s) == 0:
+            raise Exception()
+
         visited = [False] * (len(self.__edge))
-        queue = [self.__node[start]]
-        visited[self.__node[start]] = True
+        queue = [s]
+        visited[self.__node.index(s)] = True
 
         output = []
         while queue:
             s = queue.pop(0)
-            output += [s]
+            output.append(s)
             for i in self.__edge[s]:
-                if not visited[i]:
-                    queue.append(i)
-                    visited[i] = True
+                try:
+                    if not visited[i]:
+                        queue.append(i)
+                        visited[i] = True
+                except:
+                    raise TooFewEdges()
 
         return output
