@@ -15,14 +15,14 @@ This project includes algorithm designs with Python, C++ and Java Implementation
 8. MySQL library
 9. MongoDB library
 
-Current total 3160 lines
+Current total 3249 lines
 
 ## Java version includes:
 
 1. Basic Java programming tools
 2. Junit (Unit testing)
 
-Current total 123 lines
+Current total 224 lines
 
 ## C++ Version includes:
 1. Interesting small application programs
