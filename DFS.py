@@ -1,72 +1,83 @@
-class WrongInput(Exception):
-    pass
+# Author: Jingze Dai
+# Date: 16/02/2021
+# Email Address: daij24@mcmaster.ca or david1147062956@163.com
+from collections import defaultdict
 
 
-class WrongObjects(Exception):
-    pass
-
-
-class DFS:
-    def __init__(self):
-        self.__node = set()
-        self.__edge = []
-        self.__startNode = None
+class Graph:
+    def __init__(self, directed: bool):
+        """!
+        @return a graph object with 3 state variables
+        """
+        self.__node = []
+        self.__edge = defaultdict(list)
+        self.__directed = directed
 
     def get_node(self):
+        """! Getters of object's node values """
         try:
             return self.__node
         except:
-            raise Exception
+            raise Exception()
 
     def get_edge(self):
+        """! Getters of object's edge values """
         try:
             return self.__edge
         except:
-            raise Exception
+            raise Exception()
 
-    def get_start_node(self):
+    def get_directed(self):
+        """! Getters of object's directed values  """
         try:
-            return self.__startNode
+            return self.__directed
         except:
-            raise Exception
+            raise Exception()
 
-    def empty_Graph(self):
-        self.__edge = []
-        self.__node = set()
-        self.__startNode = None
+    def get_length(self):
+        """! Getters of object's node amount """
+        try:
+            return len(self.__node)
+        except:
+            raise Exception()
 
-    def add_Edge(self, tup: tuple, startNode: int):
-        if len(tup) != 2:
-            raise WrongInput()
-        elif tup[0] == tup[1]:
-            raise WrongInput()
-        elif startNode != 0 and startNode != 1:
-            raise WrongInput()
+    def get_complexity(self):
+        """! Getters of object's edge amount """
+        try:
+            return len(self.__edge)
+        except:
+            raise Exception()
 
-        for i in self.__edge:
-            if i == tup:
-                raise WrongInput()
+    def add_edge(self, edge: tuple):
+        """! Add edges to this graph """
+        if len(edge) != 2:
+            raise Exception()
+        if self.__node.count(edge[0]) == 0:
+            self.__node += [edge[0]]
+        elif self.__node.count(edge[1]) == 0:
+            self.__node += [edge[1]]
 
-        if len(self.__edge) == 0:
-            self.__startNode = tup[startNode]
+        if not self.get_directed():
+            if self.__edge[edge[0]].count(edge[1]) == 0:
+                self.__edge[edge[0]].append(edge[1])
+            elif self.__edge[edge[1]].count(edge[0]) == 0:
+                self.__edge[edge[1]].append(edge[0])
+        else:
+            if self.__edge[edge[0]].count(edge[1]) == 0:
+                self.__edge[edge[0]].append(edge[1])
 
-        self.__edge += [tup]
-        self.__node.add(tup[0])
-        self.__node.add(tup[1])
+    def DFSSub(self, v, s, visited):
+        """! DFS helper function """
+        visited.add(v)
+        s += [v]
 
-    def check_Available_Graph(self):
-        for i in self.__node:
-            count = 0
-            for j in self.__edge:
-                if j.count(i) > 0:
-                    count += 1
+        for neighbour in self.__edge[v]:
+            if neighbour not in visited:
+                self.DFSSub(neighbour, s, visited)
 
-            if count == 0:
-                return False
-        return True
-
-    def DFS(self):
-        if self.__startNode is None:
-            raise WrongObjects()
-        output = [self.__startNode]
-        return output
+    def DFS(self, v):
+        """! Depth First Search """
+        visited = set()
+        s = []
+        self.DFSSub(v, s, visited)
+        return s
