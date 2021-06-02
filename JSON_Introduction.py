@@ -2,6 +2,10 @@ import json
 import re
 import urllib.request
 
+# Author: Jingze Dai
+# Date: 16/02/2021
+# Email Address: daij24@mcmaster.ca or david1147062956@163.com
+# Basic Information of Jingze Dai
 Information1 = '{ "Name": "Jingze Dai", "School": "McMaster University", "MacID": "daij24" }'
 Information2 = '{ "Program": "Honors Computer Science program (co-op)" }'
 Information3 = '{ "Student Number": 400201059, "Email Address": "daij24@mcmaster.ca" }'
@@ -19,6 +23,7 @@ Information14 = '{ "Github Webpage": "https://github.com/daijingz" }'
 
 
 def display_Basic_Information():
+    """! Displaying basic information"""
     print("************************************************************************")
     print()
     Output1 = json.loads(Information1)
@@ -40,6 +45,7 @@ def display_Basic_Information():
 
 
 def display_Programming_Languages():
+    """! Displaying interests about high-level programming languages"""
     print("************************************************************************")
     print()
     print("Programming Languages: ")
@@ -57,6 +63,7 @@ def display_Programming_Languages():
 
 
 def display_Assembly_Languages():
+    """! Displaying interests about assembly programming languages"""
     print("************************************************************************")
     print()
     print("Assembly Languages: ")
@@ -70,6 +77,7 @@ def display_Assembly_Languages():
 
 
 def display_Professional_Tools():
+    """! Displaying interests about professional tools"""
     print("************************************************************************")
     print()
     print("Professional Tools: ")
@@ -85,6 +93,7 @@ def display_Professional_Tools():
 
 
 def display_Web_Programming():
+    """! Displaying interests about web programming languages"""
     print("************************************************************************")
     print()
     print("Web Programming: ")
@@ -104,6 +113,7 @@ def display_Web_Programming():
 
 
 def display_Computer_Graphics():
+    """! Displaying interests about computer graphics"""
     print("************************************************************************")
     print()
     print("Computer Graphics: ")
@@ -117,6 +127,7 @@ def display_Computer_Graphics():
 
 
 def display_Data_Science():
+    """! Displaying interests about data science"""
     print("************************************************************************")
     print()
     print("Database and Data Science: ")
@@ -132,6 +143,7 @@ def display_Data_Science():
 
 
 def display_Other_Skills():
+    """! Displaying interests about other useful skills"""
     print("************************************************************************")
     print()
     print("Other skills: ")
@@ -153,16 +165,19 @@ def display_Other_Skills():
 
 
 def display_LinkedIn():
+    """! Open linkedIn webpage"""
     Output13 = json.loads(Information13)
     return urllib.request.urlopen(str(Output13["LinkedIn Webpage"]))
 
 
 def display_Github():
+    """! Open github webpage"""
     Output14 = json.loads(Information14)
     return urllib.request.urlopen(str(Output14["Github Webpage"]))
 
 
 def Welcome():
+    """! Overall function"""
     username = input("Enter username: ")
     print("Welcome: " + username + "!!!")
     print("Here is David's homepage. What do you want to know about David?")
