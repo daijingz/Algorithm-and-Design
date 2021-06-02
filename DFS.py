@@ -60,7 +60,7 @@ class Graph:
         if not self.get_directed():
             if self.__edge[edge[0]].count(edge[1]) == 0:
                 self.__edge[edge[0]].append(edge[1])
-            elif self.__edge[edge[1]].count(edge[0]) == 0:
+            if self.__edge[edge[1]].count(edge[0]) == 0:
                 self.__edge[edge[1]].append(edge[0])
         else:
             if self.__edge[edge[0]].count(edge[1]) == 0:
@@ -77,6 +77,8 @@ class Graph:
 
     def DFS(self, v):
         """! Depth First Search """
+        if self.get_node().count(v) == 0:
+            raise Exception()
         visited = set()
         s = []
         self.DFSSub(v, s, visited)
