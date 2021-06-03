@@ -3,13 +3,14 @@
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
 
 class Tree:
-    # Setting an empty tree with a central node (including values)
     def __init__(self, data: int):
+        """! Setting an empty tree with a central node (including values) """
         self.__leftBranch = None
         self.__rightBranch = None
         self.__data = data
 
     def __abs__(self):
+        """! Finding sum of leaves' value """
         if self is None:
             return 0
         elif self.__leftBranch is None:
@@ -20,11 +21,13 @@ class Tree:
             return self.__data + abs(self.getLeftBranch()) + abs(self.getRightBranch())
 
     def treeType(self):
+        """! Finding tree types """
         if self.__leftBranch is None and self.__rightBranch is None:
             return type(self.__data)
         return None
 
     def __str__(self):
+        """! Give a description string about functions """
         if self.__leftBranch is None and self.__rightBranch is None:
             return "( " + str(self.__data) + " )"
         elif self.__leftBranch is None:
@@ -34,25 +37,28 @@ class Tree:
         else:
             return "( " + str(self.__leftBranch) + " " + str(self.__data) + " " + str(self.__rightBranch) + " )"
 
-    # get central node's data at the top
     def getData(self, printed=True):
+        """! Get central node's data at the top """
         if printed:
             print(str(self.__data))
         return self.__data
 
     def getLeftBranch(self):
+        """! Get left branch part of a branch """
         try:
             return self.__leftBranch
         except:
             raise Exception
 
     def getRightBranch(self):
+        """! Get right branch part of a branch """
         try:
             return self.__rightBranch
         except:
             raise Exception
 
     def addBranch(self, inputData, isLeft=True, isRight=False):
+        """! Add branch to the tree """
         if isLeft == isRight:
             raise ValueError()
         elif type(inputData) != Tree:
@@ -64,6 +70,7 @@ class Tree:
             self.__rightBranch = inputData
 
     def countLeaf(self):
+        """! Count leaf amount """
         if self.__leftBranch is None and self.__rightBranch is None:
             return 1
         elif self.__leftBranch is None:
@@ -75,6 +82,7 @@ class Tree:
             return self.__leftBranch.countLeaf() + self.__rightBranch.countLeaf()
 
     def countNode(self):
+        """! Count node amount """
         if self.__leftBranch is None and self.__rightBranch is None:
             return 0
         else:
@@ -86,6 +94,7 @@ class Tree:
                 return 1 + self.__leftBranch.countNode() + self.__rightBranch.countNode()
 
     def findDepth(self):
+        """! Find depth of tree """
         if self.__leftBranch is None and self.__rightBranch is None:
             return 0
         elif self.__leftBranch is None:
@@ -97,6 +106,7 @@ class Tree:
             return 1 + max(self.__leftBranch.findDepth(), self.__rightBranch.findDepth())
 
     def sumUp(self):
+        """! Sum up all elements in the tree """
         if type(self.__data) != int:
             raise TypeError()
 
@@ -112,6 +122,7 @@ class Tree:
         return output1 + self.__data + output2
 
     def isElement(self, data):
+        """! Check whether a leaf is a part of tree or not """
         if self.__leftBranch is None and self.__rightBranch is None:
             return data == self.__data
         else:
@@ -123,6 +134,7 @@ class Tree:
                 return self.__leftBranch.isElement(data) and self.__rightBranch.isElement(data) and data == self.__data
 
     def flattenTree(self):
+        """! Flatten a tree into a list """
         if self.__leftBranch is None and self.__rightBranch is None:
             return [self.__data]
         else:
@@ -133,7 +145,6 @@ class Tree:
             else:
                 return self.__leftBranch.flattenTree() + [self.__data] + self.__rightBranch.flattenTree()
 
-    # rotate tree's left part with right part
     # For example
     #        1                         1
     #       /  \                     /   \
@@ -141,6 +152,7 @@ class Tree:
     #     / \  / \                 / \    / \
     #    4  5  6  7               7   6   5  4
     def rotateTree(self):
+        """! Rotate tree's left part with right part """
         if self.__leftBranch is not None:
             self.__leftBranch.rotateTree()
         else:
@@ -156,8 +168,8 @@ class Tree:
         self.__rightBranch = leftPart
         self.__leftBranch = rightPart
 
-    # Returns all leaves at the bottom (with no branch)
     def baseLeaf(self):
+        """! Returns all leaves at the bottom (with no branch) """
         if self.__leftBranch is None and self.__rightBranch is None:
             return [self.__data]
         elif self.__leftBranch is None:
