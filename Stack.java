@@ -43,4 +43,10 @@ public class Stack {
             return this.values[this.front + 1];
         }
     }
+
+    public void empty(int size){
+        this.values = new int[size];
+        this.front = 0;
+        this.size = size;
+    }
 }
