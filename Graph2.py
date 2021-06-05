@@ -5,39 +5,74 @@ import itertools
 # Part 2 Algorithm: Brute-Force Algorithms (Exhaustive Computing)
 # Undirected graphs are represented as "Improved_Graph" object
 class Improved_Graph:
-    # Improved_Graph Constructor with Improved_Graph()
-    # State variable: Node (Graph's node list)
-    # State variable: Edge (Graph's edge list)
-    def __init__(self):  # Method Time Complexity: O(1) + O(1), which is O(1)
+    def __init__(self):
+        """! Initializes the program.
+
+        Improved_Graph Constructor with Improved_Graph()
+        State variable: Node (Graph's node list)
+        State variable: Edge (Graph's edge list)
+
+        """
         self.Node = []  # Time Complexity: O(1)
         self.Edge = []  # Time Complexity: O(1)
 
-    # Getters to get Node list from objects
-    def get_Node(self):  # Method Time Complexity: O(1) = O(1)
-        return self.Node  # Time Complexity: O(1)
+    # Method Time Complexity: O(1) + O(1), which is O(1)
 
-    # Getters to get Edge list from objects
-    def get_Edge(self):  # Method Time Complexity: O(1) = O(1)
-        return self.Edge  # Time Complexity: O(1)
+    def get_Node(self):
+        """! Getters to get Node list from objects"""
+        try:
+            return self.Node  # Time Complexity: O(1)
+        except:
+            raise Exception()
 
-    # Getters to get amounts of node
-    def get_Node_Amount(self):  # Method Time Complexity: O(1) = O(1)
-        return len(self.Node)  # Time Complexity: O(1)
+    # Method Time Complexity: O(1) = O(1)
 
-    # Add node to a graph's node list
-    def add_Node(self, new_Node):  # Method Time Complexity: O(1)
-        self.Node = self.Node + [new_Node] # Time Complexity: O(1)
-        self.Edge = self.Edge + [[]] # Time Complexity: O(1)
+    def get_Edge(self):
+        """! Getters to get Edge list from objects"""
+        try:
+            return self.Edge  # Time Complexity: O(1)
+        except:
+            raise Exception()
 
-    # Add edge to a graph's edge list
-    def add_Edge(self, new_Edge):  # Method Time Complexity: O(1) + O(1), which is O(1)
-        self.Edge[self.Node.index(new_Edge[0])] += [new_Edge[1]] # Time Complexity: O(1)
-        self.Edge[self.Node.index(new_Edge[1])] += [new_Edge[0]] # Time Complexity: O(1)
+    # Method Time Complexity: O(1) = O(1)
 
-    # Getting all sub-lists of node lists
-    def get_Sublist(self): # Method Time Complexity: 3 * O(1) + O(n ^ 2) = O(n ^ 2)
-        # Output is the output (a list containing all possible non-empty cases of vertex cover)
-        # Those cases are possible but not necessary becoming a vertex cover
+    def get_Node_Amount(self):
+        """! Getters to get amounts of node"""
+        try:
+            return len(self.Node)  # Time Complexity: O(1)
+        except:
+            raise Exception()
+
+    # Method Time Complexity: O(1) = O(1)
+
+    def add_Node(self, new_Node):
+        """! Add node to a graph's node list"""
+        try:
+            self.Node = self.Node + [new_Node] # Time Complexity: O(1)
+            self.Edge = self.Edge + [[]] # Time Complexity: O(1)
+        except:
+            raise Exception()
+
+    # Method Time Complexity: O(1)
+
+    def add_Edge(self, new_Edge):
+        """! Add edge to a graph's edge list"""
+        try:
+            self.Edge[self.Node.index(new_Edge[0])] += [new_Edge[1]] # Time Complexity: O(1)
+            self.Edge[self.Node.index(new_Edge[1])] += [new_Edge[0]] # Time Complexity: O(1)
+        except:
+            raise Exception()
+
+    # Method Time Complexity: O(1) + O(1), which is O(1)
+
+    def get_Sublist(self):
+        """! Initializes the program.
+
+        Getting all sub-lists of node lists
+        Output is the output (a list containing all possible non-empty cases of vertex cover)
+        Those cases are possible but not necessary becoming a vertex cover
+
+        """
         Output = [] # Time Complexity: O(1)
         a = 1 # Time Complexity: O(1)
         # Loop used to find non-empty sub-lists with different lengths
@@ -46,10 +81,16 @@ class Improved_Graph:
             a += 1 # Time Complexity: O(1)
         return Output # Time Complexity: O(1)
 
-    # Methods for checking sub-lists are vertex cover cases
-    # Checking whether every edge has at least one node in the node list
-    # it will return True if it is a vertex cover, else False
-    def get_Vertex_Cover(self): # Method Time Complexity: O(n ^ 2)
+    # Method Time Complexity: 3 * O(1) + O(n ^ 2) = O(n ^ 2)
+
+    def get_Vertex_Cover(self):
+        """! Initializes the program.
+
+        Methods for checking sub-lists are vertex cover cases
+        Checking whether every edge has at least one node in the node list
+        it will return True if it is a vertex cover, else False
+
+        """
         Vertex_Cover_List = [] # Time Complexity: O(1)
         Sub_List = self.get_Sublist()# Time Complexity: O(n ^ 2)
         for i in Sub_List: # Time Complexity: O(n * lg n)
@@ -60,10 +101,16 @@ class Improved_Graph:
                     Vertex_Cover_List += [i] # Time Complexity: O(1)
         return Vertex_Cover_List # Time Complexity: O(1)
 
-    # To find the minimum-length
-    # Step 1: Get minimum length of vertex cover
-    # Step 2: find all vertex covers with minimum length and output it
-    def get_Minimum_Vertex_Cover(self): # Method Time Complexity: O(n ^ 2)
+    # Method Time Complexity: O(n ^ 2)
+
+    def get_Minimum_Vertex_Cover(self):
+        """! Initializes the program.
+
+        To find the minimum-length
+        Step 1: Get minimum length of vertex cover
+        Step 2: find all vertex covers with minimum length and output it
+
+        """
         Vertex_Cover_List = self.get_Vertex_Cover() # Time Complexity: O(n ^ 2)
         Minimum_Length = 100 # Time Complexity: O(1)
         Minimum_Vertex_Cover_List = [] # Time Complexity: O(1)
@@ -76,35 +123,20 @@ class Improved_Graph:
                 Minimum_Vertex_Cover_List += [i] # Time Complexity: O(1)
         return Minimum_Vertex_Cover_List # Time Complexity: O(1)
 
-    # Check all vertex cover cases on whether each case is smaller than provided range
-    # Output is a list with vertex cover cases whose size is lower than or equals
-    def get_Range_Vertex_Cover(self, Range_Length): # Method Time Complexity: O(n ^ 2)
+    # Method Time Complexity: O(n ^ 2)
+
+    def get_Range_Vertex_Cover(self, Range_Length):
+        """! Initializes the program.
+
+        Check all vertex cover cases on whether each case is smaller than provided range
+        Output is a list with vertex cover cases whose size is lower than or equals
+
+        """
         Vertex_Cover_List = self.get_Vertex_Cover() # Time Complexity: O(n ^ 2)
         Range_Vertex_Cover_List = [] # Time Complexity: O(1)
         for i in Vertex_Cover_List: # Time Complexity: O(n)
             if len(i) <= Range_Length:
                 Range_Vertex_Cover_List += [i]
         return Range_Vertex_Cover_List # Time Complexity: O(1)
-# Below are test cases: A graph object has a number of nodes and edges.
-# If you want to use other test cases, modify all lines of codes below
 
-
-IG = Improved_Graph()
-IG.add_Node(0)
-IG.add_Node(1)
-IG.add_Node(2)
-IG.add_Node(3)
-IG.add_Node(4)
-IG.add_Edge([0, 1])
-IG.add_Edge([1, 4])
-IG.add_Edge([0, 4])
-IG.add_Edge([0, 2])
-IG.add_Edge([0, 3])
-IG.add_Edge([2, 3])
-IG.add_Edge([3, 4])
-print(IG.get_Node())
-print(IG.get_Edge())
-print(IG.get_Sublist())
-print(IG.get_Vertex_Cover())
-print(IG.get_Minimum_Vertex_Cover())
-print(IG.get_Range_Vertex_Cover(3))
+    # Method Time Complexity: O(n ^ 2)
