@@ -15,7 +15,7 @@ This project includes algorithm designs with Python, C++ and Java Implementation
 8. MySQL library
 9. MongoDB library
 
-Current total 3249 lines
+Current total 3639 lines
 
 ## Java version includes:
 
