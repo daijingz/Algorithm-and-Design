@@ -1,24 +1,24 @@
-# Imported codes
-import mysql.connector
+import sqlite3
+import json
 
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="yourusername",
-  password="yourpassword",
-  database="mydatabase"
-)
 
-mycursor = mydb.cursor()
+def sql2json(database, table, json_file):
+    try:
+        if database[-3:] != ".db":
+            db = sqlite3.connect(database + ".db")
+        else:
+            db = sqlite3.connect(database)
+    except:
+        raise sqlite3.DatabaseError
 
-sql = "SELECT \
-  users.name AS user, \
-  products.name AS favorite \
-  FROM users \
-  INNER JOIN products ON users.fav = products.id"
+    cur = db.cursor()
+    cur.execute("SELECT * FROM " + table)
 
-mycursor.execute(sql)
+    input1 = cur.fetchall()
+    output = dict()
+    for i in input1:
+        output[i[0]] = {"name": i[1], "description": i[2], "hotkey": i[3], "xp": i[4], "base_cost": i[5],
+                        "category": i[6]}
 
-myresult = mycursor.fetchall()
-
-for x in myresult:
-  print(x)
+    with open(json_file, 'w') as fp:
+        json.dump(output, fp)
