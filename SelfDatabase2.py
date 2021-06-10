@@ -1,5 +1,6 @@
 import pymongo
 
+# Build a pymongo database client first
 DBClient = pymongo.MongoClient("mongodb://localhost:27017/")
 
 Db1 = DBClient["Personal_Basic_Information"]
