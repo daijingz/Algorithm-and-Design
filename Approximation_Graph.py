@@ -32,6 +32,24 @@ class Approximation_Graph:
 
     # Method Total Time Complexity: O(1)
 
+    def __str__(self):
+        """! Returns the string of all vertices"""
+        try:
+            return str(self.vertices)
+        except:
+            raise Exception()
+
+    # Method Total Time Complexity: O(1)
+
+    def __len__(self):
+        """! Returns the length of all vertices"""
+        try:
+            return len(self.vertices)
+        except:
+            raise Exception()
+
+    # Method Total Time Complexity: O(1)
+
     def addEdge(self, vertex1, vertex2):
         """! Add a new edge to a new graph object"""
         try:
