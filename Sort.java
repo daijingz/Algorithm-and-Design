@@ -1,21 +1,19 @@
 // Array Numbers must be unrepeated
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Collections;
-
 public class Sort{
-    double[] SelectionSort(double[] input){
-        double[] output = new double[input.length];
+    int[] SelectionSort(int[] input){
+        int[] output = new int[input.length];
         for (int i = 0; i < input.length; i++){
             output[i] = SelectMIN(input);
+            int index = IndexMIN(input);
+            input[index] = - 100000;
         }
         return output;
     }
 
-    double SelectMIN(double[] input){
-        double output = 100000.0;
-        for (double v : input) {
+    int SelectMIN(int[] input){
+        int output = 100000;
+        for (int v : input) {
             if (v < output) {
                 output = v;
             }
@@ -23,8 +21,8 @@ public class Sort{
         return output;
     }
 
-    int IndexMIN(double[] input){
-        double num = 100000.0;
+    int IndexMIN(int[] input){
+        int num = 100000;
         int output = 0;
         for (int i = 0; i < input.length; i++) {
             if (input[i] < num) {
