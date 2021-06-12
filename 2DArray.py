@@ -119,3 +119,21 @@ class Table:
             i += 1
         self.__x = self.__x - 1
         self.__body = value
+
+    def insertRow(self):
+        pass
+
+    def appendCol(self):
+        pass
+
+    def deleteCol(self):
+        pass
+
+    def insertCol(self):
+        pass
+
+    def filter(self):
+        pass
+
+    def rotate(self):
+        pass

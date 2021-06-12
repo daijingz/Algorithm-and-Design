@@ -5,5 +5,23 @@
 
 class Table:
     def __init__(self, row: int, col: int):
-        self.row = row
-        self.col = col
+        if row <= 0 or col <= 0:
+            raise Exception()
+        elif row >= 20 or col >= 20:
+            raise Exception()
+        self.__row = row
+        self.__col = col
+        self.__index = 0
+        self.__body = dict()
+
+    def get_row(self):
+        return self.__row
+
+    def get_col(self):
+        return self.__col
+
+    def get_index(self):
+        return self.__index
+
+    def get_body(self):
+        return self.__body

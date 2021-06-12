@@ -5,5 +5,9 @@
 
 class Table:
     def __init__(self, row: int, col: int):
+        if row <= 0 or col <= 0:
+            raise Exception()
+        elif row >= 20 or col >= 20:
+            raise Exception()
         self.row = row
         self.col = col
