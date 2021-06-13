@@ -120,8 +120,52 @@ class Table:
         self.__x = self.__x - 1
         self.__body = value
 
-    def insertRow(self):
-        pass
+    def insertRow(self, index: int, row=None):
+        if row is None:
+            row = []
+
+        try:
+            if type(row) != list:
+                raise Exception()
+            elif index <= 0:
+                raise Exception()
+
+            if index > self.__x:
+                if not row:
+                    rowNum = self.__x
+                    i = 0
+                    newRow = []
+                    while i < rowNum:
+                        newRow += [0]
+                        i += 1
+                    self.__body += [newRow]
+                elif len(row) == self.__x:
+                    self.__body += [row]
+                else:
+                    raise Exception()
+            else:
+                if not row:
+                    rowNum = self.__x
+                    i = 0
+                    newRow = []
+                    while i < rowNum:
+                        newRow += [0]
+                        i += 1
+                elif len(row) == self.__x:
+                    newRow = row
+                else:
+                    raise Exception()
+
+                output = []
+                i = 0
+                while i < len(self.__body):
+                    if index == i:
+                        output += [newRow]
+                    output += [self.__body[i]]
+                    i += 1
+                self.__body = output
+        except:
+            raise Exception()
 
     def appendCol(self):
         pass

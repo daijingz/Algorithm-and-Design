@@ -9,5 +9,11 @@ class Table:
             raise Exception()
         elif row >= 20 or col >= 20:
             raise Exception()
-        self.row = row
-        self.col = col
+        self.__row = row
+        self.__col = col
+
+    def get_row(self):
+        return self.__row
+
+    def get_col(self):
+        return self.__col

@@ -14,14 +14,71 @@ class Table:
         self.__index = 0
         self.__body = dict()
 
+        built_index = 0
+        rowAmount, colAmount = 0, 0
+
     def get_row(self):
-        return self.__row
+        try:
+            return self.__row
+        except:
+            raise Exception()
 
     def get_col(self):
-        return self.__col
+        try:
+            return self.__col
+        except:
+            raise Exception()
 
     def get_index(self):
-        return self.__index
+        try:
+            return self.__index
+        except:
+            raise Exception()
 
     def get_body(self):
-        return self.__body
+        try:
+            return self.__body
+        except:
+            raise Exception()
+
+    def set_row(self):
+        pass
+
+    def set_col(self):
+        pass
+
+    def set_index(self):
+        pass
+
+    def set_point(self):
+        pass
+
+    def empty(self):
+        pass
+
+    def __str__(self):
+        pass
+
+    def appendRow(self):
+        pass
+
+    def deleteRow(self):
+        pass
+
+    def insertRow(self):
+        pass
+
+    def appendCol(self):
+        pass
+
+    def deleteCol(self):
+        pass
+
+    def insertCol(self):
+        pass
+
+    def filter(self):
+        pass
+
+    def rotate(self):
+        pass
