@@ -24,18 +24,21 @@ class Table:
             i += 1
 
     def get_x(self):
+        """! Getting x values"""
         try:
             return self.__x
         except:
             raise Exception()
 
     def get_y(self):
+        """! Getting y values"""
         try:
             return self.__y
         except:
             raise Exception()
 
     def get_body(self):
+        """! Getting body values"""
         try:
             return self.__body
         except:
@@ -167,11 +170,38 @@ class Table:
         except:
             raise Exception()
 
-    def appendCol(self):
-        pass
+    def appendCol(self, col=None):
+        try:
+            if col is None:
+                new_col = []
+                i = 0
+                while i < self.__y:
+                    new_col += [0]
+            elif len(col) == self.__y:
+                new_col = col
+            else:
+                raise Exception()
+
+            j = 0
+            output = []
+            while j < self.__y:
+                output = self.__body[j] + [new_col[j]]
+                j += 1
+            self.__body = output
+        except:
+            raise Exception()
 
     def deleteCol(self):
-        pass
+        try:
+            output = []
+            for i in self.__body:
+                if len(i) > 0:
+                    output += [i[:-1]]
+                else:
+                    output += [[]]
+            self.__body = output
+        except:
+            raise Exception()
 
     def insertCol(self):
         pass

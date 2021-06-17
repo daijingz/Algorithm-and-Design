@@ -11,9 +11,22 @@ class Table:
             raise Exception()
         self.__row = row
         self.__col = col
+        self.__body = []
 
     def get_row(self):
-        return self.__row
+        try:
+            return self.__row
+        except:
+            raise Exception()
 
     def get_col(self):
-        return self.__col
+        try:
+            return self.__col
+        except:
+            raise Exception()
+
+    def get_body(self):
+        try:
+            return self.__body
+        except:
+            raise Exception()

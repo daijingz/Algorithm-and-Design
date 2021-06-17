@@ -11,11 +11,7 @@ class Table:
             raise Exception()
         self.__row = row
         self.__col = col
-        self.__index = 0
         self.__body = dict()
-
-        built_index = 0
-        rowAmount, colAmount = 0, 0
 
     def get_row(self):
         try:
@@ -29,28 +25,23 @@ class Table:
         except:
             raise Exception()
 
-    def get_index(self):
-        try:
-            return self.__index
-        except:
-            raise Exception()
-
     def get_body(self):
         try:
             return self.__body
         except:
             raise Exception()
 
-    def set_row(self):
-        pass
+    def set_row(self, row: int):
+        if row <= 0 or row >= 20:
+            raise Exception()
+        self.__row = row
 
-    def set_col(self):
-        pass
+    def set_col(self, col: int):
+        if col <= 0 or col >= 20:
+            raise Exception()
+        self.__col = col
 
-    def set_index(self):
-        pass
-
-    def set_point(self):
+    def set_point(self, row: int, col: int, value: int):
         pass
 
     def empty(self):
