@@ -1,3 +1,6 @@
+# Jingze Dai Date: 2020/09/22
+# Part 3 Algorithm: Approximation Algorithm on Vertex Cover
+# Undirected graphs are represented as "Approximation_Graph" object
 class Table:
     def __init__(self, x: int, y: int):
         if x <= 0 or y <= 0:
