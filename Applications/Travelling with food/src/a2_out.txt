@@ -1,0 +1,10 @@
+BFS: 1, 2, 3, 8, 4, 9, 5, 10, 21, 6, 11, 22, 7, 12, 20, 18, 19, 13, 14, 32, 23, 15, 30, 24, 16, 31, 25, 29, 17, 26, 27, 28
+DFS: 1, 2, 3, 4, 5, 6, 7, 19, 32, 20, 18, 9, 10, 11, 12, 13, 23, 24, 25, 26, 27, 28, 22, 29, 30, 15, 16, 17, 31, 14, 21, 8
+
+City 		Meal of choice			Cost of Meal
+Boston		Not required			$0
+New York	McChicken				$3.79
+Pittsburgh	Double Cheeseburger		$4.38
+Columbus	McChicken				$3.79
+Chicago 	Double Cheeseburger		$4.38
+Minneapolis	McChicken				$3.79

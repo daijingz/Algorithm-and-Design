@@ -1,0 +1,25 @@
+3.1 
+Use the linkedlist with , for the hashmap, key represents
+target city, and hashset represents which citys are connected with them directly.
+
+Nodes represent different cities on the United States, and edges represent the roads between different cities.
+
+To solve it, drawing the undirected graphs by using routes and cities given (as edges and nodes). And using BFS and
+DFS to find all routes between them. (Using DFS or BFS to find all possible non-cycle path between start city and end city)
+
+3.2
+One appropriate route should be Boston-New York City-Pittsburgh-Columbus-Chicago-Minneapolis
+
+BFS has fewer steps. As for its algorithms, BFS has shorter length of routes.
+
+When the stops increases, then we need to DFS, because compared with little increased steps on DFS,
+steps on BFS are largely increased its steps.
+
+3.4
+Time Complexity of Dijkstra's algorithms is O(V^2), because it has loops for square times, and it has multi-layer function callings.
+Amount of cities does not affect the costs, because it does not affect the amount of stops in the routes.
+(e.g. initially a route with 6 cities and 6 stops, but now 12 cities with 6 stops, the cost does not change because still we need to have 6 meals)
+When the amount of stops increases, the time complexity will increase. Because it increases the times of stops and having meals
+in different cities.
+However the amount of restaurant does not affect the time complexity, because they are hundreds of restaurants for same company,
+and they have same kind of meal, and they do not affect meal choice in the cities.

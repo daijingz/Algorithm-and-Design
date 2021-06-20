@@ -1,0 +1,7 @@
+COMP SCI 2XB3
+Jingze Dai
+400201059
+The fact that the work being submitted by you is your individual work.
+Explanations about design decisions:
+
+1. For 3.2 BFS and DFS decisions, I use numbers to represent each city. And their numbers can be found in new forms
