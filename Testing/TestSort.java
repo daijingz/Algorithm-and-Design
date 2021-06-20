@@ -11,6 +11,6 @@ public class TestSort extends Sort{
 
     @Test
     public void Test_Selection_Sort(){
-        assertEquals(1.0, SelectionSort(test1)[0]);
+        assertEquals(1.0, Selection_Sort(test1)[0]);
     }
 }
