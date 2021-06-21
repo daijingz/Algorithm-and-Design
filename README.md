@@ -5,6 +5,7 @@ Jingze Dai's Project, includes lots of algorithm implementations and funny works
 * To see descriptions and explanations about all works please see **Documentation** folder. (https://github.com/daijingz/Algorithm-and-Design/tree/main/Documentation)
 * To see any works about research ideas and **funs** please see **Interesting Started Ideas** folder. (https://github.com/daijingz/Algorithm-and-Design/tree/main/Interesting%20Started%20Ideas)
 * To see various kinds of testing works please see **Testing** folder. (https://github.com/daijingz/Algorithm-and-Design/tree/main/Testing)
+* To see regular files please see current repository. (https://github.com/daijingz/Algorithm-and-Design/)
 
 This project includes algorithm designs with Python, C++ and Java Implementations.
 
