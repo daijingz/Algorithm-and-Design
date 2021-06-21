@@ -9,6 +9,10 @@ Jingze Dai's Project, includes lots of algorithm implementations and funny works
 
 This project includes algorithm designs with Python, C++ and Java Implementations.
 
+**Reminder**
+* This project includes some past works from taken campus courses and online courses
+* If you find any mistakes please give feedback to David directly
+
 ## Python version includes:
 
 * Basic Python programming tools
