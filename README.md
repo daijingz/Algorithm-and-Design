@@ -11,7 +11,7 @@ This project includes algorithm designs with Python, C++ and Java Implementation
 
 **Reminder**
 * This project includes some past works from taken campus courses and online courses
-* If you find any mistakes please give feedback to David directly
+* If you find any mistakes please give feedback to David directly (**Through emails**)
 
 ## Python version includes:
 
