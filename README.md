@@ -1,7 +1,7 @@
 # Algorithm and Design
 Jingze Dai's Project
 
-* **This text will be bold**
+* To see application programs and projects please see **Application** folder. (https://github.com/daijingz)
 *
 *
 *
