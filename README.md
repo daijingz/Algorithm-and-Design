@@ -1,7 +1,7 @@
 # Algorithm and Design
 Jingze Dai's Project
 
-*
+* **This text will be bold**
 *
 *
 *
