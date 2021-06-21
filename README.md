@@ -1,6 +1,11 @@
 # Algorithm and Design
 Jingze Dai's Project
 
+*
+*
+*
+*
+
 This project includes algorithm designs with Python, C++ and Java Implementations.
 
 ## Python version includes:
