@@ -14,6 +14,7 @@ This project includes algorithm designs with Python, C++ and Java Implementation
 7. Machine learning implementations
 8. MySQL library
 9. MongoDB library
+10. Interesting application programs (very complex)
 
 Current total 4084 lines
 
@@ -22,11 +23,12 @@ Current total 4084 lines
 1. Basic Java programming tools
 2. File Handling (Reading and writing to files)
 3. Junit (Unit testing)
+4. Interesting application programs (very complex)
 
 Current total 1327 lines
 
 ## C++ Version includes:
-1. Interesting small application programs
+1. Interesting application programs (very complex)
 
 Current total 0 lines
 
