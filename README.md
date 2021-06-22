@@ -42,7 +42,7 @@ Current total 1412 lines
 
 Current total 0 lines
 
-## Other programming languages
+## Other programming languages (used in this project)
 * MATLAB
 * C
 
