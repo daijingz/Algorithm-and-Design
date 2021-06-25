@@ -40,7 +40,7 @@ Current total 1412 lines
 ## C++ Version includes:
 * Interesting application programs (very complex)
 
-Current total 0 lines
+Current total 69 lines
 
 ## Other programming languages (used in this project)
 * MATLAB
