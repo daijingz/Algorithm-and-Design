@@ -30,7 +30,7 @@ class Hiring:
 
     def __str__(self):
         """! Returns a description string of Hiring object"""
-        Part1 = " Hiring problem "
+        Part1 = "Hiring problem "
         Part2 = " with cost " + str(self.__cost)
 
         if len(self.__applicants) == 0:
@@ -89,15 +89,17 @@ class Hiring:
 
     def Hiring(self, target):
         """! Hiring problem's solution in non-perfect situation"""
+        j = 0
         try:
             net = 0
-            j = 0
             for i in self.__applicants:
                 net -= self.__cost
                 net += self.__benefit(i)
                 j += 1
                 if net >= target:
                     break
-            return j
         except:
             raise Exception()
+        finally:
+            print("The best choice is to have interviews with" + str(j) + " applicants.")
+            return j
