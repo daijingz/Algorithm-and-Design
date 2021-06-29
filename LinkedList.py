@@ -192,7 +192,10 @@ class DNode:
             raise Exception()
 
     def getNextData(self):
-        return self.__nextData
+        try:
+            return self.__nextData
+        except:
+            raise Exception()
 
     def setData(self, data):
         self.__data = data
@@ -232,5 +235,50 @@ class DoubleEdgeLinkedList:
     def get_end(self):
         try:
             return self.__end
+        except:
+            raise Exception()
+
+
+class CNode:
+    def __init__(self, value: int, nextV: int):
+        self.__value = value
+        self.__nextV = nextV
+
+    def get_Value(self):
+        try:
+            return self.__value
+        except:
+            raise Exception()
+
+    def get_nextV(self):
+        try:
+            return self.__nextV
+        except:
+            raise Exception()
+
+    def set_Value(self, value: int):
+        try:
+            self.__value = value
+        except:
+            raise Exception()
+
+    def set_nextV(self, nextV: int):
+        try:
+            self.__nextV = nextV
+        except:
+            raise Exception()
+
+
+class CircularLinkedList:
+    def __init__(self, node1: CNode, node2: CNode):
+        value1 = node1.get_Value()
+        value2 = node2.get_Value()
+        node1.set_nextV(value2)
+        node2.set_nextV(value1)
+        self.__nodes = [node1, node2]
+
+    def get_nodes(self):
+        try:
+            return self.__nodes
         except:
             raise Exception()
