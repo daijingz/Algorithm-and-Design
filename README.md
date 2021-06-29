@@ -26,7 +26,7 @@ This project includes algorithm designs with Python, C++, Java and other program
 * MongoDB library
 * Interesting application programs (very complex)
 
-Current total 4084 lines
+Current total 4129 lines
 
 ## Java version includes:
 
