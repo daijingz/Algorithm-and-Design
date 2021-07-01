@@ -18,10 +18,12 @@ class ML_Input:
         except:
             raise Exception()
 
-    def addData(self, data: int):
+    def addData(self, data):
         """! Add data values """
         try:
-            self.__data = self.__data + [data]
+            if type(data) not in [int, float]:
+                raise TypeError()
+            self.__data = self.__data + [float(data)]
         except:
             raise Exception()
 
@@ -66,3 +68,19 @@ class ML_Input:
                 occur = self.getData().count(i)
                 output = i
         return output
+
+    def filter_data(self, value, distance):
+        """! Find all appropriate data values with given information """
+        if type(value) not in [int, float]:
+            raise TypeError()
+        if type(distance) not in [int, float]:
+            raise TypeError()
+        new_data = []
+        for i in self.__data:
+            if abs(float(i) - value) < distance:
+                new_data += [i]
+        self.__data = new_data
+
+    def filter_data2(self):
+        """! Find all appropriate data values with given information """
+        return self
