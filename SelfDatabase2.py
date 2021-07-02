@@ -1,3 +1,8 @@
+# Author: Jingze Dai
+# Email Address: daij24@mcmaster.ca or david1147062956@163.com
+# Github: https://github.com/daijingz
+# Linkedin: https://www.linkedin.com/in/jingze-dai/
+# Description: Self database 1: MongoDB (pymongo) database
 import pymongo
 
 # Build a pymongo database client first

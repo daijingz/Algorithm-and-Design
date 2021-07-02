@@ -1,4 +1,11 @@
+# Author: Jingze Dai
+# Email Address: daij24@mcmaster.ca or david1147062956@163.com
+# Github: https://github.com/daijingz
+# Linkedin: https://www.linkedin.com/in/jingze-dai/
+# Description: Other interesting sorting methods
 # Imported: TODO
+
+
 def checkAvailable(inputList):
     i = 0
     while i < len(inputList):

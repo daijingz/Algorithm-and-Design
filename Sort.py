@@ -1,6 +1,8 @@
 # Author: Jingze Dai
-# Date: 16/02/2021
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
+# Github: https://github.com/daijingz
+# Linkedin: https://www.linkedin.com/in/jingze-dai/
+# Description: Basic Sort
 # This file includes programs with 4 different kinds of sorting algorithm
 # All of those target inputs are lists consist of unrepeated integers and floats
 # Sort output is ascending-integer list
