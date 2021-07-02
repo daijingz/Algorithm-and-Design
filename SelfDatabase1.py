@@ -1,3 +1,8 @@
+# Author: Jingze Dai
+# Email Address: daij24@mcmaster.ca or david1147062956@163.com
+# Github: https://github.com/daijingz
+# Linkedin: https://www.linkedin.com/in/jingze-dai/
+# Description: Self database 1: SQL database
 import sqlite3
 from sqlite3 import Error
 import json
