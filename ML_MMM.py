@@ -1,6 +1,8 @@
 # Author: Jingze Dai
-# Date: 21/05/2021
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
+# Github: https://github.com/daijingz
+# Linkedin: https://www.linkedin.com/in/jingze-dai/
+# Description: Machine Learning Algorithm: Mean, Median and Mode
 import numpy
 import statistics
 from scipy import stats
@@ -70,7 +72,7 @@ class ML_Input:
         return output
 
     def filter_data(self, value, distance):
-        """! Find all appropriate data values with given information """
+        """! Find all appropriate data values with given values and range """
         if type(value) not in [int, float]:
             raise TypeError()
         if type(distance) not in [int, float]:
