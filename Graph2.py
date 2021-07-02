@@ -1,9 +1,11 @@
 import itertools
 
 
-# Jingze Dai Date: 2020/09/22
-# Part 2 Algorithm: Brute-Force Algorithms (Exhaustive Computing)
-# Undirected graphs are represented as "Improved_Graph" object
+# Author: Jingze Dai
+# Email Address: daij24@mcmaster.ca or david1147062956@163.com
+# Github: https://github.com/daijingz
+# Linkedin: https://www.linkedin.com/in/jingze-dai/
+# Description: Undirected graph implementation 2 (with Brute Force Algorithm version 2)
 class Improved_Graph:
     def __init__(self):
         """! Initializes the program.
