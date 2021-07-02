@@ -10,7 +10,8 @@ Jingze Dai's Project, includes lots of algorithm implementations and funny works
 This project includes algorithm designs with Python, C++, Java and other programming languages' Implementations.
 
 **Reminder**
-* This project includes some past works from taken campus courses and online courses
+* This project includes some past works from taken courses, self-working, and funs
+* Because of time limits, not all parts are complete.
 * If you find any mistakes please give feedback to David directly (**Through emails**)
 
 ## Python version includes:
@@ -47,7 +48,7 @@ Current total **69** lines
 * C
 
 # Contact
-daij24@mcmaster.ca
-**(preferred)**
-
-david1147062956@163.com
+**Preferred Email**: daij24@mcmaster.ca
+**Email**: david1147062956@163.com
+**Linkedin Account**: https://www.linkedin.com/in/jingze-dai/
+**Github Account**: https://github.com/daijingz 
