@@ -3,9 +3,10 @@ import re
 import urllib.request
 
 # Author: Jingze Dai
-# Date: 16/02/2021
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
-# Basic Information of Jingze Dai
+# Github: https://github.com/daijingz
+# Linkedin: https://www.linkedin.com/in/jingze-dai/
+# Description: JSON Introduction Page
 Information1 = '{ "Name": "Jingze Dai", "School": "McMaster University", "MacID": "daij24" }'
 Information2 = '{ "Program": "Honors Computer Science program (co-op)" }'
 Information3 = '{ "Student Number": 400201059, "Email Address": "daij24@mcmaster.ca" }'
