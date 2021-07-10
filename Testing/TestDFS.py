@@ -7,7 +7,7 @@ import DFS
 
 class MyTestCase(unittest.TestCase):
     def test_DFS(self):
-        """! Getters of object's DFS Method """
+        """! Testing of DFS Method """
         g1 = DFS.Graph(False)
         g1.add_edge((0, 1))
         g1.add_edge((0, 2))

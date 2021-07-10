@@ -7,7 +7,7 @@ import BFS
 
 class MyTestCase(unittest.TestCase):
     def test_BFS(self):
-        """! Getters of object's BFS Method """
+        """! Testing of BFS Method """
         g1 = BFS.Graph(False)
         g1.add_edge((0, 1))
         g1.add_edge((0, 2))
