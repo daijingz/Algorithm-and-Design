@@ -6,6 +6,10 @@
 
 class Table:
     def __init__(self, x: int, y: int):
+        """!
+        @param x    number of rows
+        @param y    number of columns
+        """
         if x <= 0 or y <= 0:
             raise Exception()
         elif x >= 20 or y >= 20:
