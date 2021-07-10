@@ -20,10 +20,24 @@ class Stack:
         except:
             raise Exception()
 
-    def empty(self):
+    def appendBody(self, list1: list):
+        """! Appending new lists into objects' bodies"""
+        try:
+            self.__body += list1
+        except:
+            raise Exception()
+
+    def isEmpty(self):
         """! Checking whether a stack is an empty stack"""
         try:
             return len(self.getBody()) == 0
+        except:
+            raise Exception()
+
+    def makeEmpty(self):
+        """! Make a stack becomes an empty stack"""
+        try:
+            self.__body = []
         except:
             raise Exception()
 
@@ -36,6 +50,8 @@ class Stack:
 
     def push(self, element):
         """! Push an element to stack"""
+        if type(element) == list:
+            raise TypeError()
         self.__body += [element]
 
     def pop(self):
@@ -45,45 +61,40 @@ class Stack:
         self.__body = self.__body[:-1]
         return self.__body[-1]
 
-
-class A(enumerate):
-    Add = 1
-    Sub = 2
-
-
-class NoneOfTypes(Exception):
-    pass
+    def delete(self):
+        """! Delete an element from stack"""
+        if len(self.__body) == 0:
+            raise Exception("Error: Underflow")
+        self.__body = self.__body[:-1]
 
 
-class AStack:
-    def __init__(self, input1):
+class AdvancedStack:
+    def __init__(self):
         self.__body = []
-
-        if type(input1) == str:
-            self.__unitType = 'str'
-        elif type(input1) in [int, float]:
-            self.__unitType = 'num'
-        elif type(input1) == bool:
-            self.__unitType = 'bool'
-        else:
-            raise NoneOfTypes()
-
-        self.__type = None
+        self.__boolean = 0
+        self.__digit = 0
+        self.__string = 0
 
     def get_body(self):
         try:
             return self.__body
         except:
-            raise Exception
+            raise Exception()
 
-    def get_unitType(self):
+    def get_boolean(self):
         try:
-            return self.__unitType
+            return self.__boolean
         except:
-            raise Exception
+            raise Exception()
 
-    def get_type(self):
+    def get_digit(self):
         try:
-            return self.__type
+            return self.__digit
         except:
-            raise Exception
+            raise Exception()
+
+    def get_string(self):
+        try:
+            return self.__string
+        except:
+            raise Exception()
