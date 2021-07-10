@@ -39,6 +39,30 @@ def checkAvailable(inputList):
         raise OtherErrors("Other errors founded.")
 
 
+def sciCmp(num1, num2):
+    """! Compare 2 numbers scientifically"""
+    try:
+        if num1 > num2:
+            return num1
+        elif num1 < num2:
+            return num2
+        else:
+            return 0
+    except:
+        raise Exception()
+
+
+def sciEql(num1, num2, error=1e-6):
+    """! Check whether 2 numbers are equal sequentially"""
+    try:
+        if abs(num1 - num2) <= error:
+            return True
+        else:
+            return False
+    except:
+        raise Exception()
+
+
 def SelectionSort(inputList):
     """! Sort select the minimum and make it into the new array again and again"""
     try:
