@@ -52,6 +52,8 @@ class Stack:
         """! Push an element to stack"""
         if type(element) == list:
             raise TypeError()
+        elif element is None:
+            raise ValueError()
         self.__body += [element]
 
     def pop(self):
