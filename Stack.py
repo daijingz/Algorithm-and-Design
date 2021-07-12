@@ -60,7 +60,7 @@ class Stack:
 
     def push(self, element):
         """! Push an element to stack"""
-        if type(element) == list:
+        if type(element) in [list, tuple, dict]:
             raise TypeError()
         elif element is None:
             raise ValueError()
@@ -192,7 +192,18 @@ class AdvancedStack:
         """! Delete an element from stack and return it"""
         if len(self.__body) == 0:
             raise Exception("Error: Underflow")
+        delElement = self.__body[-1]
         self.__body = self.__body[:-1]
+
+        if type(delElement) in [int, float]:
+            self.__digit -= 1
+        elif type(delElement) == str:
+            self.__string -= 1
+        elif type(delElement) == bool:
+            self.__boolean -= 1
+        else:
+            self.__other -= 1
+
         return self.__body[-1]
 
     def delete(self):
@@ -200,3 +211,13 @@ class AdvancedStack:
         if len(self.__body) == 0:
             raise Exception("Error: Underflow")
         self.__body = self.__body[:-1]
+        delElement = self.__body[-1]
+
+        if type(delElement) in [int, float]:
+            self.__digit -= 1
+        elif type(delElement) == str:
+            self.__string -= 1
+        elif type(delElement) == bool:
+            self.__boolean -= 1
+        else:
+            self.__other -= 1
