@@ -3,7 +3,9 @@
 # Github: https://github.com/daijingz
 # Linkedin: https://www.linkedin.com/in/jingze-dai/
 # Description: Rod Cutting Problem
-class RodCutting:
+
+
+class Rod:
     def __init__(self, length: int, price: list):
         if length <= 0:
             raise Exception()
@@ -17,7 +19,7 @@ class RodCutting:
 
         i = 0
         while i < len(price) - 1:
-            if price[i] <= price[i + 1]:
+            if price[i] >= price[i + 1]:
                 raise Exception()
             i += 1
         self.__price = price
@@ -34,12 +36,32 @@ class RodCutting:
         except:
             raise Exception()
 
+    def set_rod(self, length: int, price: list):
+        self.__length = length
+
+        if len(price) > length:
+            raise Exception()
+        elif price[0] <= 0:
+            raise Exception()
+
+        i = 0
+        while i < len(price) - 1:
+            if price[i] >= price[i + 1]:
+                raise Exception()
+            i += 1
+        self.__price = price
+
     def empty_object(self):
         try:
             self.__length = 0
             self.__price = []
         except:
             raise Exception()
+
+    def __eq__(self, other):
+        if isinstance(other, Rod):
+            return self.__length == other.__length and self.__price == other.__price
+        return False
 
     def Cut_Rod(self):
         if self.__length == 0:
