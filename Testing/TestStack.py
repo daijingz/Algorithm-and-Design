@@ -7,6 +7,7 @@ import Stack
 
 class MyTestCase(unittest.TestCase):
     def test_isEmpty(self):
+        """! Testing of isEmpty method """
         Stack1 = Stack.Stack()
         self.assertEqual(True, Stack1.isEmpty())
         Stack1.setBody([1])
@@ -33,6 +34,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(False, Stack5.isEmpty())
 
     def test_makeEmpty(self):
+        """! Testing of makeEmpty method """
         Stack1 = Stack.Stack()
         Stack1.setBody([1])
         Stack1.setBody([2])
@@ -79,6 +81,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(True, Stack5.isEmpty())
 
     def test_size_len(self):
+        """! Testing of size and len method """
         Stack1 = Stack.Stack()
         Stack1.setBody([1])
         Stack1.setBody([2])
@@ -123,3 +126,111 @@ class MyTestCase(unittest.TestCase):
         Stack5.setBody([10])
         self.assertEqual(10, Stack5.size())
         self.assertEqual(10, len(Stack5))
+
+    def test_push(self):
+        """! Testing of push method """
+        Stack1 = Stack.Stack()
+        Stack1.push(1)
+        Stack1.push(2)
+        Stack1.push(3)
+        self.assertEqual(1, Stack1.getBody()[0])
+        self.assertEqual(2, Stack1.getBody()[1])
+        self.assertEqual(3, Stack1.getBody()[2])
+
+        Stack2 = Stack.Stack()
+        Stack2.push("1")
+        Stack2.push("2")
+        Stack2.push("3")
+        Stack2.push("4")
+        Stack2.push("5")
+        self.assertEqual("1", Stack2.getBody()[0])
+        self.assertEqual("2", Stack2.getBody()[1])
+        self.assertEqual("3", Stack2.getBody()[2])
+        self.assertEqual("4", Stack2.getBody()[3])
+        self.assertEqual("5", Stack2.getBody()[4])
+
+        Stack3 = Stack.Stack()
+        Stack3.push(1.86)
+        Stack3.push(2.15)
+        Stack3.push(2.34)
+        Stack3.push(5.76)
+        Stack3.push(9.81)
+        self.assertEqual(1.86, Stack3.getBody()[0])
+        self.assertEqual(2.15, Stack3.getBody()[1])
+        self.assertEqual(2.34, Stack3.getBody()[2])
+        self.assertEqual(5.76, Stack3.getBody()[3])
+        self.assertEqual(9.81, Stack3.getBody()[4])
+
+    def test_pop(self):
+        """! Testing of pop method """
+        Stack1 = Stack.Stack()
+        Stack1.push(1)
+        Stack1.push(2)
+        Stack1.push(3)
+        Stack1.pop()
+        self.assertEqual(2, Stack1.size())
+        self.assertEqual(1, Stack1.getBody()[0])
+        self.assertEqual(2, Stack1.getBody()[1])
+
+        Stack2 = Stack.Stack()
+        Stack2.push("1")
+        Stack2.push("2")
+        Stack2.push("3")
+        Stack2.push("4")
+        Stack2.push("5")
+        Stack2.pop()
+        Stack2.pop()
+        Stack2.pop()
+        self.assertEqual(2, Stack2.size())
+        self.assertEqual("1", Stack2.getBody()[0])
+        self.assertEqual("2", Stack2.getBody()[1])
+
+        Stack3 = Stack.Stack()
+        Stack3.push(1.86)
+        Stack3.push(2.15)
+        Stack3.push(2.34)
+        Stack3.push(5.76)
+        Stack3.push(9.81)
+        Stack3.pop()
+        self.assertEqual(4, Stack3.size())
+        self.assertEqual(1.86, Stack3.getBody()[0])
+        self.assertEqual(2.15, Stack3.getBody()[1])
+        self.assertEqual(2.34, Stack3.getBody()[2])
+        self.assertEqual(5.76, Stack3.getBody()[3])
+
+    def test_delete(self):
+        """! Testing of delete method """
+        Stack1 = Stack.Stack()
+        Stack1.push(1)
+        Stack1.push(2)
+        Stack1.push(3)
+        Stack1.pop()
+        self.assertEqual(2, Stack1.size())
+        self.assertEqual(1, Stack1.getBody()[0])
+        self.assertEqual(2, Stack1.getBody()[1])
+
+        Stack2 = Stack.Stack()
+        Stack2.push("1")
+        Stack2.push("2")
+        Stack2.push("3")
+        Stack2.push("4")
+        Stack2.push("5")
+        Stack2.pop()
+        Stack2.pop()
+        Stack2.pop()
+        self.assertEqual(2, Stack2.size())
+        self.assertEqual("1", Stack2.getBody()[0])
+        self.assertEqual("2", Stack2.getBody()[1])
+
+        Stack3 = Stack.Stack()
+        Stack3.push(1.86)
+        Stack3.push(2.15)
+        Stack3.push(2.34)
+        Stack3.push(5.76)
+        Stack3.push(9.81)
+        Stack3.pop()
+        self.assertEqual(4, Stack3.size())
+        self.assertEqual(1.86, Stack3.getBody()[0])
+        self.assertEqual(2.15, Stack3.getBody()[1])
+        self.assertEqual(2.34, Stack3.getBody()[2])
+        self.assertEqual(5.76, Stack3.getBody()[3])
