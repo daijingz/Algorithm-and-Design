@@ -181,6 +181,41 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(G10.get_Edge()[3], ["3", "4"])
         self.assertEqual(G10.get_Edge()[-1], ["4", "6"])
 
+    def test_eq(self):
+        """! Test graph1 programs' eq methods"""
+        G6 = Graph1.Graph(6)
+        G6.add_Node("0")
+        G6.add_Node("1")
+        G6.add_Node("2")
+        G6.add_Node("3")
+        G6.add_Node("4")
+        G6.add_Node("5")
+        G6.add_Edge(["0", "1"])
+        G6.add_Edge(["1", "2"])
+        G6.add_Edge(["0", "4"])
+        G6.add_Edge(["4", "3"])
+        G6.add_Edge(["0", "3"])
+        G6.add_Edge(["3", "2"])
+        G6.add_Edge(["2", "5"])
+        G6.add_Edge(["3", "5"])
+
+        G7 = Graph1.Graph(6)
+        G7.add_Node("0")
+        G7.add_Node("1")
+        G7.add_Node("2")
+        G7.add_Node("3")
+        G7.add_Node("4")
+        G7.add_Node("5")
+        G7.add_Edge(["0", "1"])
+        G7.add_Edge(["1", "2"])
+        G7.add_Edge(["0", "4"])
+        G7.add_Edge(["4", "3"])
+        G7.add_Edge(["0", "3"])
+        G7.add_Edge(["3", "2"])
+        G7.add_Edge(["2", "5"])
+        G7.add_Edge(["3", "5"])
+        self.assertEqual(True, G6 == G7)
+
     def test_get_Sublist(self):
         """! Test graph1 programs' getting-sublist methods"""
         G1 = Graph1.Graph(5)
