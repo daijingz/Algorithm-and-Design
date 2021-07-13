@@ -77,6 +77,23 @@ class Graph:
 
     # Method Total Time Complexity: O(1), which is O(1)
 
+    def __eq__(self, other):
+        """!
+
+        Check 2 Graph objects on whether they are equal
+
+        """
+        if isinstance(other, Graph):
+            if self.Amount_Node != other.Amount_Node:
+                return False
+            elif self.Node != other.Node:
+                return False
+            elif self.Edge != other.Edge:
+                return False
+            else:
+                return True
+        return False
+
     def get_Sublist(self):
         """!
 
