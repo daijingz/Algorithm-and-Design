@@ -68,6 +68,19 @@ class Graph:
             if self.__edge[edge[0]].count(edge[1]) == 0:
                 self.__edge[edge[0]].append(edge[1])
 
+    def __eq__(self, other):
+        """! Check whether 2 graph objects are equal """
+        if isinstance(other, Graph):
+            if other.__node != self.__node:
+                return False
+            elif other.__edge != self.__edge:
+                return False
+            elif other.__directed != self.__directed:
+                return False
+            else:
+                return True
+        return False
+
     def DFSSub(self, v, s, visited):
         """! DFS helper function """
         visited.add(v)
