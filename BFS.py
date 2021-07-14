@@ -87,19 +87,22 @@ class Graph:
 
     def check(self):
         """! Check whether this graph is appropriate """
-        nodes = self.__node
-        edges = []
-        for i in nodes:
-            edges += self.__edge[i]
+        try:
+            nodes = self.__node
+            edges = []
+            for i in nodes:
+                edges += self.__edge[i]
 
-        for j in nodes:
-            if edges.count(j) < 1:
-                return False
+            for j in nodes:
+                if edges.count(j) < 1:
+                    return False
 
-        for k in nodes:
-            if self.__edge[k].count(k) > 0:
-                return False
-        return True
+            for k in nodes:
+                if self.__edge[k].count(k) > 0:
+                    return False
+            return True
+        except:
+            raise Exception()
 
     def BFS(self, s):
         """! Breadth First Search """
