@@ -1,6 +1,8 @@
 # Author: Jingze Dai
-# Date: 16/02/2021
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
+# Github: https://github.com/daijingz
+# Linkedin: https://www.linkedin.com/in/jingze-dai/
+# Description: Test cases (Unit tests)
 import unittest
 import Sort
 
@@ -22,6 +24,40 @@ class MyTestCase(unittest.TestCase):
 
         tst5 = [1.0, 2.0, 1.5, 3, 5, 6, 4]
         self.assertEqual(True, Sort.checkAvailable(tst5))
+
+    def test_sciCmp(self):
+        """! Testing of sciCmp method """
+        num1, num2 = 1.77, 1.84
+        self.assertEqual(1.84, Sort.sciCmp(num1, num2))
+
+        num3, num4 = 2.09, 2.09
+        self.assertEqual(0, Sort.sciCmp(num3, num4))
+
+        num5, num6 = 3, 1
+        self.assertEqual(3, Sort.sciCmp(num5, num6))
+
+        num7, num8 = 0.9155658, 0.9155650
+        self.assertEqual(0, Sort.sciCmp(num7, num8))
+
+        num9, num10 = 10, 19
+        self.assertEqual(19, Sort.sciCmp(num9, num10))
+
+    def test_sciEql(self):
+        """! Testing of sciEql method """
+        num1, num2 = 1.77, 1.84
+        self.assertEqual(False, Sort.sciEql(num1, num2))
+
+        num3, num4 = 2.09, 2.09
+        self.assertEqual(True, Sort.sciEql(num3, num4))
+
+        num5, num6 = 3, 1
+        self.assertEqual(False, Sort.sciEql(num5, num6))
+
+        num7, num8 = 0.9155658, 0.9155650
+        self.assertEqual(True, Sort.sciEql(num7, num8))
+
+        num9, num10 = 10, 19
+        self.assertEqual(False, Sort.sciEql(num9, num10))
 
     def test_SelectionSort(self):
         """! Testing of selection sort method """
