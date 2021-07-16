@@ -11,7 +11,7 @@ This project includes algorithm designs with Python, C++, Java and other program
 
 **Reminder**
 * This project includes some past works from taken courses, self-working, and funs
-* Because of time limits, not all parts are complete.
+* Because of time limits, not all parts are complete. Future contents are coming soon.
 * This project have error handling designs on a lot of algorithms.
 * If you find any mistakes please give feedback to David directly (**Through emails**)
 
