@@ -52,6 +52,16 @@ class Approximation_Graph:
 
     # Method Total Time Complexity: O(1)
 
+    def __eq__(self, other):
+        """! Compare whether 2 graph objects are equal"""
+        if isinstance(other, Approximation_Graph):
+            if self.vertices != other.vertices:
+                return False
+            elif self.graph != other.graph:
+                return False
+            return True
+        return False
+
     def addEdge(self, vertex1, vertex2):
         """! Add a new edge to a new graph object"""
         try:
