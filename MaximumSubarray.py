@@ -49,6 +49,19 @@ class MaximumSubarray:
         for j in self.__dailyPrice:
             self.__net += [j - self.__startPrice]
 
+    def __eq__(self, other):
+        """! Checks whether 2 objects are equal"""
+        if isinstance(other, MaximumSubarray):
+            if self.__net != other.__net:
+                return False
+            elif self.__startPrice != other.__startPrice:
+                return False
+            elif self.__dailyPrice != other.__dailyPrice:
+                return False
+            else:
+                return True
+        return False
+
     def setStartPrice(self, number: int):
         """! Setting start price value"""
         self.__startPrice = number
@@ -198,7 +211,7 @@ class MaximumSubarray:
 
 
 def fibonacci(n: int):
-    """! Divide and Conquer"""
+    """! Divide and Conquer extra implementation"""
     if n < 0:
         raise InAppropriateData()
     elif n == 0 or n == 1:
@@ -208,7 +221,7 @@ def fibonacci(n: int):
 
 
 def fibonacciM(n: int):
-    """! Divide and Conquer with Memorization"""
+    """! Divide and Conquer with Memorization extra implementation"""
     memo = [1, 1]
     limit = n
     for i in range(3, limit + 1):
