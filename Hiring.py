@@ -4,6 +4,7 @@
 # Linkedin: https://www.linkedin.com/in/jingze-dai/
 # Description: Hiring Problem
 
+
 class Hiring:
     def __init__(self, cost: int, cutoff: int, benefit, maxCost=100, minCost=0):
         """! Initializes the program.
@@ -29,6 +30,10 @@ class Hiring:
         self.__cutoff = cutoff
         self.__benefit = benefit
 
+    def __repr__(self):
+        """! Return a printable representation of object """
+        return str(self)
+
     def __str__(self):
         """! Returns a description string of Hiring object"""
         Part1 = "Hiring problem "
@@ -41,6 +46,21 @@ class Hiring:
             for i in self.__applicants:
                 Part3 += " " + str(i) + " "
         return Part1 + Part2 + Part3
+
+    def __eq__(self, other):
+        """! Compare two objects and see whether they are equal"""
+        if isinstance(other, Hiring):
+            if self.__cost != other.__cost:
+                return False
+            elif self.__cutoff != other.__cutoff:
+                return False
+            elif self.__applicants != other.__applicants:
+                return False
+            elif self.__benefit != other.__benefit:
+                return False
+            else:
+                return True
+        return False
 
     def getCost(self):
         """! Getters for returning object's cost value'"""
