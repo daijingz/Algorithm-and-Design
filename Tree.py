@@ -28,6 +28,10 @@ class Tree:
             return type(self.__data)
         return None
 
+    def __repr__(self):
+        """! Return a printable representation of object """
+        return str(self)
+
     def __str__(self):
         """! Give a description string about functions """
         if self.__leftBranch is None and self.__rightBranch is None:
