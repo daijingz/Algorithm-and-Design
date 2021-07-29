@@ -72,6 +72,17 @@ class Graph:
             if self.__edge[edge[0]].count(edge[1]) == 0:
                 self.__edge[edge[0]].append(edge[1])
 
+    def __repr__(self):
+        """! Return a printable representation of object """
+        return str(self)
+
+    def __str__(self):
+        """! Return the string form of object """
+        try:
+            return "node: {0}; edge: {1}; directed: {2}".format(self.__node, self.__edge, self.__directed)
+        except:
+            raise Exception()
+
     def __eq__(self, other):
         """! Check whether 2 graph objects are equal """
         if isinstance(other, Graph):
