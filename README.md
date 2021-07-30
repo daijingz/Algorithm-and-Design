@@ -28,7 +28,7 @@ This project includes algorithm designs with Python, C++, Java and other program
 * MongoDB library
 * Interesting application programs (very complex)
 
-Current total **5681** lines
+Current total **5681** lines (including application programs)
 
 ## Java version includes:
 
@@ -37,12 +37,12 @@ Current total **5681** lines
 * Junit (Unit testing)
 * Interesting application programs (very complex)
 
-Current total **2415** lines
+Current total **2415** lines (including application programs)
 
 ## C++ Version includes:
 * Interesting practical application programs (very complex)
 
-Current total **69** lines
+Current total **69** lines (including application programs)
 
 ## Other programming languages (used in this project)
 * MATLAB (Mostly application programs in the modeling area)
