@@ -15,7 +15,7 @@ This project includes algorithm designs with Python, C++, Java and other program
 * This project have error handling designs on a lot of algorithms.
 * If you find any mistakes please give feedback to David directly (**Through emails**)
 
-## Python version includes:
+## Python version techniques and libraries
 
 * Basic Python programming tools
 * pytest (Unit testing)
@@ -30,7 +30,7 @@ This project includes algorithm designs with Python, C++, Java and other program
 
 Current total **5681** lines (including application programs)
 
-## Java version includes:
+## Java version techniques and libraries
 
 * Basic Java programming tools
 * File Handling (Reading and writing to files)
@@ -39,12 +39,12 @@ Current total **5681** lines (including application programs)
 
 Current total **2415** lines (including application programs)
 
-## C++ Version includes:
+## C++ Version techniques and libraries
 * Interesting practical application programs (very complex)
 
 Current total **69** lines (including application programs)
 
-## Other programming languages (used in this project)
+## Other programming languages, libraries and tools (used in this project)
 * MATLAB (Mostly application programs in the modeling area)
 * C (Mostly Application programs)
 
