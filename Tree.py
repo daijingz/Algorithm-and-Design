@@ -2,7 +2,7 @@
 # Email Address: daij24@mcmaster.ca or david1147062956@163.com
 # Github: https://github.com/daijingz
 # Linkedin: https://www.linkedin.com/in/jingze-dai/
-# Description: Self database 1: Tree
+# Description: Tree
 
 class Tree:
     def __init__(self, data: int):
