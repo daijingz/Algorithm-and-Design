@@ -42,3 +42,32 @@ class BinarySearchTree:
             return self.__right
         except:
             raise Exception()
+
+    def set_data(self, data):
+        try:
+            if type(data) != self.__type:
+                raise Exception
+            self.__data = data
+        except:
+            raise Exception()
+
+    def set_type(self, new_type):
+        try:
+            if new_type not in [int, str]:
+                raise Exception()
+            self.__type = new_type
+            self.__data = None
+            self.__left = None
+            self.__right = None
+        except:
+            raise Exception()
+
+    def set_left(self, left):
+        if not isinstance(left, BinarySearchTree):
+            raise Exception()
+        self.__left = left
+
+    def set_right(self, right):
+        if not isinstance(right, BinarySearchTree):
+            raise Exception()
+        self.__left = right
