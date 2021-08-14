@@ -58,6 +58,17 @@ class Stack:
         except:
             raise Exception()
 
+    def __repr__(self):
+        """! Return a printable representation of object """
+        return str(self)
+
+    def __str__(self):
+        """! Return the string form of object """
+        try:
+            return "body: {0}".format(self.__body)
+        except:
+            raise Exception()
+
     def push(self, element):
         """! Push an element to stack"""
         if type(element) in [list, tuple, dict]:
@@ -128,7 +139,18 @@ class AdvancedStack:
     def get_repeated(self):
         """! Getters for returning whether an object allows repeating elements"""
         try:
-            return self.__body
+            return self.__repeated
+        except:
+            raise Exception()
+
+    def __repr__(self):
+        """! Return a printable representation of object """
+        return str(self)
+
+    def __str__(self):
+        """! Return the string form of object """
+        try:
+            return "body: {0}".format(self.__body)
         except:
             raise Exception()
 

@@ -53,6 +53,17 @@ class Queue:
         except:
             raise Exception()
 
+    def __repr__(self):
+        """! Return a printable representation of object """
+        return str(self)
+
+    def __str__(self):
+        """! Return the string form of object """
+        try:
+            return "body: {0}".format(self.__queue)
+        except:
+            raise Exception()
+
     def enqueue(self, num: int):
         """! Enqueue"""
         try:
