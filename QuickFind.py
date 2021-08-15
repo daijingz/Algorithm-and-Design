@@ -6,15 +6,24 @@
 
 
 class QuickFind:
-    def __init__(self, n):
+    def __init__(self, number=0):
         """! QuickFind object constructor """
-        self.__groups = n
-        self.__points = [x for x in range(n)]
+        try:
+            number = int(number)
+        except:
+            raise Exception()
+        finally:
+            if number > 0:
+                self.__length = number
+                self.__points = [x for x in range(number)]
+            else:
+                self.__length = 10
+                self.__points = [x for x in range(10)]
 
-    def get_groups(self):
+    def get_length(self):
         """! Getting objects' groups value """
         try:
-            return self.__groups
+            return self.__length
         except:
             raise Exception()
 
@@ -46,15 +55,22 @@ class QuickFind:
         if src == tgt:
             return
 
-        self.__groups -= 1
+        self.__length -= 1
         for i, v in enumerate(self.__points):
             if v == tgt:
                 self.__points[i] = src
 
+    def __len__(self):
+        """! Return the amount of elements """
+        try:
+            return len(self.__points)
+        except:
+            raise Exception()
+
     def __str__(self):
         """! Return the string form of object """
         try:
-            return "groups: {0}; points: {1}".format(self.__groups, self.__points)
+            return "length: {0}; points: {1}".format(self.__length, self.__points)
         except:
             raise Exception()
 
@@ -65,6 +81,6 @@ class QuickFind:
     def __eq__(self, other):
         """! Check 2 objects on whether they are equal """
         if isinstance(other, QuickFind):
-            if self.__points == other.__points and self.__groups == other.__groups:
+            if self.__points == other.__points and self.__length == other.__length:
                 return True
         return False
