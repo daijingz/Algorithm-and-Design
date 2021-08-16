@@ -18,6 +18,10 @@ class UndirectedGraph:
         self.__node = []
         self.__body = []
 
+    def __repr__(self):
+        """! Return a printable representation of object """
+        return str(self)
+
     def __str__(self):
         """! Return a description string of the current object"""
         str1 = "Undirected graph with start node " + str(self.getStartNode())
