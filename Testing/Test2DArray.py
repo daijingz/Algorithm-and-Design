@@ -1,4 +1,5 @@
-# Jingze Dai Date: 2020/09/22
-# Part 3 Algorithm: Approximation Algorithm on Vertex Cover
-# Undirected graphs are represented as "Approximation_Graph" object
-import unittest
+# Author: Jingze Dai
+# Email Address: daij24@mcmaster.ca or david1147062956@163.com
+# Github: https://github.com/daijingz
+# Linkedin: https://www.linkedin.com/in/jingze-dai/
+# Description: Test cases (Unit tests)
