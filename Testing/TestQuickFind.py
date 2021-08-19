@@ -26,3 +26,22 @@ class MyTestCase(unittest.TestCase):
 
         QF6 = QuickFind.QuickFind(25)
         self.assertEqual(25, QF6.get_length())
+
+    def test_get_points(self):
+        QF1 = QuickFind.QuickFind()
+        self.assertEqual(10, QF1.get_points()[-1])
+
+        QF2 = QuickFind.QuickFind(1)
+        self.assertEqual(1, QF2.get_points()[-1])
+
+        QF3 = QuickFind.QuickFind(0)
+        self.assertEqual(10, QF3.get_points()[-1])
+
+        QF4 = QuickFind.QuickFind(-1)
+        self.assertEqual(10, QF4.get_points()[-1])
+
+        QF5 = QuickFind.QuickFind(-25)
+        self.assertEqual(10, QF5.get_points()[-1])
+
+        QF6 = QuickFind.QuickFind(25)
+        self.assertEqual(25, QF6.get_points()[-1])

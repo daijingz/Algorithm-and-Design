@@ -26,3 +26,22 @@ class MyTestCase(unittest.TestCase):
 
         QF6 = QuickUnion.QuickUnion(25)
         self.assertEqual(25, QF6.get_length())
+
+    def test_get_points(self):
+        QF1 = QuickUnion.QuickUnion()
+        self.assertEqual(10, QF1.get_points()[-1])
+
+        QF2 = QuickUnion.QuickUnion(1)
+        self.assertEqual(1, QF2.get_points()[-1])
+
+        QF3 = QuickUnion.QuickUnion(0)
+        self.assertEqual(10, QF3.get_points()[-1])
+
+        QF4 = QuickUnion.QuickUnion(-1)
+        self.assertEqual(10, QF4.get_points()[-1])
+
+        QF5 = QuickUnion.QuickUnion(-25)
+        self.assertEqual(10, QF5.get_points()[-1])
+
+        QF6 = QuickUnion.QuickUnion(25)
+        self.assertEqual(25, QF6.get_points()[-1])
