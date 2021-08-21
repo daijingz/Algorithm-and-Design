@@ -3,11 +3,11 @@
 # Github: https://github.com/daijingz
 # Linkedin: https://www.linkedin.com/in/jingze-dai/
 # Description: HashTable
-from collections import defaultdict
 
 
 class DirectedAddressTable:
     def __init__(self, length: int):
+        """! Initialize the program"""
         if length < 0:
             raise Exception()
         self.__length = length
@@ -15,20 +15,23 @@ class DirectedAddressTable:
         i = 0
         while i < length:
             self.__body += [None]
-
+    
     def get_length(self):
+        """! Get the length value of object"""
         try:
             return self.__length
         except:
             raise Exception()
 
     def get_body(self):
+        """! Get the body value of object"""
         try:
             return self.__body
         except:
             raise Exception()
 
     def direct_address_search(self, index: int):
+        """! Search direct address"""
         try:
             if index < 0 or index >= self.__length:
                 raise ValueError()
@@ -37,6 +40,7 @@ class DirectedAddressTable:
             raise Exception()
 
     def direct_address_insert(self, index: int, data):
+        """! Insert direct address"""
         try:
             if index < 0 or index >= self.__length:
                 raise ValueError()
@@ -47,6 +51,7 @@ class DirectedAddressTable:
             raise Exception()
 
     def direct_address_delete(self, index: int):
+        """! Delete direct address"""
         try:
             if index < 0 or index >= self.__length:
                 raise ValueError()
