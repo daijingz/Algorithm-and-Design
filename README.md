@@ -1,6 +1,7 @@
 # Algorithm and Design
 Jingze Dai's Project, includes lots of algorithm implementations and funny works.
 
+# Documentation
 * To see application programs and projects please see **Application** folder. (https://github.com/daijingz/Algorithm-and-Design/tree/main/Applications)
 * To see descriptions and explanations about all works please see **Documentation** folder. (https://github.com/daijingz/Algorithm-and-Design/tree/main/Documentation)
 * To see any works about **funs** please see **Interesting Started Ideas** folder. (https://github.com/daijingz/Algorithm-and-Design/tree/main/Interesting%20Started%20Ideas)
