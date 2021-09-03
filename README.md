@@ -48,6 +48,7 @@ Current total **69** lines (including application programs)
 ## Other programming languages, libraries and tools (used in this project)
 * MATLAB (Mostly application programs in the modeling area)
 * C (Mostly Application programs)
+* SQL
 
 # Contact
 **Preferred Email**: daij24@mcmaster.ca
