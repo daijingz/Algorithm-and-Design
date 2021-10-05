@@ -25,7 +25,7 @@ This project includes algorithm designs with Python, C++, Java and other program
 * Advanced libraries (NumPy, Pandas, SciPy)
 * Matplotlib library
 * Machine learning implementations
-* MySQL library
+* MySQL library (accessing mySQL workbench)
 * MongoDB library
 * Interesting application programs (very complex)
 
@@ -51,6 +51,12 @@ Current total **69** lines (including application programs)
 * SQL (MySQL Workbench, EER diagram with bussiness rules, and data analysis)
 
 # Contact
+**MySQL username**: root
+**MySQL password**: 20000517
+
+**MySQL username (database 2)**: root
+**MySQL password (database 2)**: Summer31
+
 **Preferred Email**: daij24@mcmaster.ca
 **Email**: david1147062956@163.com
 
