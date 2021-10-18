@@ -1,5 +1,5 @@
 # Algorithm and Design
-Jingze Dai's Project, includes lots of algorithm implementations (basic and advanced development) and funny application programming works.
+Algorithm implementations and funny algorithm application programming works.
 
 # Documentation
 * To see application programs and projects please see **Application** folder. (https://github.com/daijingz/Algorithm-and-Design/tree/main/Applications)
