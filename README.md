@@ -51,11 +51,11 @@ Current total **69** lines (including application programs)
 * SQL (MySQL Workbench, EER diagram with bussiness rules, and data analysis)
 
 # Contact
-**MySQL username**: root
-**MySQL password**: 20000517
+**MySQL username (personal database)**: root
+**MySQL password (personal database)**: 20000517
 
-**MySQL username (database 2)**: root
-**MySQL password (database 2)**: Summer31
+**MySQL username (work database)**: root
+**MySQL password (work database)**: Summer31
 
 **Preferred Email**: daij24@mcmaster.ca
 **Email**: david1147062956@163.com
