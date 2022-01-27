@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+import european_war_4_data_library
 import matplotlib
 
 class IllegalAbilityValues(Exception):
@@ -8,6 +9,9 @@ class IllegalQualificationValues(Exception):
     pass
 
 class IllegalPromotions(Exception):
+    pass
+
+class IllegalRank(Exception):
     pass
 
 class general:
@@ -54,6 +58,9 @@ class general:
 
         self.__rank_exp = 0
         self.__noble_class_exp = 0
+
+    def __repr__(self):
+        return str(self)
 
     def __str__(self):
         try:
@@ -128,14 +135,16 @@ class general:
         except:
             raise Exception()
 
-    def set_rank(self, adjustment: int, promotion=False):
-        if promotion:
-            if adjustment == 1:
-                self.rank += 1
-            else:
-                raise IllegalPromotions
-        else:
-            pass
+    def set_rank(self, datalib: european_war_4_data_library.data_library, adjustment: int, promotion=False):
+        try:
+            if adjustment not in datalib.get_general_rank():
+                raise IllegalRank("Error: ")
+            if not promotion:
+                self.__rank = adjustment
+            elif self.__rank < 150:
+                self.__rank = datalib.get_general_rank()[index(self.__rank) + 1]
+        except:
+            raise Exception()
 
     def get_rank(self):
         try:
@@ -149,7 +158,7 @@ class general:
         except:
             raise Exception()
 
-    def set_noble_class(self):
+    def set_noble_class(self, new_noble_class: int):
         pass
 
     def get_noble_class(self):
@@ -164,7 +173,19 @@ class general:
         except:
             raise Exception()
 
-    def regroup(self, other):
+    def regroup(self, other: general):
+        try:
+            pass
+        except:
+            raise Exception()
+
+    def general_analysis(self):
+        infantry_ability = 0
+        cavalry_ability = 0
+        artillery_ability = 0
+        pass
+
+    def visualization(self):
         pass
 
     def GUI(self):
