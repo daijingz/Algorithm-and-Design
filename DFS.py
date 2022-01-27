@@ -4,6 +4,8 @@
 # Linkedin: https://www.linkedin.com/in/jingze-dai/
 # Description: Depth First Search (DFS)
 from collections import defaultdict
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 class Graph:
@@ -109,3 +111,22 @@ class Graph:
         s = []
         self.DFSSub(v, s, visited)
         return s
+
+    def visualization(self):
+        x_points = np.array(self.get_node())
+        y_points = np.array(self.DFS(0))
+
+        plt.scatter(x_points, y_points)
+        plt.show()
+
+
+g5 = Graph(True)
+g5.add_edge((0, 1))
+g5.add_edge((1, 0))
+g5.add_edge((0, 2))
+g5.add_edge((2, 0))
+g5.add_edge((1, 2))
+g5.add_edge((2, 1))
+g5.add_edge((2, 3))
+g5.add_edge((3, 2))
+g5.visualization()
