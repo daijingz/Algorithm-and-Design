@@ -4,6 +4,8 @@
 # Linkedin: https://www.linkedin.com/in/jingze-dai/
 # Description: Breadth-First Search
 from collections import defaultdict
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 class TooFewEdges(Exception):
@@ -137,3 +139,19 @@ class Graph:
                     raise TooFewEdges()
 
         return output
+
+    def visualization(self):
+        x_points = np.array(self.get_node())
+        y_points = np.array(self.BFS(0))
+
+        plt.scatter(x_points, y_points)
+        plt.show()
+
+
+g1 = Graph(False)
+g1.add_edge((0, 1))
+g1.add_edge((0, 2))
+g1.add_edge((1, 2))
+g1.add_edge((2, 0))
+g1.add_edge((2, 3))
+g1.visualization()
