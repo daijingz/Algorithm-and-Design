@@ -19,6 +19,7 @@ This project includes algorithm designs with Python, C++, Java and other program
 ## Python version techniques and libraries
 
 * Basic Python programming tools
+* pygame
 * pytest (Unit testing)
 * File handling
 * JSON library
