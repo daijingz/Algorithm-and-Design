@@ -26,6 +26,7 @@ This project includes algorithm designs with Python, C++, Java and other program
 * Matplotlib library
 * Machine learning implementations
 * MySQL library (accessing mySQL workbench)
+* sqlite library
 * MongoDB library
 * PySimpleGUI (GUI tools)
 * Interesting application programs (very complex)
