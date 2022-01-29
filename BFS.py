@@ -140,9 +140,10 @@ class Graph:
 
         return output
 
-    def visualization(self):
+    def visualization(self, start_node: int):
+        """! BFS data visualization program """
         x_points = np.array(self.get_node())
-        y_points = np.array(self.BFS(0))
+        y_points = np.array(self.BFS(start_node))
 
         plt.scatter(x_points, y_points)
         plt.show()
@@ -154,4 +155,4 @@ g1.add_edge((0, 2))
 g1.add_edge((1, 2))
 g1.add_edge((2, 0))
 g1.add_edge((2, 3))
-g1.visualization()
+g1.visualization(2)
