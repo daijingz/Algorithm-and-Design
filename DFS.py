@@ -112,9 +112,10 @@ class Graph:
         self.DFSSub(v, s, visited)
         return s
 
-    def visualization(self):
+    def visualization(self, start_node: int):
+        """! DFS data visualization program """
         x_points = np.array(self.get_node())
-        y_points = np.array(self.DFS(0))
+        y_points = np.array(self.DFS(start_node))
 
         plt.scatter(x_points, y_points)
         plt.show()
@@ -129,4 +130,4 @@ g5.add_edge((1, 2))
 g5.add_edge((2, 1))
 g5.add_edge((2, 3))
 g5.add_edge((3, 2))
-g5.visualization()
+g5.visualization(2)
