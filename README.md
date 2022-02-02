@@ -1,5 +1,5 @@
 # Algorithm and Design
-Algorithm implementations and funny algorithm application programming works.
+Algorithm implementations and funny algorithm application programming works. This folder not only includes 
 
 # Documentation
 * To see application programs and projects please see **Application** folder. (https://github.com/daijingz/Algorithm-and-Design/tree/main/Applications)
