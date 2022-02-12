@@ -36,7 +36,7 @@
   <h3 align="center">Algorithm and Design Project Family</h3>
 
   <p align="center">
-    This project is mainly about algorithms' designs and implementations. This project includes more than 70 kinds of algorithm introduced by online tutorials, websites, textbooks, documentations and other resources. This page includes a complete menu for explaining categories of algorithms and other programs. To find the implementation file, please look at the file name provides on the back side of different modules.
+    This project family is about algorithms' designs and implementations. This project includes more than 70 kinds of algorithm introduced by online tutorials, websites, textbooks, documentations and other resources. This page includes a complete description for algorithms and other programs. To find the implementation file, please look at the file name provides on the back side of different modules.
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -81,10 +81,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Algorithms and 
+:smile: 
 
 Here's why:
 * Your time should be focused on creating something amazing. A project that solves a problem and helps others
@@ -104,7 +101,7 @@ Use the `BLANK_README.md` to get started.
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Python](https://www.python.org/) (With Pytest, PyGame, Scipy, Numpy, Pandas, matplotlib)
-* [React.js](https://reactjs.org/)
+* [React.js](https://reactjs.org/) (With JUnit)
 * [Vue.js](https://vuejs.org/)
 * [Angular](https://angular.io/)
 * [Svelte](https://svelte.dev/)
