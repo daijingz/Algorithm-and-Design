@@ -81,6 +81,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+![alt text](http://url/to/img.png)
+
 :smile: 
 
 Here's why:
