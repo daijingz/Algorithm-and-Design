@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>TestMaximumSubarray.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TestMaximumSubarray.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Test cases (Unit tests)</span>
+<span class="s2">import </span><span class="s1">unittest</span>
+<span class="s2">import </span><span class="s1">MaximumSubarray</span>
+
+
+<span class="s2">class </span><span class="s1">MyTestCase(unittest.TestCase):</span>
+    <span class="s2">def </span><span class="s1">test_eq(self):</span>
+        <span class="s1">MS1 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">95</span><span class="s2">, </span><span class="s3">185</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">MS2 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">95</span><span class="s2">, </span><span class="s3">185</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">MS1 == MS2)</span>
+
+        <span class="s1">MS3 = MaximumSubarray.MaximumSubarray([</span><span class="s3">150</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">2000</span><span class="s2">, </span><span class="s3">20000</span><span class="s2">, </span><span class="s3">1500</span><span class="s2">, </span><span class="s3">9000</span><span class="s1">]</span><span class="s2">, </span><span class="s3">150</span><span class="s1">)</span>
+        <span class="s1">MS4 = MaximumSubarray.MaximumSubarray([</span><span class="s3">150</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">2000</span><span class="s2">, </span><span class="s3">20000</span><span class="s2">, </span><span class="s3">1500</span><span class="s2">, </span><span class="s3">9000</span><span class="s1">]</span><span class="s2">, </span><span class="s3">150</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">MS3 == MS4)</span>
+
+        <span class="s1">MS5 = MaximumSubarray.MaximumSubarray([</span><span class="s3">80</span><span class="s2">, </span><span class="s3">90</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">150</span><span class="s2">, </span><span class="s3">120</span><span class="s1">]</span><span class="s2">, </span><span class="s3">80</span><span class="s1">)</span>
+        <span class="s1">MS6 = MaximumSubarray.MaximumSubarray([</span><span class="s3">80</span><span class="s2">, </span><span class="s3">90</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">150</span><span class="s2">, </span><span class="s3">120</span><span class="s1">]</span><span class="s2">, </span><span class="s3">80</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">MS5 == MS6)</span>
+
+        <span class="s1">MS7 = MaximumSubarray.MaximumSubarray([</span><span class="s3">10</span><span class="s2">, </span><span class="s3">20</span><span class="s2">, </span><span class="s3">15</span><span class="s2">, </span><span class="s3">21</span><span class="s2">, </span><span class="s3">32</span><span class="s2">, </span><span class="s3">17</span><span class="s2">, </span><span class="s3">19</span><span class="s2">, </span><span class="s3">25</span><span class="s1">]</span><span class="s2">, </span><span class="s3">10</span><span class="s1">)</span>
+        <span class="s1">MS8 = MaximumSubarray.MaximumSubarray([</span><span class="s3">10</span><span class="s2">, </span><span class="s3">20</span><span class="s2">, </span><span class="s3">15</span><span class="s2">, </span><span class="s3">21</span><span class="s2">, </span><span class="s3">32</span><span class="s2">, </span><span class="s3">17</span><span class="s2">, </span><span class="s3">19</span><span class="s2">, </span><span class="s3">25</span><span class="s1">]</span><span class="s2">, </span><span class="s3">10</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">MS7 == MS8)</span>
+
+        <span class="s1">MS9 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">110</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s2">, </span><span class="s3">100</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">MS10 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">110</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s2">, </span><span class="s3">100</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">MS9 == MS10)</span>
+
+    <span class="s2">def </span><span class="s1">test_setStartPrice(self):</span>
+        <span class="s1">MS1 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">95</span><span class="s2">, </span><span class="s3">185</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">MS1.setStartPrice(</span><span class="s3">80</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">80</span><span class="s2">, </span><span class="s1">MS1.getStartPrice())</span>
+
+        <span class="s1">MS2 = MaximumSubarray.MaximumSubarray([</span><span class="s3">150</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">2000</span><span class="s2">, </span><span class="s3">20000</span><span class="s2">, </span><span class="s3">1500</span><span class="s2">, </span><span class="s3">9000</span><span class="s1">]</span><span class="s2">, </span><span class="s3">150</span><span class="s1">)</span>
+        <span class="s1">MS2.setStartPrice(</span><span class="s3">180</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">180</span><span class="s2">, </span><span class="s1">MS2.getStartPrice())</span>
+
+        <span class="s1">MS3 = MaximumSubarray.MaximumSubarray([</span><span class="s3">80</span><span class="s2">, </span><span class="s3">90</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">150</span><span class="s2">, </span><span class="s3">120</span><span class="s1">]</span><span class="s2">, </span><span class="s3">80</span><span class="s1">)</span>
+        <span class="s1">MS3.setStartPrice(</span><span class="s3">200</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">200</span><span class="s2">, </span><span class="s1">MS3.getStartPrice())</span>
+
+        <span class="s1">MS4 = MaximumSubarray.MaximumSubarray([</span><span class="s3">10</span><span class="s2">, </span><span class="s3">20</span><span class="s2">, </span><span class="s3">15</span><span class="s2">, </span><span class="s3">21</span><span class="s2">, </span><span class="s3">32</span><span class="s2">, </span><span class="s3">17</span><span class="s2">, </span><span class="s3">19</span><span class="s2">, </span><span class="s3">25</span><span class="s1">]</span><span class="s2">, </span><span class="s3">10</span><span class="s1">)</span>
+        <span class="s1">MS4.setStartPrice(</span><span class="s3">20</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">20</span><span class="s2">, </span><span class="s1">MS4.getStartPrice())</span>
+        
+        <span class="s1">MS5 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">110</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s2">, </span><span class="s3">100</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">MS5.setStartPrice(</span><span class="s3">120</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">120</span><span class="s2">, </span><span class="s1">MS5.getStartPrice())</span>
+
+    <span class="s2">def </span><span class="s1">test_emptyDailyPrice(self):</span>
+        <span class="s1">MS1 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">95</span><span class="s2">, </span><span class="s3">185</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">MS1.emptyDailyPrice()</span>
+        <span class="s1">self.assertEqual([]</span><span class="s2">, </span><span class="s1">MS1.getDailyPrice())</span>
+
+        <span class="s1">MS2 = MaximumSubarray.MaximumSubarray([</span><span class="s3">150</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">2000</span><span class="s2">, </span><span class="s3">20000</span><span class="s2">, </span><span class="s3">1500</span><span class="s2">, </span><span class="s3">9000</span><span class="s1">]</span><span class="s2">, </span><span class="s3">150</span><span class="s1">)</span>
+        <span class="s1">MS2.emptyDailyPrice()</span>
+        <span class="s1">self.assertEqual([]</span><span class="s2">, </span><span class="s1">MS2.getDailyPrice())</span>
+
+        <span class="s1">MS3 = MaximumSubarray.MaximumSubarray([</span><span class="s3">80</span><span class="s2">, </span><span class="s3">90</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">150</span><span class="s2">, </span><span class="s3">120</span><span class="s1">]</span><span class="s2">, </span><span class="s3">80</span><span class="s1">)</span>
+        <span class="s1">MS3.emptyDailyPrice()</span>
+        <span class="s1">self.assertEqual([]</span><span class="s2">, </span><span class="s1">MS3.getDailyPrice())</span>
+
+        <span class="s1">MS4 = MaximumSubarray.MaximumSubarray([</span><span class="s3">10</span><span class="s2">, </span><span class="s3">20</span><span class="s2">, </span><span class="s3">15</span><span class="s2">, </span><span class="s3">21</span><span class="s2">, </span><span class="s3">32</span><span class="s2">, </span><span class="s3">17</span><span class="s2">, </span><span class="s3">19</span><span class="s2">, </span><span class="s3">25</span><span class="s1">]</span><span class="s2">, </span><span class="s3">10</span><span class="s1">)</span>
+        <span class="s1">MS4.emptyDailyPrice()</span>
+        <span class="s1">self.assertEqual([]</span><span class="s2">, </span><span class="s1">MS4.getDailyPrice())</span>
+
+        <span class="s1">MS5 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">110</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s2">, </span><span class="s3">100</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">MS5.emptyDailyPrice()</span>
+        <span class="s1">self.assertEqual([]</span><span class="s2">, </span><span class="s1">MS5.getDailyPrice())</span>
+
+    <span class="s2">def </span><span class="s1">test_addDailyPrice(self):</span>
+        <span class="s1">MS1 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">95</span><span class="s2">, </span><span class="s3">185</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">MS1.addDailyPrice(</span><span class="s3">130</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">130</span><span class="s2">, </span><span class="s1">MS1.getDailyPrice()[</span><span class="s3">5</span><span class="s1">])</span>
+        <span class="s1">MS1.addDailyPrice(</span><span class="s3">150</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">150</span><span class="s2">, </span><span class="s1">MS1.getDailyPrice()[</span><span class="s3">6</span><span class="s1">])</span>
+        <span class="s1">MS1.addDailyPrice(</span><span class="s3">115</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">115</span><span class="s2">, </span><span class="s1">MS1.getDailyPrice()[</span><span class="s3">7</span><span class="s1">])</span>
+
+        <span class="s1">MS2 = MaximumSubarray.MaximumSubarray([</span><span class="s3">150</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">2000</span><span class="s2">, </span><span class="s3">20000</span><span class="s2">, </span><span class="s3">1500</span><span class="s2">, </span><span class="s3">9000</span><span class="s1">]</span><span class="s2">, </span><span class="s3">150</span><span class="s1">)</span>
+        <span class="s1">MS2.addDailyPrice(</span><span class="s3">3000</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">3000</span><span class="s2">, </span><span class="s1">MS2.getDailyPrice()[</span><span class="s3">6</span><span class="s1">])</span>
+        <span class="s1">MS2.addDailyPrice(</span><span class="s3">1500</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">1500</span><span class="s2">, </span><span class="s1">MS2.getDailyPrice()[</span><span class="s3">7</span><span class="s1">])</span>
+        <span class="s1">MS2.addDailyPrice(</span><span class="s3">1150</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">1150</span><span class="s2">, </span><span class="s1">MS2.getDailyPrice()[</span><span class="s3">8</span><span class="s1">])</span>
+
+        <span class="s1">MS3 = MaximumSubarray.MaximumSubarray([</span><span class="s3">80</span><span class="s2">, </span><span class="s3">90</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">150</span><span class="s2">, </span><span class="s3">120</span><span class="s1">]</span><span class="s2">, </span><span class="s3">80</span><span class="s1">)</span>
+        <span class="s1">MS3.addDailyPrice(</span><span class="s3">80</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">80</span><span class="s2">, </span><span class="s1">MS3.getDailyPrice()[</span><span class="s3">6</span><span class="s1">])</span>
+        <span class="s1">MS3.addDailyPrice(</span><span class="s3">90</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">90</span><span class="s2">, </span><span class="s1">MS3.getDailyPrice()[</span><span class="s3">7</span><span class="s1">])</span>
+        <span class="s1">MS3.addDailyPrice(</span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">100</span><span class="s2">, </span><span class="s1">MS3.getDailyPrice()[</span><span class="s3">8</span><span class="s1">])</span>
+
+        <span class="s1">MS4 = MaximumSubarray.MaximumSubarray([</span><span class="s3">10</span><span class="s2">, </span><span class="s3">20</span><span class="s2">, </span><span class="s3">15</span><span class="s2">, </span><span class="s3">21</span><span class="s2">, </span><span class="s3">32</span><span class="s2">, </span><span class="s3">17</span><span class="s2">, </span><span class="s3">19</span><span class="s2">, </span><span class="s3">25</span><span class="s1">]</span><span class="s2">, </span><span class="s3">10</span><span class="s1">)</span>
+        <span class="s1">MS4.addDailyPrice(</span><span class="s3">10</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">10</span><span class="s2">, </span><span class="s1">MS4.getDailyPrice()[</span><span class="s3">8</span><span class="s1">])</span>
+        <span class="s1">MS4.addDailyPrice(</span><span class="s3">19</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">19</span><span class="s2">, </span><span class="s1">MS4.getDailyPrice()[</span><span class="s3">9</span><span class="s1">])</span>
+        <span class="s1">MS4.addDailyPrice(</span><span class="s3">21</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">21</span><span class="s2">, </span><span class="s1">MS4.getDailyPrice()[</span><span class="s3">10</span><span class="s1">])</span>
+        <span class="s1">MS4.addDailyPrice(</span><span class="s3">23</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">23</span><span class="s2">, </span><span class="s1">MS4.getDailyPrice()[</span><span class="s3">11</span><span class="s1">])</span>
+        <span class="s1">MS4.addDailyPrice(</span><span class="s3">25</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s3">25</span><span class="s2">, </span><span class="s1">MS4.getDailyPrice()[</span><span class="s3">12</span><span class="s1">])</span>
+
+    <span class="s2">def </span><span class="s1">test_emptyNet(self):</span>
+        <span class="s1">MS1 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">95</span><span class="s2">, </span><span class="s3">185</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">MS1.emptyNet()</span>
+        <span class="s1">self.assertEqual([]</span><span class="s2">, </span><span class="s1">MS1.getNet())</span>
+
+        <span class="s1">MS2 = MaximumSubarray.MaximumSubarray([</span><span class="s3">150</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">2000</span><span class="s2">, </span><span class="s3">20000</span><span class="s2">, </span><span class="s3">1500</span><span class="s2">, </span><span class="s3">9000</span><span class="s1">]</span><span class="s2">, </span><span class="s3">150</span><span class="s1">)</span>
+        <span class="s1">MS2.emptyNet()</span>
+        <span class="s1">self.assertEqual([]</span><span class="s2">, </span><span class="s1">MS2.getNet())</span>
+
+        <span class="s1">MS3 = MaximumSubarray.MaximumSubarray([</span><span class="s3">80</span><span class="s2">, </span><span class="s3">90</span><span class="s2">, </span><span class="s3">100</span><span class="s2">, </span><span class="s3">200</span><span class="s2">, </span><span class="s3">150</span><span class="s2">, </span><span class="s3">120</span><span class="s1">]</span><span class="s2">, </span><span class="s3">80</span><span class="s1">)</span>
+        <span class="s1">MS3.emptyNet()</span>
+        <span class="s1">self.assertEqual([]</span><span class="s2">, </span><span class="s1">MS3.getNet())</span>
+
+        <span class="s1">MS4 = MaximumSubarray.MaximumSubarray([</span><span class="s3">10</span><span class="s2">, </span><span class="s3">20</span><span class="s2">, </span><span class="s3">15</span><span class="s2">, </span><span class="s3">21</span><span class="s2">, </span><span class="s3">32</span><span class="s2">, </span><span class="s3">17</span><span class="s2">, </span><span class="s3">19</span><span class="s2">, </span><span class="s3">25</span><span class="s1">]</span><span class="s2">, </span><span class="s3">10</span><span class="s1">)</span>
+        <span class="s1">MS4.emptyNet()</span>
+        <span class="s1">self.assertEqual([]</span><span class="s2">, </span><span class="s1">MS4.getNet())</span>
+
+        <span class="s1">MS5 = MaximumSubarray.MaximumSubarray([</span><span class="s3">100</span><span class="s2">, </span><span class="s3">110</span><span class="s2">, </span><span class="s3">120</span><span class="s2">, </span><span class="s3">110</span><span class="s2">, </span><span class="s3">100</span><span class="s1">]</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+        <span class="s1">MS5.emptyNet()</span>
+        <span class="s1">self.assertEqual([]</span><span class="s2">, </span><span class="s1">MS5.getNet())</span></pre>
+</body>
+</html>

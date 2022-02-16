@@ -1,0 +1,146 @@
+<html>
+<head>
+<title>TestAGraph.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TestAGraph.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Date: 16/02/2021</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s2">import </span><span class="s1">unittest</span>
+<span class="s2">import </span><span class="s1">Approximation_Graph</span>
+
+
+<span class="s2">class </span><span class="s1">MyTestCase(unittest.TestCase):</span>
+    <span class="s2">def </span><span class="s1">test_eq(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Test Approximation_graph programs' __eq__ methods&quot;&quot;&quot;</span>
+        <span class="s1">G1 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G1.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G1.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G1.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+
+        <span class="s1">G2 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G2.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G2.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G2.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">G1 == G2)</span>
+
+        <span class="s1">G3 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+
+        <span class="s1">G4 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">G3 == G4)</span>
+
+        <span class="s1">G5 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+
+        <span class="s1">G6 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G6.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G6.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">G6.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G6.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G6.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">G6.addEdge(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">G5 == G6)</span>
+
+        <span class="s1">G7 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G7.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G7.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G7.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G7.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">G7.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G7.addEdge(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+
+        <span class="s1">G8 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G8.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G8.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G8.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G8.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">G8.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G8.addEdge(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">G7 == G8)</span>
+
+        <span class="s1">G9 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G9.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G9.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">G9.addEdge(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G9.addEdge(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G9.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+
+        <span class="s1">G10 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G10.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G10.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">G10.addEdge(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G10.addEdge(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G10.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">G9 == G10)</span>
+
+    <span class="s2">def </span><span class="s1">test_FindVertexCover(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Test Approximation_graph programs' getting-vertex-cover methods&quot;&quot;&quot;</span>
+        <span class="s1">G1 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G1.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G1.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G1.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(G1.FindVertexCover()</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">])</span>
+
+        <span class="s1">G2 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G2.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G2.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G2.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G2.addEdge(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">G2.addEdge(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(G2.FindVertexCover()</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">])</span>
+
+        <span class="s1">G3 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">G3.addEdge(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(G3.FindVertexCover()</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">3</span><span class="s1">])</span>
+
+        <span class="s1">G4 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G4.addEdge(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(G4.FindVertexCover()</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">])</span>
+
+        <span class="s1">G5 = Approximation_Graph.Approximation_Graph()</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">G5.addEdge(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(G5.FindVertexCover()</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">4</span><span class="s1">])</span></pre>
+</body>
+</html>

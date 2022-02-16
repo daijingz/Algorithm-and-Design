@@ -1,0 +1,259 @@
+<html>
+<head>
+<title>TestStack.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #6897bb;}
+.s5 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TestStack.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Test cases (Unit tests)</span>
+<span class="s2">import </span><span class="s1">unittest</span>
+<span class="s2">import </span><span class="s1">Stack</span>
+
+
+<span class="s2">class </span><span class="s1">MyTestCase(unittest.TestCase):</span>
+    <span class="s2">def </span><span class="s1">test_isEmpty(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of isEmpty method &quot;&quot;&quot;</span>
+        <span class="s1">Stack1 = Stack.Stack()</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">Stack1.isEmpty())</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">False, </span><span class="s1">Stack1.isEmpty())</span>
+
+        <span class="s1">Stack2 = Stack.Stack()</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">Stack2.isEmpty())</span>
+        <span class="s1">Stack2.setBody([</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">False, </span><span class="s1">Stack2.isEmpty())</span>
+
+        <span class="s1">Stack3 = Stack.Stack()</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">Stack3.isEmpty())</span>
+        <span class="s1">Stack3.setBody([</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">False, </span><span class="s1">Stack3.isEmpty())</span>
+
+        <span class="s1">Stack4 = Stack.Stack()</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">Stack4.isEmpty())</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">4</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">False, </span><span class="s1">Stack4.isEmpty())</span>
+
+        <span class="s1">Stack5 = Stack.Stack()</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">Stack5.isEmpty())</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">5</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">False, </span><span class="s1">Stack5.isEmpty())</span>
+
+    <span class="s2">def </span><span class="s1">test_makeEmpty(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of makeEmpty method &quot;&quot;&quot;</span>
+        <span class="s1">Stack1 = Stack.Stack()</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">4</span><span class="s1">])</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">5</span><span class="s1">])</span>
+        <span class="s1">Stack1.makeEmpty()</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">Stack1.isEmpty())</span>
+
+        <span class="s1">Stack2 = Stack.Stack()</span>
+        <span class="s1">Stack1.makeEmpty()</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">Stack2.isEmpty())</span>
+
+        <span class="s1">Stack3 = Stack.Stack()</span>
+        <span class="s1">Stack3.setBody([</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">Stack3.setBody([</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">Stack3.setBody([</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">Stack3.makeEmpty()</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">Stack3.isEmpty())</span>
+
+        <span class="s1">Stack4 = Stack.Stack()</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">4</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">5</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">6</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">7</span><span class="s1">])</span>
+        <span class="s1">Stack4.makeEmpty()</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">Stack4.isEmpty())</span>
+
+        <span class="s1">Stack5 = Stack.Stack()</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">4</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">5</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">6</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">7</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">8</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">9</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">10</span><span class="s1">])</span>
+        <span class="s1">Stack5.makeEmpty()</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">Stack5.isEmpty())</span>
+
+    <span class="s2">def </span><span class="s1">test_size_len(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of size and len method &quot;&quot;&quot;</span>
+        <span class="s1">Stack1 = Stack.Stack()</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">4</span><span class="s1">])</span>
+        <span class="s1">Stack1.setBody([</span><span class="s4">5</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">5</span><span class="s2">, </span><span class="s1">Stack1.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">5</span><span class="s2">, </span><span class="s1">len(Stack1))</span>
+
+        <span class="s1">Stack2 = Stack.Stack()</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">0</span><span class="s2">, </span><span class="s1">Stack2.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">0</span><span class="s2">, </span><span class="s1">len(Stack2))</span>
+
+        <span class="s1">Stack3 = Stack.Stack()</span>
+        <span class="s1">Stack3.setBody([</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">Stack3.setBody([</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">Stack3.setBody([</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">3</span><span class="s2">, </span><span class="s1">Stack3.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">3</span><span class="s2">, </span><span class="s1">len(Stack3))</span>
+
+        <span class="s1">Stack4 = Stack.Stack()</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">4</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">5</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">6</span><span class="s1">])</span>
+        <span class="s1">Stack4.setBody([</span><span class="s4">7</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">7</span><span class="s2">, </span><span class="s1">Stack4.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">7</span><span class="s2">, </span><span class="s1">len(Stack4))</span>
+
+        <span class="s1">Stack5 = Stack.Stack()</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">4</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">5</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">6</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">7</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">8</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">9</span><span class="s1">])</span>
+        <span class="s1">Stack5.setBody([</span><span class="s4">10</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">10</span><span class="s2">, </span><span class="s1">Stack5.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">10</span><span class="s2">, </span><span class="s1">len(Stack5))</span>
+
+    <span class="s2">def </span><span class="s1">test_push(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of push method &quot;&quot;&quot;</span>
+        <span class="s1">Stack1 = Stack.Stack()</span>
+        <span class="s1">Stack1.push(</span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">Stack1.push(</span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">Stack1.push(</span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">1</span><span class="s2">, </span><span class="s1">Stack1.getBody()[</span><span class="s4">0</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2</span><span class="s2">, </span><span class="s1">Stack1.getBody()[</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">3</span><span class="s2">, </span><span class="s1">Stack1.getBody()[</span><span class="s4">2</span><span class="s1">])</span>
+
+        <span class="s1">Stack2 = Stack.Stack()</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;1&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;2&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;3&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;4&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;5&quot;</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s5">&quot;1&quot;</span><span class="s2">, </span><span class="s1">Stack2.getBody()[</span><span class="s4">0</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s5">&quot;2&quot;</span><span class="s2">, </span><span class="s1">Stack2.getBody()[</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s5">&quot;3&quot;</span><span class="s2">, </span><span class="s1">Stack2.getBody()[</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s5">&quot;4&quot;</span><span class="s2">, </span><span class="s1">Stack2.getBody()[</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s5">&quot;5&quot;</span><span class="s2">, </span><span class="s1">Stack2.getBody()[</span><span class="s4">4</span><span class="s1">])</span>
+
+        <span class="s1">Stack3 = Stack.Stack()</span>
+        <span class="s1">Stack3.push(</span><span class="s4">1.86</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">2.15</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">2.34</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">5.76</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">9.81</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">1.86</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">0</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2.15</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2.34</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">5.76</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">3</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">9.81</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">4</span><span class="s1">])</span>
+
+    <span class="s2">def </span><span class="s1">test_pop(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of pop method &quot;&quot;&quot;</span>
+        <span class="s1">Stack1 = Stack.Stack()</span>
+        <span class="s1">Stack1.push(</span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">Stack1.push(</span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">Stack1.push(</span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">Stack1.pop()</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2</span><span class="s2">, </span><span class="s1">Stack1.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">1</span><span class="s2">, </span><span class="s1">Stack1.getBody()[</span><span class="s4">0</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2</span><span class="s2">, </span><span class="s1">Stack1.getBody()[</span><span class="s4">1</span><span class="s1">])</span>
+
+        <span class="s1">Stack2 = Stack.Stack()</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;1&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;2&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;3&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;4&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;5&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.pop()</span>
+        <span class="s1">Stack2.pop()</span>
+        <span class="s1">Stack2.pop()</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2</span><span class="s2">, </span><span class="s1">Stack2.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s5">&quot;1&quot;</span><span class="s2">, </span><span class="s1">Stack2.getBody()[</span><span class="s4">0</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s5">&quot;2&quot;</span><span class="s2">, </span><span class="s1">Stack2.getBody()[</span><span class="s4">1</span><span class="s1">])</span>
+
+        <span class="s1">Stack3 = Stack.Stack()</span>
+        <span class="s1">Stack3.push(</span><span class="s4">1.86</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">2.15</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">2.34</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">5.76</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">9.81</span><span class="s1">)</span>
+        <span class="s1">Stack3.pop()</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">4</span><span class="s2">, </span><span class="s1">Stack3.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">1.86</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">0</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2.15</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2.34</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">5.76</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">3</span><span class="s1">])</span>
+
+    <span class="s2">def </span><span class="s1">test_delete(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of delete method &quot;&quot;&quot;</span>
+        <span class="s1">Stack1 = Stack.Stack()</span>
+        <span class="s1">Stack1.push(</span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">Stack1.push(</span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">Stack1.push(</span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">Stack1.pop()</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2</span><span class="s2">, </span><span class="s1">Stack1.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">1</span><span class="s2">, </span><span class="s1">Stack1.getBody()[</span><span class="s4">0</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2</span><span class="s2">, </span><span class="s1">Stack1.getBody()[</span><span class="s4">1</span><span class="s1">])</span>
+
+        <span class="s1">Stack2 = Stack.Stack()</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;1&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;2&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;3&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;4&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.push(</span><span class="s5">&quot;5&quot;</span><span class="s1">)</span>
+        <span class="s1">Stack2.pop()</span>
+        <span class="s1">Stack2.pop()</span>
+        <span class="s1">Stack2.pop()</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2</span><span class="s2">, </span><span class="s1">Stack2.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s5">&quot;1&quot;</span><span class="s2">, </span><span class="s1">Stack2.getBody()[</span><span class="s4">0</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s5">&quot;2&quot;</span><span class="s2">, </span><span class="s1">Stack2.getBody()[</span><span class="s4">1</span><span class="s1">])</span>
+
+        <span class="s1">Stack3 = Stack.Stack()</span>
+        <span class="s1">Stack3.push(</span><span class="s4">1.86</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">2.15</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">2.34</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">5.76</span><span class="s1">)</span>
+        <span class="s1">Stack3.push(</span><span class="s4">9.81</span><span class="s1">)</span>
+        <span class="s1">Stack3.pop()</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">4</span><span class="s2">, </span><span class="s1">Stack3.size())</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">1.86</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">0</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2.15</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">1</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">2.34</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">2</span><span class="s1">])</span>
+        <span class="s1">self.assertEqual(</span><span class="s4">5.76</span><span class="s2">, </span><span class="s1">Stack3.getBody()[</span><span class="s4">3</span><span class="s1">])</span></pre>
+</body>
+</html>

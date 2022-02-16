@@ -1,0 +1,207 @@
+<html>
+<head>
+<title>TestDFS.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TestDFS.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Test cases (Unit tests)</span>
+<span class="s2">import </span><span class="s1">unittest</span>
+<span class="s2">import </span><span class="s1">DFS</span>
+
+
+<span class="s2">class </span><span class="s1">MyTestCase(unittest.TestCase):</span>
+    <span class="s2">def </span><span class="s1">test_eq(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of __eq__ Method &quot;&quot;&quot;</span>
+        <span class="s1">g1 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g1.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g1.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g1.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g1.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">g1.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+
+        <span class="s1">g2 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g2.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g2.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g2.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g2.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">g2.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">g1 == g2)</span>
+
+        <span class="s1">g3 = DFS.Graph(</span><span class="s2">True</span><span class="s1">)</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">3</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+
+        <span class="s1">g4 = DFS.Graph(</span><span class="s2">True</span><span class="s1">)</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">3</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">g3 == g4)</span>
+
+        <span class="s1">g5 = DFS.Graph(</span><span class="s2">True</span><span class="s1">)</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+
+        <span class="s1">g6 = DFS.Graph(</span><span class="s2">True</span><span class="s1">)</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">g5 == g6)</span>
+
+        <span class="s1">g7 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g7.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g7.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g7.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g7.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g7.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g7.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+
+        <span class="s1">g8 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g8.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g8.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g8.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g8.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g8.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g8.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">g7 == g8)</span>
+
+        <span class="s1">g9 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g9.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g9.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g9.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g9.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g9.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g9.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+
+        <span class="s1">g10 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g10.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g10.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g10.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g10.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g10.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g10.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">g9 == g10)</span>
+
+        <span class="s1">g11 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">6</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">6</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">5</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g11.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+
+        <span class="s1">g12 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">6</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">6</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">5</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g12.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(</span><span class="s2">True, </span><span class="s1">g11 == g12)</span>
+
+    <span class="s2">def </span><span class="s1">test_DFS(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of DFS Method &quot;&quot;&quot;</span>
+        <span class="s1">g1 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g1.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g1.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g1.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g1.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">g1.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(g1.DFS(</span><span class="s4">0</span><span class="s1">)</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">])</span>
+
+        <span class="s1">g2 = DFS.Graph(</span><span class="s2">True</span><span class="s1">)</span>
+        <span class="s1">g2.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g2.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g2.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g2.add_edge((</span><span class="s4">3</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g2.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(g2.DFS(</span><span class="s4">0</span><span class="s1">)</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s2">, </span><span class="s4">4</span><span class="s1">])</span>
+
+        <span class="s1">g3 = DFS.Graph(</span><span class="s2">True</span><span class="s1">)</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">0</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g3.add_edge((</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(g3.DFS(</span><span class="s4">0</span><span class="s1">)</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">3</span><span class="s1">])</span>
+
+        <span class="s1">g4 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g4.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(g4.DFS(</span><span class="s4">0</span><span class="s1">)</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">5</span><span class="s2">, </span><span class="s4">4</span><span class="s1">])</span>
+
+        <span class="s1">g5 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g5.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(g5.DFS(</span><span class="s4">0</span><span class="s1">)</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s2">, </span><span class="s4">6</span><span class="s2">, </span><span class="s4">3</span><span class="s2">, </span><span class="s4">5</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">1</span><span class="s1">])</span>
+
+        <span class="s1">g6 = DFS.Graph(</span><span class="s2">False</span><span class="s1">)</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">0</span><span class="s2">, </span><span class="s4">6</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">1</span><span class="s2">, </span><span class="s4">6</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">6</span><span class="s2">, </span><span class="s4">5</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">5</span><span class="s2">, </span><span class="s4">4</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">4</span><span class="s2">, </span><span class="s4">3</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">))</span>
+        <span class="s1">g6.add_edge((</span><span class="s4">2</span><span class="s2">, </span><span class="s4">1</span><span class="s1">))</span>
+        <span class="s1">self.assertEqual(g6.DFS(</span><span class="s4">0</span><span class="s1">)</span><span class="s2">, </span><span class="s1">[</span><span class="s4">0</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">6</span><span class="s2">, </span><span class="s4">5</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">3</span><span class="s2">, </span><span class="s4">2</span><span class="s1">])</span></pre>
+</body>
+</html>

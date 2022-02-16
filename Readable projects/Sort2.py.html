@@ -1,0 +1,167 @@
+<html>
+<head>
+<title>Sort2.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #6897bb;}
+.s5 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Sort2.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Other interesting sorting methods</span>
+
+<span class="s2">class </span><span class="s1">OtherErrors(Exception):</span>
+    <span class="s3">&quot;&quot;&quot;! Exception for all other problems&quot;&quot;&quot;</span>
+    <span class="s2">pass</span>
+
+
+<span class="s2">def </span><span class="s1">checkAvailable(inputList):</span>
+    <span class="s3">&quot;&quot;&quot;! Function Check whether it is correct and appropriate&quot;&quot;&quot;</span>
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s1">i = </span><span class="s4">0</span>
+        <span class="s2">while </span><span class="s1">i &lt; len(inputList):</span>
+            <span class="s2">if not </span><span class="s1">isinstance(inputList[i]</span><span class="s2">, </span><span class="s1">(float</span><span class="s2">, </span><span class="s1">int)):</span>
+                <span class="s2">return False</span>
+            <span class="s1">i += </span><span class="s4">1</span>
+
+        <span class="s2">for </span><span class="s1">j </span><span class="s2">in </span><span class="s1">inputList:</span>
+            <span class="s2">if </span><span class="s1">inputList.count(j) &gt; </span><span class="s4">1</span><span class="s1">:</span>
+                <span class="s2">return False</span>
+            <span class="s2">elif </span><span class="s1">j == </span><span class="s4">0</span><span class="s1">:</span>
+                <span class="s2">return False</span>
+
+        <span class="s2">return True</span>
+    <span class="s2">except</span><span class="s1">:</span>
+        <span class="s2">raise </span><span class="s1">OtherErrors(</span><span class="s5">&quot;Other errors founded.&quot;</span><span class="s1">)</span>
+
+
+<span class="s2">def </span><span class="s1">heapify(array</span><span class="s2">, </span><span class="s1">n</span><span class="s2">, </span><span class="s1">i):</span>
+    <span class="s3">&quot;&quot;&quot;! heapSort helper function&quot;&quot;&quot;</span>
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s1">largest = i</span>
+        <span class="s1">left = </span><span class="s4">2 </span><span class="s1">* i + </span><span class="s4">1</span>
+        <span class="s1">right = </span><span class="s4">2 </span><span class="s1">* i + </span><span class="s4">2</span>
+
+        <span class="s2">if </span><span class="s1">left &lt; n </span><span class="s2">and </span><span class="s1">array[largest] &lt; array[left]:</span>
+            <span class="s1">largest = left</span>
+
+        <span class="s2">if </span><span class="s1">right &lt; n </span><span class="s2">and </span><span class="s1">array[largest] &lt; array[right]:</span>
+            <span class="s1">largest = right</span>
+
+        <span class="s2">if </span><span class="s1">largest != i:</span>
+            <span class="s1">array[i]</span><span class="s2">, </span><span class="s1">array[largest] = array[largest]</span><span class="s2">, </span><span class="s1">array[i]</span>
+            <span class="s1">heapify(array</span><span class="s2">, </span><span class="s1">n</span><span class="s2">, </span><span class="s1">largest)</span>
+    <span class="s2">except</span><span class="s1">:</span>
+        <span class="s2">raise </span><span class="s1">OtherErrors(</span><span class="s5">&quot;Other errors founded.&quot;</span><span class="s1">)</span>
+
+
+<span class="s2">def </span><span class="s1">heapSort(array):</span>
+    <span class="s3">&quot;&quot;&quot;! heapSort function&quot;&quot;&quot;</span>
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s1">n = len(array)</span>
+
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(n // </span><span class="s4">2 </span><span class="s1">- </span><span class="s4">1</span><span class="s2">, </span><span class="s1">-</span><span class="s4">1</span><span class="s2">, </span><span class="s1">-</span><span class="s4">1</span><span class="s1">):</span>
+            <span class="s1">heapify(array</span><span class="s2">, </span><span class="s1">n</span><span class="s2">, </span><span class="s1">i)</span>
+
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(n - </span><span class="s4">1</span><span class="s2">, </span><span class="s4">0</span><span class="s2">, </span><span class="s1">-</span><span class="s4">1</span><span class="s1">):</span>
+            <span class="s1">array[i]</span><span class="s2">, </span><span class="s1">array[</span><span class="s4">0</span><span class="s1">] = array[</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s1">array[i]</span>
+            <span class="s1">heapify(array</span><span class="s2">, </span><span class="s1">i</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+    <span class="s2">except</span><span class="s1">:</span>
+        <span class="s2">raise </span><span class="s1">OtherErrors(</span><span class="s5">&quot;Other errors founded.&quot;</span><span class="s1">)</span>
+
+
+<span class="s2">def </span><span class="s1">countingSort(array</span><span class="s2">, </span><span class="s1">expr):</span>
+    <span class="s3">&quot;&quot;&quot;! radixSort helper function&quot;&quot;&quot;</span>
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s1">n = len(array)</span>
+        <span class="s1">output = [</span><span class="s4">0</span><span class="s1">] * n</span>
+        <span class="s1">count = [</span><span class="s4">0</span><span class="s1">] * </span><span class="s4">50</span>
+
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(</span><span class="s4">0</span><span class="s2">, </span><span class="s1">n):</span>
+            <span class="s1">index = array[i] // expr</span>
+            <span class="s1">count[index % </span><span class="s4">10</span><span class="s1">] += </span><span class="s4">1</span>
+
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">10</span><span class="s1">):</span>
+            <span class="s1">count[i] += count[i - </span><span class="s4">1</span><span class="s1">]</span>
+
+        <span class="s1">i = n - </span><span class="s4">1</span>
+        <span class="s2">while </span><span class="s1">i &gt;= </span><span class="s4">0</span><span class="s1">:</span>
+            <span class="s1">index = array[i] // expr</span>
+            <span class="s1">output[count[index % </span><span class="s4">10</span><span class="s1">] - </span><span class="s4">1</span><span class="s1">] = array[i]</span>
+            <span class="s1">count[index % </span><span class="s4">10</span><span class="s1">] -= </span><span class="s4">1</span>
+            <span class="s1">i -= </span><span class="s4">1</span>
+
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(</span><span class="s4">0</span><span class="s2">, </span><span class="s1">len(array)):</span>
+            <span class="s1">array[i] = output[i]</span>
+    <span class="s2">except</span><span class="s1">:</span>
+        <span class="s2">raise </span><span class="s1">OtherErrors(</span><span class="s5">&quot;Other errors founded.&quot;</span><span class="s1">)</span>
+
+
+<span class="s2">def </span><span class="s1">radixSort(array):</span>
+    <span class="s3">&quot;&quot;&quot;! radixSort function&quot;&quot;&quot;</span>
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s2">if </span><span class="s1">len(array) &lt;= </span><span class="s4">0</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">[]</span>
+        <span class="s1">max1 = max(array)</span>
+
+        <span class="s1">exp_num = </span><span class="s4">1</span>
+        <span class="s2">while </span><span class="s1">max1 / exp_num &gt; </span><span class="s4">1</span><span class="s1">:</span>
+            <span class="s1">countingSort(array</span><span class="s2">, </span><span class="s1">exp_num)</span>
+            <span class="s1">exp_num *= </span><span class="s4">10</span>
+    <span class="s2">except</span><span class="s1">:</span>
+        <span class="s2">raise </span><span class="s1">OtherErrors(</span><span class="s5">&quot;Other errors founded.&quot;</span><span class="s1">)</span>
+
+
+<span class="s2">def </span><span class="s1">insertionSort(array: list):</span>
+    <span class="s3">&quot;&quot;&quot;! bucketSort helper function&quot;&quot;&quot;</span>
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(</span><span class="s4">1</span><span class="s2">, </span><span class="s1">len(array)):</span>
+            <span class="s1">up = array[i]</span>
+            <span class="s1">j = i - </span><span class="s4">1</span>
+            <span class="s2">while </span><span class="s1">j &gt;= </span><span class="s4">0 </span><span class="s2">and </span><span class="s1">array[j] &gt; up:</span>
+                <span class="s1">array[j + </span><span class="s4">1</span><span class="s1">] = array[j]</span>
+                <span class="s1">j -= </span><span class="s4">1</span>
+            <span class="s1">array[j + </span><span class="s4">1</span><span class="s1">] = up</span>
+        <span class="s2">return </span><span class="s1">array</span>
+    <span class="s2">except</span><span class="s1">:</span>
+        <span class="s2">raise </span><span class="s1">OtherErrors(</span><span class="s5">&quot;Other errors founded.&quot;</span><span class="s1">)</span>
+
+
+<span class="s2">def </span><span class="s1">bucketSort(input_list: list):</span>
+    <span class="s3">&quot;&quot;&quot;! bucketSort function&quot;&quot;&quot;</span>
+    <span class="s2">try</span><span class="s1">:</span>
+        <span class="s1">array = []</span>
+        <span class="s1">slots = </span><span class="s4">10</span>
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(slots):</span>
+            <span class="s1">array.append([])</span>
+
+        <span class="s2">for </span><span class="s1">j </span><span class="s2">in </span><span class="s1">input_list:</span>
+            <span class="s1">index_b = int(slots * j)</span>
+            <span class="s1">array[index_b].append(j)</span>
+
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(slots):</span>
+            <span class="s1">array[i] = insertionSort(array[i])</span>
+
+        <span class="s1">k = </span><span class="s4">0</span>
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(slots):</span>
+            <span class="s2">for </span><span class="s1">j </span><span class="s2">in </span><span class="s1">range(len(array[i])):</span>
+                <span class="s1">input_list[k] = array[i][j]</span>
+                <span class="s1">k += </span><span class="s4">1</span>
+        <span class="s2">return </span><span class="s1">input_list</span>
+    <span class="s2">except</span><span class="s1">:</span>
+        <span class="s2">raise </span><span class="s1">OtherErrors(</span><span class="s5">&quot;Other errors founded.&quot;</span><span class="s1">)</span></pre>
+</body>
+</html>

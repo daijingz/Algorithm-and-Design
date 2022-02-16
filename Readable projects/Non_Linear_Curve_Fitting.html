@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>Non_Linear_Curve_Fitting</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Non_Linear_Curve_Fitting</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Non-linear curve fitting (drawing non-linear curves for 2-dimensional data points)</span>
+
+
+<span class="s0"># fit a second degree polynomial to the economic data</span>
+<span class="s2">from </span><span class="s1">numpy </span><span class="s2">import </span><span class="s1">arange</span>
+<span class="s2">from </span><span class="s1">pandas </span><span class="s2">import </span><span class="s1">read_csv</span>
+<span class="s2">from </span><span class="s1">scipy.optimize </span><span class="s2">import </span><span class="s1">curve_fit</span>
+<span class="s2">from </span><span class="s1">matplotlib </span><span class="s2">import </span><span class="s1">pyplot</span>
+
+
+<span class="s0"># define the true objective function</span>
+<span class="s2">def </span><span class="s1">objective(x</span><span class="s2">, </span><span class="s1">a</span><span class="s2">, </span><span class="s1">b</span><span class="s2">, </span><span class="s1">c):</span>
+    <span class="s2">return </span><span class="s1">a * x + b * x ** </span><span class="s3">2 </span><span class="s1">+ c</span>
+
+
+<span class="s0"># load the dataset</span>
+<span class="s1">url = </span><span class="s4">'https://raw.githubusercontent.com/jbrownlee/Datasets/master/longley.csv'</span>
+<span class="s1">dataframe = read_csv(url</span><span class="s2">, </span><span class="s1">header=</span><span class="s2">None</span><span class="s1">)</span>
+<span class="s1">data = dataframe.values</span>
+<span class="s0"># choose the input and output variables</span>
+<span class="s1">x</span><span class="s2">, </span><span class="s1">y = data[:</span><span class="s2">, </span><span class="s3">4</span><span class="s1">]</span><span class="s2">, </span><span class="s1">data[:</span><span class="s2">, </span><span class="s1">-</span><span class="s3">1</span><span class="s1">]</span>
+<span class="s0"># curve fit</span>
+<span class="s1">popt</span><span class="s2">, </span><span class="s1">_ = curve_fit(objective</span><span class="s2">, </span><span class="s1">x</span><span class="s2">, </span><span class="s1">y)</span>
+<span class="s0"># summarize the parameter values</span>
+<span class="s1">a</span><span class="s2">, </span><span class="s1">b</span><span class="s2">, </span><span class="s1">c = popt</span>
+<span class="s1">print(</span><span class="s4">'y = %.5f * x + %.5f * x^2 + %.5f' </span><span class="s1">% (a</span><span class="s2">, </span><span class="s1">b</span><span class="s2">, </span><span class="s1">c))</span>
+<span class="s0"># plot input vs output</span>
+<span class="s1">pyplot.scatter(x</span><span class="s2">, </span><span class="s1">y)</span>
+<span class="s0"># define a sequence of inputs between the smallest and largest known inputs</span>
+<span class="s1">x_line = arange(min(x)</span><span class="s2">, </span><span class="s1">max(x)</span><span class="s2">, </span><span class="s3">1</span><span class="s1">)</span>
+<span class="s0"># calculate the output for the range</span>
+<span class="s1">y_line = objective(x_line</span><span class="s2">, </span><span class="s1">a</span><span class="s2">, </span><span class="s1">b</span><span class="s2">, </span><span class="s1">c)</span>
+<span class="s0"># create a line plot for the mapping function</span>
+<span class="s1">pyplot.plot(x_line</span><span class="s2">, </span><span class="s1">y_line</span><span class="s2">, </span><span class="s4">'--'</span><span class="s2">, </span><span class="s1">color=</span><span class="s4">'red'</span><span class="s1">)</span>
+<span class="s1">pyplot.show()</span></pre>
+</body>
+</html>

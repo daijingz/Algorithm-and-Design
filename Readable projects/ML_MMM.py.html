@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>ML_MMM.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ML_MMM.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Machine Learning Algorithm: Mean, Median and Mode</span>
+<span class="s2">import </span><span class="s1">numpy</span>
+<span class="s2">import </span><span class="s1">statistics</span>
+<span class="s2">from </span><span class="s1">scipy </span><span class="s2">import </span><span class="s1">stats</span>
+
+
+<span class="s2">class </span><span class="s1">ML_Input:</span>
+    <span class="s2">def </span><span class="s1">__init__(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Setting an empty tree with a central node (including values) &quot;&quot;&quot;</span>
+        <span class="s1">self.__data = []</span>
+
+    <span class="s2">def </span><span class="s1">getData(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Get data values &quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">self.__data</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s2">def </span><span class="s1">addData(self</span><span class="s2">, </span><span class="s1">data):</span>
+        <span class="s3">&quot;&quot;&quot;! Add data values &quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">if </span><span class="s1">type(data) </span><span class="s2">not in </span><span class="s1">[int</span><span class="s2">, </span><span class="s1">float]:</span>
+                <span class="s2">raise </span><span class="s1">TypeError()</span>
+            <span class="s1">self.__data = self.__data + [float(data)]</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s2">def </span><span class="s1">Mean(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Find mean values &quot;&quot;&quot;</span>
+        <span class="s2">return </span><span class="s1">statistics.mean(self.getData())</span>
+
+    <span class="s2">def </span><span class="s1">ownMean(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Own function about finding mean values &quot;&quot;&quot;</span>
+        <span class="s2">if </span><span class="s1">len(self.__data) == </span><span class="s4">0</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s4">0</span>
+        <span class="s1">input1 = self.getData()</span>
+        <span class="s1">sum1 = sum(input1)</span>
+        <span class="s2">return </span><span class="s1">sum1/len(input1)</span>
+
+    <span class="s2">def </span><span class="s1">Median(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Find median values &quot;&quot;&quot;</span>
+        <span class="s2">return </span><span class="s1">numpy.median(self.getData())</span>
+
+    <span class="s2">def </span><span class="s1">ownMedian(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Own function about finding median values &quot;&quot;&quot;</span>
+        <span class="s1">input1 = self.getData()</span>
+        <span class="s1">input1.sort()</span>
+        <span class="s2">if </span><span class="s1">len(input1) % </span><span class="s4">2 </span><span class="s1">== </span><span class="s4">0</span><span class="s1">:</span>
+            <span class="s1">median1 = len(input1) // </span><span class="s4">2</span>
+            <span class="s1">median2 = len(input1) // </span><span class="s4">2 </span><span class="s1">+ </span><span class="s4">1</span>
+            <span class="s2">return </span><span class="s1">(input1[median1] + input1[median2])/</span><span class="s4">2</span>
+        <span class="s2">else</span><span class="s1">:</span>
+            <span class="s1">median = len(input1) // </span><span class="s4">2</span>
+            <span class="s2">return </span><span class="s1">input1[median]</span>
+
+    <span class="s2">def </span><span class="s1">Mode(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Find mode values &quot;&quot;&quot;</span>
+        <span class="s2">return </span><span class="s1">stats.mode(self.getData())</span>
+
+    <span class="s2">def </span><span class="s1">ownMode(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Own function about finding mode values &quot;&quot;&quot;</span>
+        <span class="s1">occur = </span><span class="s4">0</span>
+        <span class="s1">output = </span><span class="s2">None</span>
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">self.getData():</span>
+            <span class="s2">if </span><span class="s1">self.getData().count(i) &gt; occur:</span>
+                <span class="s1">occur = self.getData().count(i)</span>
+                <span class="s1">output = i</span>
+        <span class="s2">return </span><span class="s1">output</span>
+
+    <span class="s2">def </span><span class="s1">filter_data(self</span><span class="s2">, </span><span class="s1">value</span><span class="s2">, </span><span class="s1">distance):</span>
+        <span class="s3">&quot;&quot;&quot;! Find all appropriate data values with given values and range &quot;&quot;&quot;</span>
+        <span class="s2">if </span><span class="s1">type(value) </span><span class="s2">not in </span><span class="s1">[int</span><span class="s2">, </span><span class="s1">float]:</span>
+            <span class="s2">raise </span><span class="s1">TypeError()</span>
+        <span class="s2">if </span><span class="s1">type(distance) </span><span class="s2">not in </span><span class="s1">[int</span><span class="s2">, </span><span class="s1">float]:</span>
+            <span class="s2">raise </span><span class="s1">TypeError()</span>
+        <span class="s1">new_data = []</span>
+        <span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">self.__data:</span>
+            <span class="s2">if </span><span class="s1">abs(float(i) - value) &lt; distance:</span>
+                <span class="s1">new_data += [i]</span>
+        <span class="s1">self.__data = new_data</span>
+
+    <span class="s2">def </span><span class="s1">filter_data2(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Find all appropriate data values with given information &quot;&quot;&quot;</span>
+        <span class="s2">return </span><span class="s1">self</span></pre>
+</body>
+</html>

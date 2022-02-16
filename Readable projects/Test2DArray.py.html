@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>Test2DArray.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Test2DArray.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Test cases (Unit tests)</span>
+<span class="s2">import </span><span class="s1">unittest</span>
+<span class="s2">import </span><span class="s1">twoD_array</span>
+
+
+<span class="s2">class </span><span class="s1">MyTestCase(unittest.TestCase):</span>
+    <span class="s2">def </span><span class="s1">test_init(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of __init__ Method &quot;&quot;&quot;</span>
+        <span class="s1">array1 = twoD_array.twoD_array(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array1.get_body()</span><span class="s2">, </span><span class="s1">[[</span><span class="s4">0</span><span class="s1">]])</span>
+
+        <span class="s1">array2 = twoD_array.twoD_array(</span><span class="s4">2</span><span class="s2">, </span><span class="s4">5</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">4</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_body()[</span><span class="s4">1</span><span class="s1">][</span><span class="s4">4</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_body()[</span><span class="s4">1</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+
+        <span class="s1">array3 = twoD_array.twoD_array(</span><span class="s4">20</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">19</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_body()[</span><span class="s4">19</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_body()[</span><span class="s4">19</span><span class="s1">][</span><span class="s4">19</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+
+        <span class="s1">array4 = twoD_array.twoD_array(</span><span class="s4">10</span><span class="s2">, </span><span class="s4">10</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array4.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array4.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">9</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array4.get_body()[</span><span class="s4">9</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array4.get_body()[</span><span class="s4">9</span><span class="s1">][</span><span class="s4">9</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+
+        <span class="s1">array5 = twoD_array.twoD_array(</span><span class="s4">5</span><span class="s2">, </span><span class="s4">5</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array5.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array5.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">4</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array5.get_body()[</span><span class="s4">4</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array5.get_body()[</span><span class="s4">4</span><span class="s1">][</span><span class="s4">4</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+
+    <span class="s2">def </span><span class="s1">test_set_x(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of set_x Method &quot;&quot;&quot;</span>
+        <span class="s1">array1 = twoD_array.twoD_array(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">array1.set_x(</span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array1.get_x()</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">array1.set_x(</span><span class="s4">6</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array1.get_x()</span><span class="s2">, </span><span class="s4">6</span><span class="s1">)</span>
+        <span class="s1">array1.set_x(</span><span class="s4">10</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array1.get_x()</span><span class="s2">, </span><span class="s4">10</span><span class="s1">)</span>
+
+        <span class="s1">array2 = twoD_array.twoD_array(</span><span class="s4">7</span><span class="s2">, </span><span class="s4">5</span><span class="s1">)</span>
+        <span class="s1">array2.set_x(</span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_x()</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">array2.set_x(</span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_x()</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">array2.set_x(</span><span class="s4">8</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_x()</span><span class="s2">, </span><span class="s4">8</span><span class="s1">)</span>
+        <span class="s1">array2.set_x(</span><span class="s4">13</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_x()</span><span class="s2">, </span><span class="s4">13</span><span class="s1">)</span>
+
+        <span class="s1">array3 = twoD_array.twoD_array(</span><span class="s4">20</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+        <span class="s1">array3.set_x(</span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_x()</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">array3.set_x(</span><span class="s4">20</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_x()</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+        <span class="s1">array3.set_x(</span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_x()</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">array3.set_x(</span><span class="s4">20</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_x()</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+
+    <span class="s2">def </span><span class="s1">test_set_y(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of set_y Method &quot;&quot;&quot;</span>
+        <span class="s1">array1 = twoD_array.twoD_array(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">array1.set_y(</span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array1.get_y()</span><span class="s2">, </span><span class="s4">3</span><span class="s1">)</span>
+        <span class="s1">array1.set_y(</span><span class="s4">6</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array1.get_y()</span><span class="s2">, </span><span class="s4">6</span><span class="s1">)</span>
+        <span class="s1">array1.set_y(</span><span class="s4">10</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array1.get_y()</span><span class="s2">, </span><span class="s4">10</span><span class="s1">)</span>
+
+        <span class="s1">array2 = twoD_array.twoD_array(</span><span class="s4">7</span><span class="s2">, </span><span class="s4">5</span><span class="s1">)</span>
+        <span class="s1">array2.set_y(</span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_y()</span><span class="s2">, </span><span class="s4">4</span><span class="s1">)</span>
+        <span class="s1">array2.set_y(</span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_y()</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">array2.set_y(</span><span class="s4">8</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_y()</span><span class="s2">, </span><span class="s4">8</span><span class="s1">)</span>
+        <span class="s1">array2.set_y(</span><span class="s4">13</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array2.get_y()</span><span class="s2">, </span><span class="s4">13</span><span class="s1">)</span>
+
+        <span class="s1">array3 = twoD_array.twoD_array(</span><span class="s4">20</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+        <span class="s1">array3.set_y(</span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_y()</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">array3.set_y(</span><span class="s4">20</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_y()</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+        <span class="s1">array3.set_y(</span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_y()</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+        <span class="s1">array3.set_y(</span><span class="s4">20</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array3.get_y()</span><span class="s2">, </span><span class="s4">20</span><span class="s1">)</span>
+
+    <span class="s2">def </span><span class="s1">test_set_point(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of set_point Method &quot;&quot;&quot;</span>
+        <span class="s1">array6 = twoD_array.twoD_array(</span><span class="s4">10</span><span class="s2">, </span><span class="s4">10</span><span class="s1">)</span>
+        <span class="s1">array6.set_point(</span><span class="s4">9</span><span class="s2">, </span><span class="s4">9</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array6.get_body()[</span><span class="s4">8</span><span class="s1">][</span><span class="s4">8</span><span class="s1">]</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">array6.set_point(</span><span class="s4">8</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">16</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array6.get_body()[</span><span class="s4">7</span><span class="s1">][</span><span class="s4">3</span><span class="s1">]</span><span class="s2">, </span><span class="s4">16</span><span class="s1">)</span>
+        <span class="s1">array6.set_point(</span><span class="s4">7</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">9</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array6.get_body()[</span><span class="s4">6</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">9</span><span class="s1">)</span>
+
+        <span class="s1">array7 = twoD_array.twoD_array(</span><span class="s4">5</span><span class="s2">, </span><span class="s4">5</span><span class="s1">)</span>
+        <span class="s1">array7.set_point(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">6</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array7.get_body()[</span><span class="s4">3</span><span class="s1">][</span><span class="s4">3</span><span class="s1">]</span><span class="s2">, </span><span class="s4">6</span><span class="s1">)</span>
+        <span class="s1">array7.set_point(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">19</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array7.get_body()[</span><span class="s4">3</span><span class="s1">][</span><span class="s4">3</span><span class="s1">]</span><span class="s2">, </span><span class="s4">19</span><span class="s1">)</span>
+
+        <span class="s1">array8 = twoD_array.twoD_array(</span><span class="s4">8</span><span class="s2">, </span><span class="s4">8</span><span class="s1">)</span>
+        <span class="s1">array8.set_point(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">7</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array8.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">7</span><span class="s1">)</span>
+
+    <span class="s2">def </span><span class="s1">test_empty(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Testing of empty Method &quot;&quot;&quot;</span>
+        <span class="s1">array6 = twoD_array.twoD_array(</span><span class="s4">10</span><span class="s2">, </span><span class="s4">10</span><span class="s1">)</span>
+        <span class="s1">array6.set_point(</span><span class="s4">9</span><span class="s2">, </span><span class="s4">9</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array6.get_body()[</span><span class="s4">8</span><span class="s1">][</span><span class="s4">8</span><span class="s1">]</span><span class="s2">, </span><span class="s4">2</span><span class="s1">)</span>
+        <span class="s1">array6.set_point(</span><span class="s4">8</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">16</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array6.get_body()[</span><span class="s4">7</span><span class="s1">][</span><span class="s4">3</span><span class="s1">]</span><span class="s2">, </span><span class="s4">16</span><span class="s1">)</span>
+        <span class="s1">array6.set_point(</span><span class="s4">7</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">9</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array6.get_body()[</span><span class="s4">6</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">9</span><span class="s1">)</span>
+
+        <span class="s1">array6.empty()</span>
+        <span class="s1">self.assertEqual(array6.get_body()[</span><span class="s4">8</span><span class="s1">][</span><span class="s4">8</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array6.get_body()[</span><span class="s4">7</span><span class="s1">][</span><span class="s4">3</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array6.get_body()[</span><span class="s4">6</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+
+        <span class="s1">array7 = twoD_array.twoD_array(</span><span class="s4">5</span><span class="s2">, </span><span class="s4">5</span><span class="s1">)</span>
+        <span class="s1">array7.set_point(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">6</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array7.get_body()[</span><span class="s4">3</span><span class="s1">][</span><span class="s4">3</span><span class="s1">]</span><span class="s2">, </span><span class="s4">6</span><span class="s1">)</span>
+        <span class="s1">array7.set_point(</span><span class="s4">4</span><span class="s2">, </span><span class="s4">4</span><span class="s2">, </span><span class="s4">19</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array7.get_body()[</span><span class="s4">3</span><span class="s1">][</span><span class="s4">3</span><span class="s1">]</span><span class="s2">, </span><span class="s4">19</span><span class="s1">)</span>
+
+        <span class="s1">array7.empty()</span>
+        <span class="s1">self.assertEqual(array7.get_body()[</span><span class="s4">3</span><span class="s1">][</span><span class="s4">3</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array7.get_body()[</span><span class="s4">3</span><span class="s1">][</span><span class="s4">3</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span>
+
+        <span class="s1">array8 = twoD_array.twoD_array(</span><span class="s4">8</span><span class="s2">, </span><span class="s4">8</span><span class="s1">)</span>
+        <span class="s1">array8.set_point(</span><span class="s4">1</span><span class="s2">, </span><span class="s4">1</span><span class="s2">, </span><span class="s4">7</span><span class="s1">)</span>
+        <span class="s1">self.assertEqual(array8.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">7</span><span class="s1">)</span>
+
+        <span class="s1">array8.empty()</span>
+        <span class="s1">self.assertEqual(array8.get_body()[</span><span class="s4">0</span><span class="s1">][</span><span class="s4">0</span><span class="s1">]</span><span class="s2">, </span><span class="s4">0</span><span class="s1">)</span></pre>
+</body>
+</html>

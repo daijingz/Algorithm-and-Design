@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>Approximation_Graph.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Approximation_Graph.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Undirected graph with approximation method (To find algorithms)</span>
+<span class="s2">from </span><span class="s1">collections </span><span class="s2">import </span><span class="s1">defaultdict</span>
+
+
+<span class="s2">class </span><span class="s1">Approximation_Graph:</span>
+    <span class="s2">def </span><span class="s1">__init__(self):</span>
+        <span class="s3">&quot;&quot;&quot;! 
+        @return a graph object with bodies and nodes 
+        &quot;&quot;&quot;</span>
+        <span class="s1">self.vertices = [] </span><span class="s0"># Time Complexity: O(1)</span>
+        <span class="s1">self.graph = defaultdict(list) </span><span class="s0"># Time Complexity: O(1)</span>
+
+    <span class="s0"># Constructor Total Time Complexity: O(1) + O(1) = O(1)</span>
+
+    <span class="s2">def </span><span class="s1">get_vertices(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Get vertices values of an object&quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">self.vertices </span><span class="s0"># Time Complexity: O(1)</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s0"># Method Total Time Complexity: O(1)</span>
+
+    <span class="s2">def </span><span class="s1">get_graph(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Get graph body values of an object&quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">self.graph </span><span class="s0"># Time Complexity: O(1)</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s0"># Method Total Time Complexity: O(1)</span>
+
+    <span class="s2">def </span><span class="s1">__str__(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Returns the string of all vertices&quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">str(self.vertices)</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s0"># Method Total Time Complexity: O(1)</span>
+
+    <span class="s2">def </span><span class="s1">__len__(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Returns the length of all vertices&quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">len(self.vertices)</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s0"># Method Total Time Complexity: O(1)</span>
+
+    <span class="s2">def </span><span class="s1">__eq__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s3">&quot;&quot;&quot;! Compare whether 2 graph objects are equal&quot;&quot;&quot;</span>
+        <span class="s2">if </span><span class="s1">isinstance(other</span><span class="s2">, </span><span class="s1">Approximation_Graph):</span>
+            <span class="s2">if </span><span class="s1">self.vertices != other.vertices:</span>
+                <span class="s2">return False</span>
+            <span class="s2">elif </span><span class="s1">self.graph != other.graph:</span>
+                <span class="s2">return False</span>
+            <span class="s2">return True</span>
+        <span class="s2">return False</span>
+
+    <span class="s2">def </span><span class="s1">addEdge(self</span><span class="s2">, </span><span class="s1">vertex1</span><span class="s2">, </span><span class="s1">vertex2):</span>
+        <span class="s3">&quot;&quot;&quot;! Add a new edge to a new graph object&quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">if </span><span class="s1">self.vertices.count(vertex1) == </span><span class="s4">0</span><span class="s1">: </span><span class="s0"># Time Complexity: O(1)</span>
+                <span class="s1">self.vertices += [vertex1]</span>
+            <span class="s2">if </span><span class="s1">self.vertices.count(vertex2) == </span><span class="s4">0</span><span class="s1">: </span><span class="s0"># Time Complexity: O(1)</span>
+                <span class="s1">self.vertices += [vertex2]</span>
+            <span class="s1">self.graph[vertex1].append(vertex2) </span><span class="s0"># Time Complexity: O(1)</span>
+            <span class="s1">self.graph[vertex2].append(vertex1) </span><span class="s0"># Time Complexity: O(1)</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s0"># Method Total Time Complexity: O(1) + O(1) + O(1) + O(1) = O(1)</span>
+
+    <span class="s2">def </span><span class="s1">FindVertexCover(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Find the smallest vertex cover of an undirected graph&quot;&quot;&quot;</span>
+        <span class="s1">Visited = [</span><span class="s2">False</span><span class="s1">] * len(self.vertices) </span><span class="s0"># Initially all nodes have not been visited</span>
+        <span class="s1">Output = [] </span><span class="s0"># Output shows the vertex set of vertex cover</span>
+        <span class="s2">for </span><span class="s1">vertex </span><span class="s2">in </span><span class="s1">range(len(self.vertices)):</span>
+            <span class="s2">if not </span><span class="s1">Visited[vertex]:</span>
+                <span class="s0"># Select edges that both connected vertices have not been visited</span>
+                <span class="s0"># Reachable edges are ignored</span>
+                <span class="s2">for </span><span class="s1">edge </span><span class="s2">in </span><span class="s1">self.graph[vertex]:</span>
+                    <span class="s2">if not </span><span class="s1">Visited[edge]:</span>
+                        <span class="s1">Visited[edge] = </span><span class="s2">True</span>
+                        <span class="s1">Visited[vertex] = </span><span class="s2">True</span>
+                <span class="s0"># Collect vertex to output list</span>
+                <span class="s1">Output += [vertex]</span>
+        <span class="s2">return </span><span class="s1">Output </span><span class="s0"># Time Complexity: O(1)</span>
+
+    <span class="s0"># Method Total Time Complexity: O(V + E)</span></pre>
+</body>
+</html>

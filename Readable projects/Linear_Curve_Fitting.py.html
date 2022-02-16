@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Linear_Curve_Fitting.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Linear_Curve_Fitting.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Linear curve fitting (drawing linear curves for 2-dimensional data points)</span>
+<span class="s0"># fit a straight line to the economic data</span>
+<span class="s2">from </span><span class="s1">numpy </span><span class="s2">import </span><span class="s1">arange</span>
+<span class="s2">from </span><span class="s1">pandas </span><span class="s2">import </span><span class="s1">read_csv</span>
+<span class="s2">from </span><span class="s1">scipy.optimize </span><span class="s2">import </span><span class="s1">curve_fit</span>
+<span class="s2">from </span><span class="s1">matplotlib </span><span class="s2">import </span><span class="s1">pyplot</span>
+
+
+<span class="s2">def </span><span class="s1">objective(variable_x</span><span class="s2">, </span><span class="s1">val_a</span><span class="s2">, </span><span class="s1">val_b):</span>
+    <span class="s2">return </span><span class="s1">val_a * variable_x + val_b</span>
+
+
+<span class="s0"># load the dataset</span>
+<span class="s1">url = </span><span class="s3">'https://raw.githubusercontent.com/jbrownlee/Datasets/master/longley.csv'</span>
+<span class="s1">dataframe = read_csv(url</span><span class="s2">, </span><span class="s1">header=</span><span class="s2">None</span><span class="s1">)</span>
+<span class="s1">data = dataframe.values</span>
+<span class="s0"># choose the input and output variables</span>
+<span class="s1">x</span><span class="s2">, </span><span class="s1">y = data[:</span><span class="s2">, </span><span class="s4">4</span><span class="s1">]</span><span class="s2">, </span><span class="s1">data[:</span><span class="s2">, </span><span class="s1">-</span><span class="s4">1</span><span class="s1">]</span>
+<span class="s0"># curve fit</span>
+<span class="s1">popt</span><span class="s2">, </span><span class="s1">_ = curve_fit(objective</span><span class="s2">, </span><span class="s1">x</span><span class="s2">, </span><span class="s1">y)</span>
+<span class="s0"># summarize the parameter values</span>
+<span class="s1">a</span><span class="s2">, </span><span class="s1">b = popt</span>
+<span class="s1">print(</span><span class="s3">'y = %.5f * x + %.5f' </span><span class="s1">% (a</span><span class="s2">, </span><span class="s1">b))</span>
+<span class="s0"># plot input vs output</span>
+<span class="s1">pyplot.scatter(x</span><span class="s2">, </span><span class="s1">y)</span>
+<span class="s0"># define a sequence of inputs between the smallest and largest known inputs</span>
+<span class="s1">x_line = arange(min(x)</span><span class="s2">, </span><span class="s1">max(x)</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span>
+<span class="s0"># calculate the output for the range</span>
+<span class="s1">y_line = objective(x_line</span><span class="s2">, </span><span class="s1">a</span><span class="s2">, </span><span class="s1">b)</span>
+<span class="s0"># create a line plot for the mapping function</span>
+<span class="s1">pyplot.plot(x_line</span><span class="s2">, </span><span class="s1">y_line</span><span class="s2">, </span><span class="s3">'--'</span><span class="s2">, </span><span class="s1">color=</span><span class="s3">'red'</span><span class="s1">)</span>
+<span class="s1">pyplot.show()</span></pre>
+</body>
+</html>

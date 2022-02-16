@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>QuickUnion.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #629755; font-style: italic;}
+.s5 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+QuickUnion.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Quick Union</span>
+
+
+<span class="s2">class </span><span class="s1">QuickUnion:</span>
+    <span class="s2">def </span><span class="s1">__init__(self</span><span class="s2">, </span><span class="s1">number=</span><span class="s3">0</span><span class="s1">):</span>
+        <span class="s4">&quot;&quot;&quot;! QuickUnion object constructor &quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s1">number = int(number)</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+        <span class="s2">finally</span><span class="s1">:</span>
+            <span class="s2">if </span><span class="s1">number &gt; </span><span class="s3">0</span><span class="s1">:</span>
+                <span class="s1">self.__length = number</span>
+                <span class="s1">self.__points = [x </span><span class="s2">for </span><span class="s1">x </span><span class="s2">in </span><span class="s1">range(number + </span><span class="s3">1</span><span class="s1">)]</span>
+            <span class="s2">else</span><span class="s1">:</span>
+                <span class="s1">self.__length = </span><span class="s3">10</span>
+                <span class="s1">self.__points = [x </span><span class="s2">for </span><span class="s1">x </span><span class="s2">in </span><span class="s1">range(</span><span class="s3">11</span><span class="s1">)]</span>
+
+    <span class="s2">def </span><span class="s1">get_length(self):</span>
+        <span class="s4">&quot;&quot;&quot;! Getting objects' groups value &quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">self.__length</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s2">def </span><span class="s1">get_points(self):</span>
+        <span class="s4">&quot;&quot;&quot;! Getting objects' points value &quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">self.__points</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s2">def </span><span class="s1">is_connected(self</span><span class="s2">, </span><span class="s1">p</span><span class="s2">, </span><span class="s1">q):</span>
+        <span class="s4">&quot;&quot;&quot;! Check 2 parts of an object about whether they are connected or not &quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">self.find(p) == self.find(q)</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s2">def </span><span class="s1">find(self</span><span class="s2">, </span><span class="s1">p):</span>
+        <span class="s4">&quot;&quot;&quot;! Find method &quot;&quot;&quot;</span>
+        <span class="s2">while </span><span class="s1">p != self.__points[p]:</span>
+            <span class="s1">p = self.__points[p]</span>
+        <span class="s2">return </span><span class="s1">p</span>
+
+    <span class="s2">def </span><span class="s1">union(self</span><span class="s2">, </span><span class="s1">p</span><span class="s2">, </span><span class="s1">q):</span>
+        <span class="s4">&quot;&quot;&quot;! Union method &quot;&quot;&quot;</span>
+        <span class="s1">parent = self.find(p)</span>
+        <span class="s1">child = self.find(q)</span>
+        <span class="s2">if </span><span class="s1">parent == child:</span>
+            <span class="s2">return</span>
+
+        <span class="s1">self.__length -= </span><span class="s3">1</span>
+        <span class="s1">self.__points[child] = parent</span>
+
+    <span class="s2">def </span><span class="s1">__str__(self):</span>
+        <span class="s4">&quot;&quot;&quot;! Return the string form of object &quot;&quot;&quot;</span>
+        <span class="s2">return </span><span class="s5">&quot;groups: {0}; points: {1}&quot;</span><span class="s1">.format(self.__length</span><span class="s2">, </span><span class="s1">self.__points)</span>
+
+    <span class="s2">def </span><span class="s1">__repr__(self):</span>
+        <span class="s4">&quot;&quot;&quot;! Return a printable representation of object &quot;&quot;&quot;</span>
+        <span class="s2">return </span><span class="s1">str(self)</span>
+
+    <span class="s2">def </span><span class="s1">__eq__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s4">&quot;&quot;&quot;! Check 2 objects on whether they are equal &quot;&quot;&quot;</span>
+        <span class="s2">if </span><span class="s1">isinstance(other</span><span class="s2">, </span><span class="s1">QuickUnion):</span>
+            <span class="s2">if </span><span class="s1">self.__points == other.__points </span><span class="s2">and </span><span class="s1">self.__length == other.__length:</span>
+                <span class="s2">return True</span>
+        <span class="s2">return False</span></pre>
+</body>
+</html>

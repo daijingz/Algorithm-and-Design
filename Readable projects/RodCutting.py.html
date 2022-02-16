@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>RodCutting.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #629755; font-style: italic;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+RodCutting.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Author: Jingze Dai</span>
+<span class="s0"># Email Address: daij24@mcmaster.ca or david1147062956@163.com</span>
+<span class="s0"># Github: https://github.com/daijingz</span>
+<span class="s0"># Linkedin: https://www.linkedin.com/in/jingze-dai/</span>
+<span class="s0"># Description: Rod Cutting Problem</span>
+
+
+<span class="s2">class </span><span class="s1">Rod:</span>
+    <span class="s2">def </span><span class="s1">__init__(self</span><span class="s2">, </span><span class="s1">length: int</span><span class="s2">, </span><span class="s1">price: list):</span>
+        <span class="s3">&quot;&quot;&quot;! 
+        Construct a Rod object for rod cutting algorithm 
+        @:param length      length of rod 
+        @:param price       price list of different length's rods 
+        &quot;&quot;&quot;</span>
+        <span class="s2">if </span><span class="s1">length &lt;= </span><span class="s4">0</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+        <span class="s1">self.__length = length</span>
+
+        <span class="s2">if </span><span class="s1">len(price) &gt; length:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+        <span class="s2">elif </span><span class="s1">price[</span><span class="s4">0</span><span class="s1">] &lt;= </span><span class="s4">0</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+        <span class="s1">i = </span><span class="s4">0</span>
+        <span class="s2">while </span><span class="s1">i &lt; len(price) - </span><span class="s4">1</span><span class="s1">:</span>
+            <span class="s2">if </span><span class="s1">price[i] &gt;= price[i + </span><span class="s4">1</span><span class="s1">]:</span>
+                <span class="s2">raise </span><span class="s1">Exception()</span>
+            <span class="s1">i += </span><span class="s4">1</span>
+        <span class="s1">self.__price = price</span>
+
+    <span class="s2">def </span><span class="s1">get_length(self):</span>
+        <span class="s3">&quot;&quot;&quot;! @return length of Rod object &quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">self.__length</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s2">def </span><span class="s1">get_price(self):</span>
+        <span class="s3">&quot;&quot;&quot;! @return price list of Rod object &quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">self.__price</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s2">def </span><span class="s1">set_rod(self</span><span class="s2">, </span><span class="s1">length: int</span><span class="s2">, </span><span class="s1">price: list):</span>
+        <span class="s3">&quot;&quot;&quot;! Reset rod values&quot;&quot;&quot;</span>
+        <span class="s1">self.__length = length</span>
+
+        <span class="s2">if </span><span class="s1">len(price) &gt; length:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+        <span class="s2">elif </span><span class="s1">price[</span><span class="s4">0</span><span class="s1">] &lt;= </span><span class="s4">0</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+        <span class="s1">i = </span><span class="s4">0</span>
+        <span class="s2">while </span><span class="s1">i &lt; len(price) - </span><span class="s4">1</span><span class="s1">:</span>
+            <span class="s2">if </span><span class="s1">price[i] &gt;= price[i + </span><span class="s4">1</span><span class="s1">]:</span>
+                <span class="s2">raise </span><span class="s1">Exception()</span>
+            <span class="s1">i += </span><span class="s4">1</span>
+        <span class="s1">self.__price = price</span>
+
+    <span class="s2">def </span><span class="s1">empty_object(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Empty a rod object &quot;&quot;&quot;</span>
+        <span class="s2">try</span><span class="s1">:</span>
+            <span class="s1">self.__length = </span><span class="s4">0</span>
+            <span class="s1">self.__price = []</span>
+        <span class="s2">except</span><span class="s1">:</span>
+            <span class="s2">raise </span><span class="s1">Exception()</span>
+
+    <span class="s2">def </span><span class="s1">__eq__(self</span><span class="s2">, </span><span class="s1">other):</span>
+        <span class="s3">&quot;&quot;&quot;! Compare 2 Rod objects to check whether they are equal &quot;&quot;&quot;</span>
+        <span class="s2">if </span><span class="s1">isinstance(other</span><span class="s2">, </span><span class="s1">Rod):</span>
+            <span class="s2">return </span><span class="s1">self.__length == other.__length </span><span class="s2">and </span><span class="s1">self.__price == other.__price</span>
+        <span class="s2">return False</span>
+
+    <span class="s2">def </span><span class="s1">Cut_Rod(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Cut rod algorithm implementations &quot;&quot;&quot;</span>
+        <span class="s2">if </span><span class="s1">self.__length &lt;= </span><span class="s4">0</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s4">0</span>
+        <span class="s1">q</span><span class="s2">, </span><span class="s1">i = </span><span class="s4">0</span><span class="s2">, </span><span class="s4">0</span>
+        <span class="s1">length = self.__length</span>
+        <span class="s1">price = self.__price</span>
+        <span class="s2">while </span><span class="s1">i &lt; self.__length:</span>
+            <span class="s1">self.__length = self.__length - i - </span><span class="s4">1</span>
+            <span class="s1">q = max(q</span><span class="s2">, </span><span class="s1">self.__price[i] + self.Cut_Rod())</span>
+            <span class="s1">i += </span><span class="s4">1</span>
+            <span class="s1">self.__length = length</span>
+            <span class="s1">self.__price = price</span>
+        <span class="s2">return </span><span class="s1">q</span>
+
+    <span class="s2">def </span><span class="s1">Mem_Cut_Rod(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Memorized cut rod algorithm implementations &quot;&quot;&quot;</span>
+        <span class="s1">i = </span><span class="s4">0</span>
+        <span class="s1">r = []</span>
+        <span class="s2">while </span><span class="s1">i &lt; self.__length:</span>
+            <span class="s1">r += [</span><span class="s4">0</span><span class="s1">]</span>
+            <span class="s1">i += </span><span class="s4">1</span>
+        <span class="s2">return </span><span class="s1">self.Mem_Cut_Rod_Aux(r)</span>
+
+    <span class="s2">def </span><span class="s1">Mem_Cut_Rod_Aux(self</span><span class="s2">, </span><span class="s1">r):</span>
+        <span class="s3">&quot;&quot;&quot;! Helper function of memorized cut rod algorithm implementations &quot;&quot;&quot;</span>
+        <span class="s2">if </span><span class="s1">self.__length &lt; len(r) </span><span class="s2">and </span><span class="s1">r[self.__length] &gt; </span><span class="s4">0</span><span class="s1">:</span>
+            <span class="s2">return </span><span class="s1">r[self.__length]</span>
+        <span class="s2">if </span><span class="s1">self.__length &lt;= </span><span class="s4">0</span><span class="s1">:</span>
+            <span class="s1">q = </span><span class="s4">0</span>
+        <span class="s2">else</span><span class="s1">:</span>
+            <span class="s1">q = - </span><span class="s4">1000000</span>
+            <span class="s1">j = </span><span class="s4">0</span>
+            <span class="s1">length = self.__length</span>
+            <span class="s1">price = self.__price</span>
+            <span class="s2">while </span><span class="s1">j &lt; self.__length:</span>
+                <span class="s1">self.__length = self.__length - j - </span><span class="s4">1</span>
+                <span class="s1">q = max(q</span><span class="s2">, </span><span class="s1">self.__price[j] + self.Mem_Cut_Rod_Aux(r))</span>
+                <span class="s1">j += </span><span class="s4">1</span>
+                <span class="s1">self.__length = length</span>
+                <span class="s1">self.__price = price</span>
+        <span class="s1">r += [q]</span>
+        <span class="s2">return </span><span class="s1">q</span>
+
+    <span class="s2">def </span><span class="s1">analysis(self):</span>
+        <span class="s3">&quot;&quot;&quot;! Rod cutting problem analyzing &quot;&quot;&quot;</span>
+        <span class="s1">i = </span><span class="s4">0</span>
+        <span class="s1">output = []</span>
+        <span class="s2">while </span><span class="s1">i &lt; len(self.__price):</span>
+            <span class="s1">output += [self.__price[i] / (i + </span><span class="s4">1</span><span class="s1">)]</span>
+            <span class="s1">i += </span><span class="s4">1</span>
+        <span class="s1">output.sort()</span>
+        <span class="s2">return </span><span class="s1">output</span></pre>
+</body>
+</html>
