@@ -43,7 +43,7 @@
     <br />
     <a href="https://github.com/daijingz/Algorithm-and-Design/tree/main">View Demo</a>
     ·
-    <a href="https://github.com/daijingz/Algorithm-and-Design/tree/main">Report Bug</a>
+    <a href="#contact">Report Bug</a>
     ·
     <a href="https://github.com/daijingz/Algorithm-and-Design/tree/main">Request Feature</a>
   </p>
