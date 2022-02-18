@@ -70,35 +70,54 @@ class twoD_array:
             raise ValueError("Error: x not in the range")
         elif y > self.__y:
             raise ValueError("Error: y not in the  range")
-        elif value <= 0:
+        elif value < 0:
             raise IllegalPointValue("Error: Point value should be non-negative integer value")
 
         row, col = x - 1, y - 1
         self.__body[row][col] = value
 
     def empty(self):
-        self.__body = []
-        i, j = 0, 0
-        while i < self.__x:
-            subarray = []
-            while j < self.__y:
-                subarray += [0]
-                j += 1
-            j = 0
-            self.__body += [subarray]
-            i += 1
+        """! With given coordinates, insert values inside"""
+        try:
+            self.__body = []
+            i, j = 0, 0
+            while i < self.__x:
+                subarray = []
+                while j < self.__y:
+                    subarray += [0]
+                    j += 1
+                j = 0
+                self.__body += [subarray]
+                i += 1
+        except:
+            raise Exception("Exceptions with the empty function")
+
+    def printOut(self):
+        """! Print out 2-Dimensional array"""
+        try:
+            output = ""
+            for i in self.__body:
+                index = 0
+                while index < len(i):
+                    if index == len(i) - 1:
+                        output += str(i[index]) + "\n"
+                    else:
+                        output += str(i[index]) + " "
+                    index += 1
+            print(output)
+        except:
+            raise Exception("Error occurs on the printOut execution")
+
+    def __repr__(self):
+        """! Returns representation forms"""
+        return str(self)
 
     def __str__(self):
-        output = ""
-        for i in self.__body:
-            index = 0
-            while index < len(i):
-                if index == len(i) - 1:
-                    output += str(i[index]) + "\n"
-                else:
-                    output += str(i[index]) + " "
-                index += 1
-        return output
+        """! Returns string forms"""
+        try:
+            return str(self.__body)
+        except:
+            raise Exception("")
 
     def appendRow(self, row=None):
         if row is None:
@@ -228,3 +247,10 @@ class twoD_array:
 
     def checkCol(self):
         pass
+
+
+array6 = twoD_array(10, 10)
+array6.set_point(9, 9, 2)
+array6.set_point(8, 4, 16)
+array6.set_point(7, 1, 9)
+array6.printOut()
