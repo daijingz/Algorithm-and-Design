@@ -83,9 +83,9 @@
 ## About The Project
 ![alt text](images/algorithms_illustration.jpg)
 
-:open_mouth: Do not know how to have advanced functional programs? Why not use algortihms to solve problems? Building codings for algorithms.
+:open_mouth: Do not know how to have advanced functional programs? Why not use algortihms to solve problems? This project family includes programming designs for algorithms.
 
-:smile: Already have algorithm implementations, but do not find how to apply it in the realistic problems?
+:smile: Already have algorithm implementations, but do not find how to apply it in the realistic problems? Based on algorithm implementations, this project 
 
 :grimacing: This project family 
 
@@ -99,16 +99,16 @@ Every repository has the `README.md` file to briefly explain what does this repo
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This project family includes
 
 * [Python](https://www.python.org/) (With Pytest, PyGame, Scipy, Numpy, Pandas, matplotlib)
-* [Java](https://reactjs.org/) (With JUnit, java.sql, GUI)
-* [C++](https://vuejs.org/) (Application programs and gaming programs)
-* [C](https://angular.io/) (Mainly about operating systems)
-* [Ruby](https://svelte.dev/) (High-Level programming languages)
-* [Haskell](https://laravel.com) (High-Level programming languages)
-* [Scala](https://getbootstrap.com) (High-Level programming languages)
-* [JQuery](https://jquery.com)
+* [Java](https://www.java.com/en/) (With JUnit, java.sql, GUI)
+* [C++](https://docs.microsoft.com/en-us/cpp/?view=msvc-170) (Application programs and gaming programs)
+* [C](https://docs.microsoft.com/en-us/cpp/?view=msvc-170) (Mainly about operating systems)
+* [Ruby](https://www.ruby-lang.org/en/documentation/) (High-Level programming languages)
+* [Haskell](https://hoogle.haskell.org/) (High-Level programming languages)
+* [Scala](https://docs.scala-lang.org/) (High-Level programming languages)
+* [SQL](https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15) (Azure, mySQL, and Oracle)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -130,9 +130,9 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+Different 
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [https://example.com](https:/
 2. Clone the repo
    ```sh
    git clone https://github.com/your_username_/Project-Name.git
