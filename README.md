@@ -102,8 +102,8 @@ Every repository has the `README.md` file to briefly explain what does this repo
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [Python](https://www.python.org/) (With Pytest, PyGame, Scipy, Numpy, Pandas, matplotlib)
-* [React.js](https://reactjs.org/) (With JUnit)
-* [Vue.js](https://vuejs.org/)
+* [Java](https://reactjs.org/) (With JUnit, java.sql, GUI)
+* [C++](https://vuejs.org/)
 * [Angular](https://angular.io/)
 * [Svelte](https://svelte.dev/)
 * [Laravel](https://laravel.com)
