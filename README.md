@@ -113,6 +113,12 @@ Every repository has the `README.md` file to briefly explain what does this repo
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### Statistics
+
+**Total lines** - 9344 lines
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
 <!-- LICENSE -->
