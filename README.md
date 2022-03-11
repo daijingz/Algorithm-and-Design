@@ -83,13 +83,19 @@
 ## About The Project
 ![alt text](images/algorithms_illustration.jpg)
 
-:open_mouth: Do not know how to have advanced functional programs? Why not use algortihms to solve problems? This project family includes programming designs for algorithms.
+**This project family includes those parts**
 
-:smile: Already have algorithm implementations, but do not find how to apply it in the realistic problems? Based on algorithm implementations, this project 
+:open_mouth: **Algorithm implementations** (How do algorithm perform in the different programming languages?)
 
-:grimacing: This project family 
+:smile: **Algorithm-based Application programs** (Apply algorithms to application programs)
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+:grimacing: **Documentations** (files that explain content, mainly **_.ipynb_** and **_.md_** files)
+
+:blush: **Mathematical proofs** (algortihms' theory proofs, mostly based on selected textbooks)
+
+:smiley: **Testing** (Testing that checks whether each program has good, expected performance)
+
+Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
 
 Every repository has the `README.md` file to briefly explain what does this repository do.
 
@@ -97,9 +103,7 @@ Every repository has the `README.md` file to briefly explain what does this repo
 
 
 
-### Built With
-
-This project family includes
+### Mainly Used Programming Languages
 
 * [Python](https://www.python.org/) (With Pytest, PyGame, Scipy, Numpy, Pandas, matplotlib)
 * [Java](https://www.java.com/en/) (With JUnit, java.sql, GUI)
@@ -117,8 +121,7 @@ This project family includes
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+This project family uses 
 
 ### Prerequisites
 
