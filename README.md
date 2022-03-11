@@ -103,11 +103,11 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 * [Python](https://www.python.org/) (With Pytest, PyGame, Scipy, Numpy, Pandas, matplotlib)
 * [Java](https://reactjs.org/) (With JUnit, java.sql, GUI)
-* [C++](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
+* [C++](https://vuejs.org/) (Application programs and gaming programs)
+* [C](https://angular.io/) (Mainly about operating systems)
+* [Ruby](https://svelte.dev/) (High-Level programming languages)
+* [Haskell](https://laravel.com) (High-Level programming languages)
+* [Scala](https://getbootstrap.com) (High-Level programming languages)
 * [JQuery](https://jquery.com)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
