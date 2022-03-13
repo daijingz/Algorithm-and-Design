@@ -116,6 +116,7 @@ Every repository has the `README.md` file to briefly explain what does this repo
 ### Statistics
 
 **Total lines** - 9344 lines
+**Current Modules** - 8 parts (modules)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
