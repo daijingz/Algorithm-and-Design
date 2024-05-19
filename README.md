@@ -135,9 +135,11 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 <!-- CONTACT -->
-## Contact
+## Contact the Author
 
-Jingze Dai - [@your_twitter](david1147062956@gmail.com) - david1147062956@gmail.com
+Email Address - david1147062956@gmail.com
+
+Email Address - dai.jingze@icloud.com
 
 Project Link: [https://github.com/daijingz/Algorithm-and-Design](https://github.com/daijingz/Algorithm-and-Design)
 
