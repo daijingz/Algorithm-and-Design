@@ -137,9 +137,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Jingze Dai - [@your_twitter](https://twitter.com/your_username) - david1147062956@gmail.com
+Jingze Dai - [@your_twitter](david1147062956@gmail.com) - david1147062956@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/daijingz/Algorithm-and-Design](https://github.com/daijingz/Algorithm-and-Design)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
