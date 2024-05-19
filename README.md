@@ -33,7 +33,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Algorithm and Design Project Family</h3>
+  <h3 align="center">Algorithm and Design Project Family (Refurbishing now)</h3>
 
   <p align="center">
     This project family is about algorithms' designs and implementations. This project includes more than 70 kinds of algorithm introduced by online tutorials, websites, textbooks, documentations and other resources. This page includes a complete description for algorithms and other programs. To find the implementation file, please look at the file name provides on the back side of different modules.
