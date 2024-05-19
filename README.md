@@ -123,17 +123,6 @@ Every repository has the `README.md` file to briefly explain what does this repo
 
 ## Repository
 
-<!-- LICENSE -->
-## License
-
-**_This part is from the README file template provider, NOT from the author_**
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 <!-- CONTACT -->
 ## Contact the Author
 
